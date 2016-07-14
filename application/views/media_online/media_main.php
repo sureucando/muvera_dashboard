@@ -90,7 +90,7 @@
 							<label for="Viva">Viva</label>
 						</div>
 					</div>
-					<div id="btn-generate" class="btn btn-orange btn-lg-rnd">Generate Report</div>
+					<div id="btn-generate" class="btn btn-orange btn-lg-rnd" onclick="search()">Generate Report</div>
 				</form>
 			</div>
 			

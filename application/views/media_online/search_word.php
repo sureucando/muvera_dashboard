@@ -4,20 +4,20 @@
 								<h3 class="report-title">
 									<img src="assets/images/icon-title2.png">Chart Report</h3>
 									<div class="report-content-chart">
-										Main Keyword : <?php echo $_GET["main-word"] ?> <br>
-										Taxonomy 1 : <?php echo $_GET["first-tax"] ?> <br>
-										Taxonomy 2 : <?php echo $_GET["second-tax"] ?> <br>
-										Taxonomy 3 : <?php echo $_GET["third-tax"] ?> <br>
-										Taxonomy 4 : <?php echo $_GET["fourth-tax"] ?> <br>
+										<!--Main Keyword : <?php echo $_POST["main-word"] ?> <br>
+										Taxonomy 1 : <?php echo $_POST["first-tax"] ?> <br>
+										Taxonomy 2 : <?php echo $_POST["second-tax"] ?> <br>
+										Taxonomy 3 : <?php echo $_POST["third-tax"] ?> <br>
+										Taxonomy 4 : <?php echo $_POST["fourth-tax"] ?> <br>
 
 										Get Date : <br>
-										From : <?php echo $_GET["date-from"] . ' ' . $_GET["time-from"] ?> <br>
-										To : <?php echo $_GET["date-to"] . ' ' . $_GET["time-to"] ?> <br>
+										From : <?php echo $_POST["date-from"] . ' ' . $_POST["time-from"] ?> <br>
+										To : <?php echo $_POST["date-to"] . ' ' . $_POST["time-to"] ?> <br>
 
 										Chosen Media : <br>
 										<?php 
-										$media = $_GET["media"];
+										$media = $_POST["media"];
 										foreach ($media as $media_data){echo $media_data . "<br />";} ?>
-
+										-->
 									</div>
 								</div>
