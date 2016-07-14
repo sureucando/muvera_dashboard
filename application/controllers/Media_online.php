@@ -80,4 +80,14 @@ class Media_online extends CI_Controller {
 
 		$this->load->view('data_view', $data);	
 	}
+	
+	public function Query($type = ''){
+		//if($type === "ajax_refresh"){
+			$output = array(
+			"message" => "Hei Berhasil AJAX",
+			"status" => TRUE
+			);
+			echo json_encode($output);
+		//}
+	}
 }
