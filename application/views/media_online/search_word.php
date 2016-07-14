@@ -4,7 +4,8 @@
 								<h3 class="report-title">
 									<img src="assets/images/icon-title2.png">Chart Report</h3>
 									<div class="report-content-chart">
-										<!--Main Keyword : <?php echo $_POST["main-word"] ?> <br>
+										<div id="search-input" style="display:none;">
+										Main Keyword : <?php echo $_POST["main-word"] ?> <br>
 										Taxonomy 1 : <?php echo $_POST["first-tax"] ?> <br>
 										Taxonomy 2 : <?php echo $_POST["second-tax"] ?> <br>
 										Taxonomy 3 : <?php echo $_POST["third-tax"] ?> <br>
@@ -18,6 +19,8 @@
 										<?php 
 										$media = $_POST["media"];
 										foreach ($media as $media_data){echo $media_data . "<br />";} ?>
-										-->
+											
+										</div>
+										
 									</div>
 								</div>

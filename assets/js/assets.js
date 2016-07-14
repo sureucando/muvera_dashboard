@@ -23,8 +23,8 @@ $(document).ready(function(){
     /* Generate Report */
     $('#btn-generate').click(function(){
       $('#search-form').submit();
-      //$('.section-report').show();
-      $('.content-container').animate({height:'2750px'}, 500);
+      $('.section-report').show();
+      $('.content-container').animate({height:'2860px'}, 500);
       $(this).attr('style', 'pointer-events: none;');
       $(this).addClass('selected');
     });
