@@ -65,6 +65,10 @@ td{
 	border: solid 1px;
 }
 
+form{
+	height: 515px;
+}
+
 /* Header Bar */
 #header {
 	background-color: #131418;
@@ -229,7 +233,6 @@ h1.content-title {
 	background-color: #fff;
 	position: relative;
 	padding:  0 20px;
-	top: -280px;
 	height: 1675px;
 	display: none;
 }
