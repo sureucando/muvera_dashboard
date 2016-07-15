@@ -16,10 +16,10 @@ $(document).ready(function(){
 
   /* Generate Report */
   $('#btn-generate').click(function(){
-    $('.section-report').show();
-    $('.content-container').animate({height:'2860px'}, 500);
-    $(this).attr('style', 'pointer-events: none;');
-    $(this).addClass('selected');
+    //$('.section-report').show();
+    //$('.content-container').animate({height:'2860px'}, 500);
+    //$(this).attr('style', 'pointer-events: none;');
+    //$(this).addClass('selected');
   });
 });
 

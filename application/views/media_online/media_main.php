@@ -6,7 +6,7 @@
 		<!-- Banner -->
 		<div class="banner">
 			<div class="banner-top">
-				Lorem Ipsum Dolor
+				Media Monitoring - Muvera
 				<div class="btn btn-sm btn-orange">Learn More</div>
 			</div>
 			<div class="banner-bot">
@@ -14,7 +14,7 @@
 		</div>
 		<div class="content-container">
 			<!-- Search Config Section -->
-			<form id="search-form">
+			<form id="search-form" name="search-form">
 				<div class="section-search">
 					<h1 class="content-title">MEDIA</h1>
 					<div id="search-container">
