@@ -22,7 +22,6 @@ $(document).ready(function(){
 
     /* Generate Report */
     $('#btn-generate').click(function(){
-      $('#search-form').submit();
       $('.section-report').show();
       $('.content-container').animate({height:'2860px'}, 500);
       $(this).attr('style', 'pointer-events: none;');
@@ -30,22 +29,6 @@ $(document).ready(function(){
     });
   });
 });
-
-/* Search Form */
-  $("#search-form").submit(function() {
-	var url = "<?php echo base_url('query/ajax_refresh')?>";; // the script where you handle the form input.
-
-    $.ajax({
-        type: "POST",
-        url: url,
-        data: $("#search-form").serialize(), // serializes the form's elements.
-        success: function(data) {
-             // 'data' is the response from the php script.
-             // Update <div id="change"> here.
-        }
-    });
-    return false; // avoid to execute the actual submit of the form. (This stops the URL changing).
-  });
 
   
 /* Datepicker */

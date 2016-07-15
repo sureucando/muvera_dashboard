@@ -204,7 +204,7 @@ form{
 .content-container {
 	margin: 0 130px;
 	padding: 0px 35px;
-	height: 1024px;
+	height: 525px;
 }
 
 h1.content-title {
@@ -226,7 +226,7 @@ h1.content-title {
 	padding: 0 20px;
 	top: -250px;
 	height: 830px;
-	/*display: none;*/
+	display: none;
 }
 
 .section-report {
