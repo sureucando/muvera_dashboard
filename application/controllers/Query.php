@@ -17,9 +17,14 @@ class Query extends CI_Controller {
 			'media' => $this->input->post('media')
 			);
 		$countData = [];
+		$i = 0;
 		foreach($query1['media'] as &$tablename){	
-			$countData[$tablename] = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$query1['timefrom'], $query1['dateto'].' '.$query1['timeto'],$tablename);
+			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$query1['timefrom'], $query1['dateto'].' '.$query1['timeto'],$tablename);
+			$table = explode("_",$tablename);
+			$countData[$i] = array ("tablename" => ucfirst($table[0]), "total" => (int)$result[0]->total);
+			$i++;
 		}
+		
 		$output = array(
 			"message" => "Hei Berhasil AJAX",
 			"word1" => $query1['mainword'],

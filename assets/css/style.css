@@ -516,3 +516,12 @@ input[type=time]::-webkit-inner-spin-button {
 a:hover {
 	text-decoration: underline;
 }
+
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}

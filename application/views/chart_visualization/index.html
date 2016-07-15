@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+</style>
+
+<body>
+<div id="pie_chart_visualisation" style="display:block;margin:auto;"></div>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 400,
+    height = 250,
+    radius = Math.min(width, height) / 2;
+
+var color = d3.scale.ordinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b"]);
+
+var arc = d3.svg.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(0);
+
+var labelArc = d3.svg.arc()
+    .outerRadius(radius - 40)
+    .innerRadius(radius - 40);
+
+var pie = d3.layout.pie()
+    .sort(null)
+    .value(function(d) { return d.Frequent; });
+
+var svg = d3.select("#pie_chart_visualisation").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+
+d3.csv("news_tier1.csv", type, function(error, data) {
+  if (error) throw error;
+
+
+
+  var g = svg.selectAll(".arc")
+      .data(pie(data))
+    .enter().append("g")
+      .attr("class", "arc");
+
+  g.append("path")
+      .attr("d", arc)
+      .style("fill", function(d) { return color(d.data.Source); });
+
+  g.append("text")
+      .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+      .attr("dy", ".35em")
+      .text(function(d) { return d.data.Source; });
+
+  var legend = d3.select("#pie_chart_visualisation").append("svg")
+      .attr("class", "legend")
+      .attr("width", radius * 2)
+      .attr("height", radius * 1.2)
+    .selectAll("g")
+      .data(color.domain().slice().reverse())
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .text(function(d) {return d});
+});
+
+function type(d) {
+  d.Frequent = +d.Frequent;
+  return d;
+}
+
+</script>
+</html>
