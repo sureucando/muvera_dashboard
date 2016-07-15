@@ -16,6 +16,10 @@ class Query extends CI_Controller {
 			'timeto' => $this->input->post('time-to'),
 			'media' => $this->input->post('media')
 			);
+		$countData = [];
+		foreach($query1['media'] as &$tablename){	
+			$countData[$tablename] = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$query1['timefrom'], $query1['dateto'].' '.$query1['timeto'],$tablename);
+		}
 		$output = array(
 				"message" => "Hei Berhasil AJAX",
 				"word1" => $query1['mainword'],
@@ -28,13 +32,20 @@ class Query extends CI_Controller {
 				"dateto" => $query1['dateto'],
 				"timeto" => $query1['timeto'],
 				"media" => $query1['media'],
-				"status" => TRUE
+				"status" => TRUE,
+				"count" => $countData
 		);
 		echo json_encode($output);
 	}
 	
 	public function index(){
 		echo "bangke";
+	}
+	
+	private function data($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename){
+		$this->load->model('model_query');
+		
+		return $this->model_query->getCountBasedKeyword($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename);
 	}
 }
 ?>

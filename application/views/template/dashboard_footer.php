@@ -26,7 +26,12 @@
 							dataType : "JSON",
 							success : function(data){
 								if (data.status){
-									alert(data.message+", Keyword pertama: "+data.word1+", Keyword kedua: "+data.word2+", Keyword ketiga: "+data.word3+", Keyword keempat: "+data.word4+", Keyword kelima: "+data.word5+", Waktu Mulai: "+data.datefrom+" "+data.timefrom+", Waktu Selesai: "+data.dateto+" "+data.timeto+", List Media: "+data.media);
+									//alert(data.message+", Keyword pertama: "+data.word1+", Keyword kedua: "+data.word2+", Keyword ketiga: "+data.word3+", Keyword keempat: "+data.word4+", Keyword kelima: "+data.word5+", Waktu Mulai: "+data.datefrom+" "+data.timefrom+", Waktu Selesai: "+data.dateto+" "+data.timeto+", List Media: "+data.media);
+									var countMedia = data.count;
+									for(var countMed in countMedia){
+										var total = countMedia[countMed];
+										document.getElementById('chart_count_report').innerHTML += '<tr><td>'.concat(countMed,'</td><td>', total[0]["total"], '</td></tr>');
+									}
 								}
 							},
 							error: function (jqXHR, textStatus, errorThrown)
@@ -34,6 +39,10 @@
 								alert('Error !');
 							}
 						});
+						$('.section-report').show();
+						$('.content-container').animate({height:'2860px'}, 500);
+						$(this).attr('style', 'pointer-events: none;');
+						$(this).addClass('selected');
 					}
 				</script>
 </body>

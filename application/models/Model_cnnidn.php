@@ -27,4 +27,14 @@
 				return NULL;
 			}
 		}
+		
+		function getCountBasedKeyword($k1, $k2, $k3, $k4, $k5, $table_name){
+			$query = "select count(*) as total from $table_name where content like '%$k1%' and content like '%$k2%' and content like '%$k3%' and content like '%$k4%' and content like '%$k5%' ";
+			if ($query->num_rows() > 0) {
+				return $query->result();
+			}
+			else {
+				return NULL;
+			}
+		}
 	}

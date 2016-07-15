@@ -10,17 +10,8 @@
 											<th>Counter</th>
 										</tr>
 									</thead>
-									<tbody>
-										<?php foreach ($count_cnnidn as $object) {echo '<tr><td>CNN Indonesia</td><td>' . $object->total . '</td></tr>';} ?>
-										<?php foreach ($count_detik as $object) {echo '<tr><td>Detik</td><td>' . $object->total . '</td></tr>';} ?>
-										<?php foreach ($count_kompas as $object) {echo '<tr><td>Kompas</td><td>' . $object->total . '</td></tr>';} ?>
-										<?php foreach ($count_liputan6 as $object) {echo '<tr><td>Liputan 6</td><td>' . $object->total . '</td></tr>';} ?>
-										<?php foreach ($count_merdeka as $object) {echo '<tr><td>Merdeka</td><td>' . $object->total . '</td></tr>';} ?>
-										<?php foreach ($count_republika as $object) {echo '<tr><td>Republika</td><td>' . $object->total . '</td></tr>';} ?>
-										<?php foreach ($count_sindo as $object) {echo '<tr><td>Sindonews</td><td>' . $object->total . '</td></tr>';} ?>
-										<?php foreach ($count_tempo as $object) {echo '<tr><td>Tempo</td><td>' . $object->total . '</td></tr>';} ?>
-										<?php foreach ($count_tribun as $object) {echo '<tr><td>Tribunnews</td><td>' . $object->total . '</td></tr>';} ?>
-										<?php foreach ($count_viva as $object) {echo '<tr><td>Viva</td><td>' . $object->total . '</td></tr>';} ?>
+									<tbody id='chart_count_report'>
+										
 									</tbody>
 								</table>
 								</div>

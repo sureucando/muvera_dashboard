@@ -33,8 +33,7 @@ $(document).ready(function(){
 
 /* Search Form */
   $("#search-form").submit(function() {
-
-    var url = "media_online/search_word"; // the script where you handle the form input.
+	var url = "<?php echo base_url('query/ajax_refresh')?>";; // the script where you handle the form input.
 
     $.ajax({
         type: "POST",
