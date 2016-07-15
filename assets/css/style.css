@@ -233,7 +233,7 @@ h1.content-title {
 	background-color: #fff;
 	position: relative;
 	padding:  0 20px;
-	height: 1675px;
+	height: 1785px;
 	display: none;
 }
 
@@ -455,6 +455,24 @@ input[type=time]::-webkit-inner-spin-button {
 	padding: 10px 0 10px 290px;
 	font-size: 14pt;
 	box-shadow: 0 15px 15px rgba(0,0,0,0.15);
+}
+
+.btn-rnd-cont {
+	margin: 0 350px;
+}
+
+.btn-rnd {
+	display: inline-block;
+	border-radius: 50px;
+	width: 100px;
+	height: 100px;
+	margin: 0 15px;
+}
+
+.btn-rnd>img {
+	height: 72%;
+	width: 60%;
+	margin: 13px 20px;
 }
 
 .btn-sm {

@@ -26,6 +26,10 @@
 								</div>
 							</div>
 							<div class="btn btn-orange btn-lg">Download Chart Report</div>
+							<div class="btn-rnd-cont">
+								<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+								<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+							</div>
 						</div>
 						<div class="file-container">
 							<div class="report-file">
