@@ -52,7 +52,7 @@ class Media_online extends CI_Controller {
 		$this->load->view('template/dashboard_footer', $data);
 	}
 
-	public function data()
+	/*public function data()
 	{
 		$this->load->model('model_cnnidn');
 		$this->load->model('model_detik');
@@ -79,7 +79,7 @@ class Media_online extends CI_Controller {
 		$data['count_viva'] = $this->model_viva->countVivaData();
 
 		$this->load->view('data_view', $data);	
-	}
+	}*/
 	
 	public function Query($type = ''){
 		//if($type === "ajax_refresh"){

@@ -50,43 +50,43 @@
 				<div class="section-choice">
 					<div class="btn-media-container">
 						<div class="btn btn-media">
-							<input id="CNNIdn" type="checkbox" name="media[]" value="CNNIdn">
+							<input id="CNNIdn" type="checkbox" name="media[]" value="cnnindo_data">
 							<label for="CNNIdn">CNN Idn</label>
 						</div>
 						<div class="btn btn-media">
-							<input id="Detik" type="checkbox" name="media[]" value="Detik">
+							<input id="Detik" type="checkbox" name="media[]" value="detik_data">
 							<label for="Detik">Detik</label>
 						</div>
 						<div class="btn btn-media">
-							<input id="Kompas" type="checkbox" name="media[]" value="Kompas">
+							<input id="Kompas" type="checkbox" name="media[]" value="kompas_data">
 							<label for="Kompas">Kompas</label>
 						</div>
 						<div class="btn btn-media">
-							<input id="Liputan6" type="checkbox" name="media[]" value="Liputan6">
+							<input id="Liputan6" type="checkbox" name="media[]" value="liputan6_data">
 							<label for="Liputan6">Liputan6</label>
 						</div>
 						<div class="btn btn-media">
-							<input id="Merdeka" type="checkbox" name="media[]" value="Merdeka">
+							<input id="Merdeka" type="checkbox" name="media[]" value="merdeka_data">
 							<label for="Merdeka">Merdeka</label>
 						</div>
 						<div class="btn btn-media">
-							<input id="Republika" type="checkbox" name="media[]" value="Republika">
+							<input id="Republika" type="checkbox" name="media[]" value="republika_data">
 							<label for="Republika">Republika</label>
 						</div>
 						<div class="btn btn-media">
-							<input id="Sindo" type="checkbox" name="media[]" value="Sindo">
+							<input id="Sindo" type="checkbox" name="media[]" value="sindonews_data">
 							<label for="Sindo">Sindo</label>
 						</div>
 						<div class="btn btn-media">
-							<input id="Tempo" type="checkbox" name="media[]" value="Tempo">
+							<input id="Tempo" type="checkbox" name="media[]" value="tempo_data">
 							<label for="Tempo">Tempo</label>
 						</div>
 						<div class="btn btn-media">
-							<input id="Tribun" type="checkbox" name="media[]" value="Tribun">
+							<input id="Tribun" type="checkbox" name="media[]" value="tribunnews_data">
 							<label for="Tribun">Tribun</label>
 						</div>
 						<div class="btn btn-media">
-							<input id="Viva" type="checkbox" name="media[]" value="Viva">
+							<input id="Viva" type="checkbox" name="media[]" value="viva_data">
 							<label for="Viva">Viva</label>
 						</div>
 					</div>
