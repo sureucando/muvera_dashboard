@@ -16,7 +16,7 @@
 		<!-- Aditional Div's -->
 		<!-- Loading Div -->
 		<div id="loading"></div>
-
+		
 		<script src="assets/js/jquery-1.12.3.js"></script>
 		<script src="assets/js/jquery-ui.js"></script>
 		<script src="assets/js/assets.js"></script>
