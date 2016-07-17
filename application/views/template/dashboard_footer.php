@@ -308,7 +308,7 @@
 										.duration(200)    
 										.style("opacity", .9);    
 									div .html(d.tablename + "<br/>"  + d.total)  
-										.style("left", (d3.event.pageX - 200) + "px")   
+										.style("left", (d3.event.pageX) + "px")   
 										.style("top", (d3.event.pageY - 28) + "px");  
 									})          
 								.on("mouseout", function(d) {   

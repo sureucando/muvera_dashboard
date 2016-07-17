@@ -69,9 +69,10 @@ class Print_report extends CI_Controller {
 		$html = file_get_contents('php://input');
 		
 		//print the barchart
-		$array1 = explode('</label>',$html);
-		$array2 = explode('<div', $array1[1]);
-		$pdf->ImageSVG('@' . $array2[0], $x=15, $y=30, $w='', $h='', $link='', $align='', $palign='', $border=0, $fitonpage=true);
+		//$array1 = explode('</label>',$html);
+		$array2 = explode('<svg', $html);
+		$array3 = explode('</svg>', $array2[1]);
+		$pdf->ImageSVG('@'.'<svg'.$array3[0]."</svg>", $x=15, $y=30, $w='', $h='', $link='', $align='', $palign='', $border=0, $fitonpage=true);
 		$pdf->Write(0, $txt='', '', 0, 'L', true, 0, false, false, 0);
 		/*
 		//print the piechart
