@@ -65,10 +65,6 @@ td{
 	border: solid 1px;
 }
 
-form{
-	height: 1095px;
-}
-
 select {
    -webkit-appearance: none;
    -moz-appearance: none;
@@ -230,8 +226,8 @@ h1.content-title {
 	background-color: #fff;
 	position: relative;
 	padding: 0 20px;
-	top: -250px;
-	height: 830px;
+	top: -230px;
+	height: 810px;
 }
 
 .section-report {
@@ -240,6 +236,15 @@ h1.content-title {
 	padding: 0 20px;
 	height: 625px;
 	display: none;
+}
+
+/* Form */
+form#search-form{
+	height: 1095px;
+}
+
+form#share-form{
+	height: 175px;
 }
 
 /* Search Word */
@@ -317,6 +322,24 @@ img.file {
 	margin-top: 60px;
 	margin-left: 300px;
 	height: 300px;
+}
+
+#share-cont {
+	margin: 10px 240px;
+	border-radius: 5px;
+	height: 175px;
+	width: 500px;
+	background: #d6d8da;
+	display: none;
+}
+
+#share-form>input {
+	margin: 50px 40px 0 40px;
+	padding-left: 20px;
+	border-radius: 5px;
+	border: none;
+	height: 50px;
+	width: 400px;
 }
 
 /* Datepicker */
@@ -412,20 +435,39 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	margin: 10px;
 	background-color: #131418;
 	overflow: hidden;
+}
+
+.btn-media-md {
+	height: 66px;
+	width: 284px;
+}
+
+.btn-media-lg {
 	height: 100px;
 	width: 437px;
 }
 
 .btn-media label {
 	display: inline-block;
-	padding: 25px 0px;
 	background-color: #131418;
-	font-size: 34pt;
-	line-height: 34pt;
 	font-weight: bold;
 	text-align: center;
 	color: #fff;
 	overflow: hidden;
+}
+
+.btn-media-md label {
+	padding: 15px 0px;
+	font-size: 24pt;
+	line-height: 24pt;
+	height: 36px;
+	width: 284px;
+}
+
+.btn-media-lg label {
+	padding: 25px 0px;
+	font-size: 34pt;
+	line-height: 34pt;
 	height: 50px;
 	width: 437px;
 }
@@ -442,6 +484,16 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	height: 50px;
 	width: 437px;
 	background: rgba(41,243,128,0.8);
+}
+
+.btn-media-md input[type=checkbox]:checked + label {
+	height: 36px;
+	width: 284px;
+}
+
+.btn-media-lg input[type=checkbox]:checked + label {
+	height: 50px;
+	width: 437px;
 }
 
 /* Button */
@@ -476,12 +528,31 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	color: #fff;
 }
 
-.btn-blue:hover {
+.btn-blue:hover,
+.btn-blue:selected {
 	background: #F27321;
 	background: linear-gradient(to right, #E41E79, #F27321);
 	background: -webkit-linear-gradient(left, #E41E79 , #F27321); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(right, #E41E79, #F27321); /* For Opera 11.1 to 12.0 */
 	background: -moz-linear-gradient(right, #E41E79, #F27321); /* For Firefox 3.6 to 15 */ 
+}
+
+.btn-green {
+	background: #29f380;
+	background: linear-gradient(to right, #29f380, #29f380);
+	background: -webkit-linear-gradient(left, #29f380 , #29f380); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #29f380, #29f380); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #29f380, #29f380); /* For Firefox 3.6 to 15 */
+	color: #fff;
+}
+
+.btn-green:hover,
+.btn-green.selected {
+	background: #9FC9FF;
+	background: linear-gradient(to right, #B9C0FF, #9FC9FF);
+	background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
 }
 
 .btn-lg-rnd {
@@ -518,6 +589,15 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	margin: 10px 620px;
 	padding: 1px 0 1px 2.6px;
 	font-size: 9.15pt;
+}
+
+.btn-md {
+	border-radius: 5px;
+	text-align: center;
+	width: 418px;
+	margin: 20px 40px;
+	padding: 5px 0;
+	font-size: 12pt;
 }
 
 .btn-lg {

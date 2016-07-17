@@ -9,7 +9,13 @@
 							<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
 							<div class="btn btn-orange btn-rnd"><img src="assets/images/file-xlxs.png"></div>
 						</div>
-						<div class="btn btn-orange btn-lg" id="report-share">Share Report</div>
+						<div class="btn btn-orange btn-lg" id="report-sh">Share Report</div>
+						<div id="share-cont">
+							<form id="share-form" name="share-form">
+								<input type="text" placeholder="Insert Email Here...">
+								<div class="btn btn-green btn-md">Share</div>
+							</form>
+						</div>
 					</div>
 					<!--<div class="file-container">
 						<div class="report-file">
