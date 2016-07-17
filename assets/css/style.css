@@ -333,15 +333,6 @@ img.file {
 	display: none;
 }
 
-#share-form>input {
-	margin: 50px 40px 0 40px;
-	padding-left: 20px;
-	border-radius: 5px;
-	border: none;
-	height: 50px;
-	width: 400px;
-}
-
 /* Datepicker */
 #datepicker-container {
 	position: relative;
@@ -395,6 +386,10 @@ select.from-period, select.to-period {
 	padding-left: 15px;
 }
 
+input[type=date] {
+	font-family: 'AvenirNext';
+}
+
 input[type=date]::-webkit-inner-spin-button {
 	display: none;
 }
@@ -416,6 +411,16 @@ input[type=number]::-webkit-inner-spin-button {
 
 input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: #000000;
+}
+
+#share-form>input {
+	margin: 50px 40px 0 40px;
+	padding-left: 20px;
+	border-radius: 5px;
+	border: none;
+	height: 50px;
+	width: 400px;
+	font-size: 12pt;
 }
 
 #datepicker-container label,
@@ -653,38 +658,4 @@ a:hover {
 
 .arc path {
   stroke: #fff;
-}
-
-
-.axis text {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.bar {
-  fill: steelblue;
-  fill-opacity: .9;
-}
-
-.x.axis path {
-  display: none;
-}
-
-div.tooltip { 
-    position: absolute;     
-    text-align: center;     
-    width: 60px;          
-    height: 28px;         
-    padding: 2px;       
-    font: 12px sans-serif;    
-    background: lightsteelblue; 
-    border: 0px;    
-    border-radius: 8px;     
-    pointer-events: none;     
 }
