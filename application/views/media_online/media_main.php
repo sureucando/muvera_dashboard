@@ -37,12 +37,22 @@
 						</div>
 						<div id="timepicker-container">
 							<div class="timepicker-from">
-								<label for="from">From</label>
-								<input type="time" class="from from-time" name="time-from">
+								<!--<label for="from">From</label>
+								<input type="time" class="from from-time" name="time-from">-->
+								<input type="number" class="from from-time" name="hour-from" placeholder="00" min="0" max="12" maxlength="2"> : <input type="number" class="from from-time" name="minute-from" placeholder="00" min="0" max="59" maxlength="2">
+								<select name="period" class="from from-period" id="period-from">
+									<option value="am" selected>AM</option>
+									<option value="pm">PM</option>
+								</select>
 							</div>
 							<div class="timepicker-to">
-								<label for="to">to</label>
-								<input type="time" class="to to-time" name="time-to">
+								<!--<label for="to">to</label>
+								<input type="time" class="to to-time" name="time-to">-->
+								<input type="number" class="to to-time" name="hour-to" placeholder="00" min="0" max="12" maxlength="2"> : <input type="number" class="to to-time" name="minute-to" placeholder="00" min="0" max="59" maxlength="2">
+								<select name="period" class="to to-period" id="period-to">
+									<option value="am" selected>AM</option>
+									<option value="pm">PM</option>
+								</select>
 							</div>
 						</div>
 					</div>
