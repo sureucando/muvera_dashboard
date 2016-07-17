@@ -21,6 +21,13 @@
 				<script src="assets/js/jquery-ui.js"></script>
 				<script src="assets/js/assets.js"></script>
 				<script src="https://d3js.org/d3.v3.min.js"></script>
+				<script src="assets/js/jspdf.js"></script> 
+				<script src="assets/js/addimage.js"></script> 
+				<script src="assets/js/FileSaver.js"></script> 
+				<script src="assets/js/png.js"></script> 
+				<script src="assets/js/zlib.js"></script> 
+				<script src="assets/js/xepOnline.jqPlugin.js"></script> 
+				<script src="assets/js/png_support.js"></script> 
 				<script type="text/javascript"> 
 					function validateForm() {
 						var main_word = document.forms["search-form"]["main-word"].value;
@@ -44,6 +51,75 @@
 						}
 						return true;
 					}
+					
+					function downloadPDF(){
+						var svgChart = new XMLSerializer().serializeToString(document.getElementById('ResultChart'));
+						var svgLeged = new XMLSerializer().serializeToString(document.getElementById('ResultLegend'));
+						var canvas = document.getElementById("canvas");
+						var ctx = canvas.getContext("2d");
+						var DOMURL = self.URL || self.webkitURL || self;
+						var imgChart = new Image();
+						var imgLegend = new Image();
+						var svgCh = new Blob([svgChart], {type: "image/svg+xml;charset=utf-8"});
+						var svgLg = new Blob([svgLeged], {type: "image/svg+xml;charset=utf-8"});
+						var urlChart = DOMURL.createObjectURL(svgCh);
+						var urlLegend = DOMURL.createObjectURL(svgLg);
+						var count = 2;
+						imgChart.onload = imgLegend.onload = function() {
+							count --;
+							if (count === 0) drawPDF(ctx, imgChart, imgLegend, canvas, DOMURL);
+						};
+						imgChart.src = urlChart;
+						imgLegend.src = urlLegend;
+					}
+					
+					function downloadPNG(){
+						//return xepOnline.Formatter.Format('pie_chart_visualisation',{srctype:'svg', mimeType:'image/png', render:'download'});
+						//saveSvgAsPng(document.getElementById("pie_chart_visualisation"), "diagram.png");
+						var svgChart = new XMLSerializer().serializeToString(document.getElementById('ResultChart'));
+						var svgLeged = new XMLSerializer().serializeToString(document.getElementById('ResultLegend'));
+						var canvas = document.getElementById("canvas");
+						var ctx = canvas.getContext("2d");
+						var DOMURL = self.URL || self.webkitURL || self;
+						var imgChart = new Image();
+						var imgLegend = new Image();
+						var svgCh = new Blob([svgChart], {type: "image/svg+xml;charset=utf-8"});
+						var svgLg = new Blob([svgLeged], {type: "image/svg+xml;charset=utf-8"});
+						var urlChart = DOMURL.createObjectURL(svgCh);
+						var urlLegend = DOMURL.createObjectURL(svgLg);
+						var count = 2;
+						imgChart.onload = imgLegend.onload = function() {
+							count --;
+							if (count === 0) drawImages(ctx, imgChart, imgLegend, canvas, DOMURL);
+						};
+						imgChart.src = urlChart;
+						imgLegend.src = urlLegend;
+					}
+					
+					function drawImages(ctx, img1, img2,canvas, DOMURL){
+						ctx.clearRect(0, 0, canvas.width, canvas.height);
+						ctx.drawImage(img1, 0, 0,500,300);
+						ctx.drawImage(img2, 500, 0);
+						var png = canvas.toDataURL("image/png");
+						document.querySelector('#pngdataurl').innerHTML = '<img src="'+png+'"/>';
+						DOMURL.revokeObjectURL(png);
+						var a = document.createElement("a");
+						a.download = "sample.png";
+						a.href = png;
+						document.body.appendChild(a);
+						a.click();
+					}
+					
+					function drawPDF(ctx, img1, img2,canvas, DOMURL){
+						ctx.clearRect(0, 0, canvas.width, canvas.height);
+						ctx.drawImage(img1, parseInt(0), parseInt(0),img1.width,img1.height);
+						ctx.drawImage(img2, parseInt(img1.width), 0);
+						var img = canvas.toDataURL("image/png");
+						var pdf = new jsPDF();
+						pdf.addImage(img, 'PNG', 10, 10);
+						pdf.save("download.pdf");
+					}
+					
 					function search(){
 						var valid = validateForm();
 						if (valid){
@@ -107,6 +183,7 @@
 						var svg = d3.select("#pie_chart_visualisation").append("svg")
 							.attr("width", width)
 							.attr("height", height)
+							.attr("id", 'ResultChart')
 						  .append("g")
 							.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 							
@@ -128,6 +205,7 @@
 							  .attr("class", "legend")
 							  .attr("width", radius * 2)
 							  .attr("height", radius * 1.2)
+							  .attr("id", 'ResultLegend')
 							.selectAll("g")
 							  .data(color.domain().slice().reverse())
 							.enter().append("g")

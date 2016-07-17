@@ -1,4 +1,3 @@
-
 						<div class="report-chart" id="report-2">
 							<h3 class="report-title"><img src="assets/images/icon-title2.png">Chart Report</h3>
 							<div class="report-content-chart" id="pie_chart_visualisation">
