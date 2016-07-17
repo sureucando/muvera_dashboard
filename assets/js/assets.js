@@ -1,11 +1,12 @@
 /* Global Variable */
 var query;
-var flag;
+var flagdl, flagsh;
 
 /* Start Of Function */
 
 $(document).ready(function(){
-  flag = true;
+  flagdl = true;
+  flagsh = true;
 
   /* Loading Screen */
   $('#loading').hide()
@@ -29,20 +30,42 @@ $(document).ready(function(){
     //$(this).addClass('selected');
   });
 
+  /*Download Button*/
   $('#report-dl').click(function(){
     var y = $('.content').scrollTop();  //your current y position on the page
+    var cch = $('.content-container').height();
+    var srh = $('.section-report').height();
     $('#btn-dl-cont').slideToggle();
-    if(flag){
-      $('.content-container').animate({height:'1800px'}, 'slow');
-      $('.section-report').animate({height:'725px'}, 'slow');
+    if(flagdl){
+      $('.content-container').animate({height: cch+100}, 'slow');
+      $('.section-report').animate({height: srh+100}, 'slow');
       $('.content').animate({scrollTop: y+100}, 'slow');
-      flag = false;
+      flagdl = false;
     }
     else{
-      $('.content-container').animate({height:'1700px'}, 'slow');
-      $('.section-report').animate({height:'625px'}, 'slow');
+      $('.content-container').animate({height: cch-100}, 'slow');
+      $('.section-report').animate({height: srh-100}, 'slow');
       $('.content').animate({scrollTop: y}, 'slow');
-      flag = true; 
+      flagdl = true; 
+    };
+  });
+
+  $('#report-sh').click(function(){
+    var y = $('.content').scrollTop();  //your current y position on the page
+    var cch = $('.content-container').height();
+    var srh = $('.section-report').height();
+    $('#share-cont').slideToggle();
+    if(flagsh){
+      $('.content-container').animate({height: cch+200}, 'slow');
+      $('.section-report').animate({height: srh+200}, 'slow');
+      $('.content').animate({scrollTop: y+200}, 'slow');
+      flagsh = false;
+    }
+    else{
+      $('.content-container').animate({height: cch-200}, 'slow');
+      $('.section-report').animate({height: srh-200}, 'slow');
+      $('.content').animate({scrollTop: y}, 'slow');
+      flagsh = true; 
     };
   });
 });

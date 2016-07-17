@@ -19,35 +19,35 @@ class Media_online extends CI_Controller {
 		
 		$data['title'] = 'Dashboard';
 
-		$this->load->model('model_cnnidn');
-		$this->load->model('model_detik');
-		$this->load->model('model_kompas');
-		$this->load->model('model_liputan6');
-		$this->load->model('model_merdeka');
-		$this->load->model('model_republika');
-		$this->load->model('model_sindo');
-		$this->load->model('model_tempo');
-		$this->load->model('model_tribun');
-		$this->load->model('model_viva');
+		#$this->load->model('model_cnnidn');
+		#$this->load->model('model_detik');
+		#$this->load->model('model_kompas');
+		#$this->load->model('model_liputan6');
+		#$this->load->model('model_merdeka');
+		#$this->load->model('model_republika');
+		#$this->load->model('model_sindo');
+		#$this->load->model('model_tempo');
+		#$this->load->model('model_tribun');
+		#$this->load->model('model_viva');
 
-		$data['count_cnnidn'] = $this->model_cnnidn->countCNNIdnData();
-		$data['count_detik'] = $this->model_detik->countDetikData();
-		$data['count_kompas'] = $this->model_kompas->countKompasData();
-		$data['count_liputan6'] = $this->model_liputan6->countLiputan6Data();
-		$data['count_merdeka'] = $this->model_merdeka->countMerdekaData();
-		$data['count_republika'] = $this->model_republika->countRepublikaData();
-		$data['count_sindo'] = $this->model_sindo->countSindoData();
-		$data['count_tempo'] = $this->model_tempo->countTempoData();
-		$data['count_tribun'] = $this->model_tribun->countTribunData();
-		$data['count_viva'] = $this->model_viva->countVivaData();
+		#$data['count_cnnidn'] = $this->model_cnnidn->countCNNIdnData();
+		#$data['count_detik'] = $this->model_detik->countDetikData();
+		#$data['count_kompas'] = $this->model_kompas->countKompasData();
+		#$data['count_liputan6'] = $this->model_liputan6->countLiputan6Data();
+		#$data['count_merdeka'] = $this->model_merdeka->countMerdekaData();
+		#$data['count_republika'] = $this->model_republika->countRepublikaData();
+		#$data['count_sindo'] = $this->model_sindo->countSindoData();
+		#$data['count_tempo'] = $this->model_tempo->countTempoData();
+		#$data['count_tribun'] = $this->model_tribun->countTribunData();
+		#$data['count_viva'] = $this->model_viva->countVivaData();
 
-		$input = array(
-			'main-word' => $this->input->post('main-word'),
-			);
+		#$input = array(
+		#	'main-word' => $this->input->post('main-word'),
+		#	);
 
 		$this->load->view('template/dashboard_header', $data);
 		$this->load->view('media_online/media_main', $data);
-		$this->load->view('media_online/search_word', $input);
+		$this->load->view('media_online/search_word', $data);
 		$this->load->view('media_online/media_report', $data);
 		$this->load->view('template/dashboard_footer', $data);
 	}
