@@ -167,6 +167,34 @@
 						pdf.save("download.pdf");
 					}
 					
+					function downloadXLS(){
+						var valid = validateForm();
+						if (valid){
+							//$('#loading').show();
+							var url = "<?php echo base_url('query/getxls')?>";
+							$.ajax({
+								url: url,
+								type : "POST",
+								data :$('#search-form').serialize(),
+								success : function(data){
+									if (data && data.search('filename') != -1){
+										var arrDispo = data.split(':');
+										console.log("here");
+										var filename = arrDispo[1].trim();
+										console.log(filename);
+										//var filename = filename.replace(".","/");
+										window.location.assign("<?php echo base_url('print_report/download/')?>"+"/"+filename);
+									}
+								},
+								error: function (jqXHR, textStatus, errorThrown)
+								{
+									alert('Error !');
+									//$('#loading').toggle();
+								}
+							});
+						}
+					}
+					
 					function search(){
 						var valid = validateForm();
 						if (valid){

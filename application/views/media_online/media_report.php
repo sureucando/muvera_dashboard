@@ -10,7 +10,7 @@
 						<div id="btn-dl-cont">
 							<div class="btn btn-orange btn-rnd" onclick="downloadPNG()"><img src="assets/images/file-png.png"></div>
 							<div class="btn btn-orange btn-rnd" onclick="downloadPDF()"><img src="assets/images/file-pdf.png"></div>
-							<div class="btn btn-orange btn-rnd" ><img src="assets/images/file-xlxs.png"></div>
+							<div class="btn btn-orange btn-rnd" onclick="downloadXLS()"><img src="assets/images/file-xlxs.png"></div>
 						</div>
 						<div class="btn btn-orange btn-lg" id="report-sh">Share Report</div>
 						<div id="share-cont">
