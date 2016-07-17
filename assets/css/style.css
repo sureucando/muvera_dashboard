@@ -69,6 +69,12 @@ form{
 	height: 1095px;
 }
 
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
 /* Header Bar */
 #header {
 	background-color: #131418;
@@ -231,8 +237,8 @@ h1.content-title {
 .section-report {
 	background-color: #fff;
 	position: relative;
-	padding:  0 20px;
-	height: 1785px;
+	padding: 0 20px;
+	height: 625px;
 	display: none;
 }
 
@@ -283,8 +289,12 @@ h3>img {
 	margin-right: 20px;
 }
 
+#report-1 {
+	display: none;
+}
+
 .report-content-chart {
-	height: 400px;
+	height: 350px;
 }
 
 .report-content-file {
@@ -312,36 +322,54 @@ img.file {
 /* Datepicker */
 #datepicker-container {
 	position: relative;
-	margin: 20px 239px;
+	margin: 20px 200px 20px 245px;
 	height: 200px;
 }
 
 .datepicker-from {
-	margin-right: 30px;
+	margin-right: 25px;
 }
 
 .timepicker-from {
-	margin-right: 30px; 
+	margin-right: 5px; 
 }
 
-.datepicker-from, .datepicker-to,
-.timepicker-from, .timepicker-to {
+.datepicker-from, .datepicker-to/*,
+.timepicker-from, .timepicker-to*/ {
 	background: #B9C0FF;
+	float: left;
+}
+
+.timepicker-from, .timepicker-to {
+	margin-left: 90px;
+	background: #dcdcdc;
 	float: left;
 }
 
 #timepicker-container {
 	position: absolute;
 	top: 450px;
-	left: 404px;
+	left: 409px;
 }
 
-input.from, input.to {
+input.from-date, input.to-date,
+input.from-time, input.to-time,
+select.from-period, select.to-period {
 	border: none;
 	background: #dcdcdc;
 	width: 15em;
 	height: 2.5em;
 	text-align: right;
+}
+
+input.from-time, input.to-time {
+	width: 3.7em;
+}
+
+select.from-period, select.to-period {
+	background: #B9C0FF;
+	width: 3.9em;
+	padding-left: 15px;
 }
 
 input[type=date]::-webkit-inner-spin-button {
@@ -353,9 +381,18 @@ input[type=date]::-webkit-inner-spin-button {
 	background: #dcdcdc;
 }
 
-input[type=time]::-webkit-inner-spin-button {
+/*input[type=time]::-webkit-inner-spin-button {
 	padding: 7px 7px;
 	background: #dcdcdc;
+}*/
+
+input[type=number]::-webkit-inner-spin-button {
+	height: 2.5em;
+	color: #dcdcdc;
+}
+
+input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #000000;
 }
 
 #datepicker-container label,
@@ -456,8 +493,9 @@ input[type=time]::-webkit-inner-spin-button {
 	box-shadow: 0 15px 15px rgba(0,0,0,0.15);
 }
 
-.btn-rnd-cont {
-	margin: 0 350px;
+#btn-dl-cont {
+	margin: 0 290px;
+	display: none;
 }
 
 .btn-rnd {
@@ -517,6 +555,17 @@ a:hover {
 	text-decoration: underline;
 }
 
+/* Loading */
+#loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.3);
+}
+
+/* Chart */
 .arc text {
   font: 10px sans-serif;
   text-anchor: middle;

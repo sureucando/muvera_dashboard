@@ -1,13 +1,20 @@
 /* Global Variable */
 var query;
-var content;
-var content1;
-var content2;
-var detik;
+var flag;
 
 /* Start Of Function */
 
 $(document).ready(function(){
+  flag = true;
+
+  /* Loading Screen */
+  $('#loading').hide()
+    .ajaxStart(function() {
+      $(this).show();
+    })
+    .ajaxStop(function() {
+      $(this).hide();
+    });
 
 	/* Search Keyword */
 	$('.search-keyword-main').click(function(){
@@ -20,6 +27,23 @@ $(document).ready(function(){
     //$('.content-container').animate({height:'2860px'}, 500);
     //$(this).attr('style', 'pointer-events: none;');
     //$(this).addClass('selected');
+  });
+
+  $('#report-dl').click(function(){
+    var y = $('.content').scrollTop();  //your current y position on the page
+    $('#btn-dl-cont').slideToggle();
+    if(flag){
+      $('.content-container').animate({height:'1800px'}, 'slow');
+      $('.section-report').animate({height:'725px'}, 'slow');
+      $('.content').animate({scrollTop: y+100}, 'slow');
+      flag = false;
+    }
+    else{
+      $('.content-container').animate({height:'1700px'}, 'slow');
+      $('.section-report').animate({height:'625px'}, 'slow');
+      $('.content').animate({scrollTop: y}, 'slow');
+      flag = true; 
+    };
   });
 });
 
