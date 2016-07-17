@@ -4,6 +4,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Query extends CI_Controller {
 	
 	public function ajax_refresh(){
+		#Getting Time
+		#$hourfrom = $this->input->post('hour-from'),
+		#$minutefrom = $this->input->post('minute-from'),
+		#$fromperiod = $this->input->post('from-period'),
+		#if($fromperiod == "am"){
+		#	$timefrom = $hourfrom . ":" . $minutefrom;
+		#}
+		#else if($fromperiod == "pm"){
+		#	$hourfrom = $hourfrom + 12;
+		#	$timefrom = $hourfrom . ":" . $minutefrom;
+		#}
+		#
+		#$hourto = $this->input->post('hour-to'),
+		#$minuteto = $this->input->post('minute-to'),
+		#$toperiod = $this->input->post('to-period'),
+		#if($toperiod == "am"){
+		#	$timeto = $hourto . ":" . $minuteto;
+		#}
+		#else if($toperiod == "pm"){
+		#	$hourto = $hourto + 12;
+		#	$timeto = $hourto . ":" . $minuteto;
+		#}
+
 		$query1 = array (
 			'mainword' => $this->input->post('main-word'),
 			'firsttax' => $this->input->post('first-tax'),

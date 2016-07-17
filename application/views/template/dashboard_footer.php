@@ -13,6 +13,10 @@
 					</div>
 				</div>
 
+				<!-- Aditional Div's -->
+				<!-- Loading Div -->
+				<div id="loading"></div>
+
 				<script src="assets/js/jquery-1.12.3.js"></script>
 				<script src="assets/js/jquery-ui.js"></script>
 				<script src="assets/js/assets.js"></script>
@@ -119,6 +123,7 @@
 					function search(){
 						var valid = validateForm();
 						if (valid){
+							$('#loading').show();
 							var url = "<?php echo base_url('query/ajax_refresh')?>";
 							$.ajax({
 								url: url,
@@ -135,14 +140,20 @@
 										}
 										showPieChart(data.count);
 									}
+									$('.section-report').show();
+									$('.content-container').animate({height:'1700px'}, 'slow');
+									$('#loading').hide();
+									var y = $('.content').scrollTop();
+   									$('.content').animate({scrollTop: y + 625}, 'slow');
 								},
 								error: function (jqXHR, textStatus, errorThrown)
 								{
 									alert('Error !');
+									$('#loading').toggle();
 								}
 							});
-							$('.section-report').show();
-							$('.content-container').animate({height:'2860px'}, 500);
+							//$('.section-report').show();
+							//$('.content-container').animate({height:'1700px'}, 'slow');
 							//$(this).attr('style', 'pointer-events: none;');
 							//$(this).addClass('selected');
 						}
@@ -216,6 +227,7 @@
 					  d.Frequent = +d.Frequent;
 					  return d;
 					}
+
 				</script>
 </body>
 </html>
