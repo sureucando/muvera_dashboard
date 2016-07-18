@@ -14,8 +14,18 @@
 
 				<!-- Aditional Div's -->
 				<!-- Loading Div -->
+<<<<<<< HEAD
 				<div id="loading"><img src="assets/images/loader.gif"></div>
 
+=======
+				<div id="loading"></div>
+				<input type='hidden' id='pdffile' value=""></input> 
+				<input type='hidden' id='pngfile' value=""></input> 
+				<input type='hidden' id='xlsfile' value=""></input> 
+				<script src="assets/js/jquery-1.12.3.js"></script>
+				<script src="assets/js/jquery-ui.js"></script>
+				<script src="assets/js/assets.js"></script>
+>>>>>>> refs/remotes/sureucando/master
 				<script src="https://d3js.org/d3.v3.min.js"></script>
 				<script src="assets/js/jspdf.js"></script> 
 				<script src="assets/js/addimage.js"></script> 
@@ -30,6 +40,7 @@
 				<script type="text/javascript"> 
 					
 					
+<<<<<<< HEAD
 					function downloadPDF(){
 						//can print pdf with low quality
 						/*var svgChart = new XMLSerializer().serializeToString(document.getElementById('ResultChart'));
@@ -52,6 +63,9 @@
 						imgLegend.src = urlLegend;*/
 						
 						$('#loading').show();
+=======
+					function downloadPDF(){						
+>>>>>>> refs/remotes/sureucando/master
 						var url = "<?php echo base_url('print_report/printpdf')?>";
 						$.ajax({
 							url: url,
@@ -75,39 +89,65 @@
 						});
 					}
 					
+					function downloadPDF2(){						
+						var url = "<?php echo base_url('print_report/printpdf')?>";
+						$.ajax({
+							url: url,
+							type : "POST",
+							data :$('#pie_chart_visualisation').html(),
+							contentType : "text",
+							success : function(data){
+								if (data && data.search('filename') != -1){
+									var arrDispo = data.split(':');
+									var filename = arrDispo[1].trim();
+									document.getElementById('pdffile').value = filename;
+									downloadPNG2();
+								}
+							},
+							error: function (jqXHR, textStatus, errorThrown)
+							{
+								alert('Error !');
+								//$('#loading').toggle();
+							}
+						});
+					}
+					
 					function downloadPNG(){
-						//return xepOnline.Formatter.Format('pie_chart_visualisation',{srctype:'svg', mimeType:'image/png', render:'download'});
-						//saveSvgAsPng(document.getElementById("pie_chart_visualisation"), "diagram.png");
-						// can do but low quality
 						var svgChart = new XMLSerializer().serializeToString(document.getElementById('ResultChart'));
-						//var svgLeged = new XMLSerializer().serializeToString(document.getElementById('ResultLegend'));
 						var canvas = document.getElementById("canvas");
 						var ctx = canvas.getContext("2d");
 						var DOMURL = self.URL || self.webkitURL || self;
 						var imgChart = new Image();
-						//var imgLegend = new Image();
 						var svgCh = new Blob([svgChart], {type: "image/svg+xml;charset=utf-8"});
-						//var svgLg = new Blob([svgLeged], {type: "image/svg+xml;charset=utf-8"});
 						var urlChart = DOMURL.createObjectURL(svgCh);
-						//var urlLegend = DOMURL.createObjectURL(svgLg);
 						var count = 1;
-						//imgChart.onload = imgLegend.onload = function() {
 						imgChart.onload = function() {	
 							count --;
-							//if (count === 0) drawImages(ctx, imgChart, imgLegend, canvas, DOMURL);
 							if (count === 0) drawImages(ctx, imgChart, imgChart, canvas, DOMURL);
 						};
 						imgChart.src = urlChart;
-						//imgLegend.src = urlLegend;
-						
-						
+					}
+					
+					function downloadPNG2(){
+						var svgChart = new XMLSerializer().serializeToString(document.getElementById('ResultChart'));
+						var canvas = document.getElementById("canvas");
+						var ctx = canvas.getContext("2d");
+						var DOMURL = self.URL || self.webkitURL || self;
+						var imgChart = new Image();
+						var svgCh = new Blob([svgChart], {type: "image/svg+xml;charset=utf-8"});
+						var urlChart = DOMURL.createObjectURL(svgCh);
+						var count = 1;
+						imgChart.onload = function() {	
+							count --;
+							if (count === 0) drawImages2(ctx, imgChart, imgChart, canvas, DOMURL);
+						};
+						imgChart.src = urlChart;
 					}
 					
 					function drawImages(ctx, img1, img2,canvas, DOMURL){
 						$('#loading').show();
 						ctx.clearRect(0, 0, canvas.width, canvas.height);
 						ctx.drawImage(img1, 0, 0,500,300);
-						//ctx.drawImage(img2, 500, 0);
 						var png = canvas.toDataURL("image/png");
 						var url = "<?php echo base_url('print_report/printpng')?>";
 						$.ajax({
@@ -119,7 +159,6 @@
 								if (data && data.search('filename') != -1){
 									var arrDispo = data.split(':');
 									var filename = arrDispo[1].trim();
-									//var filename = filename.replace(".","/");
 									window.location.assign("<?php echo base_url('print_report/download/')?>"+"/"+filename);
 								}
 								$('#loading').hide();
@@ -127,18 +166,15 @@
 							error: function (jqXHR, textStatus, errorThrown)
 							{
 								alert('Error !');
+<<<<<<< HEAD
 								$('#loading').hide();
+=======
+>>>>>>> refs/remotes/sureucando/master
 							}
 						});
-						/*document.querySelector('#pngdataurl').innerHTML = '<img src="'+png+'"/>';
-						DOMURL.revokeObjectURL(png);
-						var a = document.createElement("a");
-						a.download = "sample.png";
-						a.href = png;
-						document.body.appendChild(a);
-						a.click();*/
 					}
 					
+<<<<<<< HEAD
 					function drawPDF(ctx, img1, img2,canvas, DOMURL){
 						$('#loading').show();
 						ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -149,8 +185,33 @@
 						pdf.addImage(img, 'PNG', 10, 10);
 						pdf.save("download.pdf");
 						$('#loading').hide();
+=======
+					function drawImages2(ctx, img1, img2,canvas, DOMURL){
+						ctx.clearRect(0, 0, canvas.width, canvas.height);
+						ctx.drawImage(img1, 0, 0,500,300);
+						var png = canvas.toDataURL("image/png");
+						var url = "<?php echo base_url('print_report/printpng')?>";
+						$.ajax({
+							url: url,
+							type : "POST",
+							data : png,
+							contentType : "text",
+							success : function(data){
+								if (data && data.search('filename') != -1){
+									var arrDispo = data.split(':');
+									var filename = arrDispo[1].trim();
+									document.getElementById('pngfile').value = filename;
+									downloadXLS2();
+								}
+							},
+							error: function (jqXHR, textStatus, errorThrown)
+							{
+								alert('Error !');
+							}
+						});
+>>>>>>> refs/remotes/sureucando/master
 					}
-					
+										
 					function downloadXLS(){
 						var valid = validateForm();
 						if (valid){
@@ -166,7 +227,6 @@
 										console.log("here");
 										var filename = arrDispo[1].trim();
 										console.log(filename);
-										//var filename = filename.replace(".","/");
 										window.location.assign("<?php echo base_url('print_report/download/')?>"+"/"+filename);
 									}
 									$('#loading').hide();
@@ -174,12 +234,67 @@
 								error: function (jqXHR, textStatus, errorThrown)
 								{
 									alert('Error !');
+<<<<<<< HEAD
 									$('#loading').hide();
+=======
+>>>>>>> refs/remotes/sureucando/master
 								}
 							});
 						}
 					}
 					
+					function downloadXLS2(){
+						var valid = validateForm();
+						if (valid){
+							//$('#loading').show();
+							var url = "<?php echo base_url('query/getxls')?>";
+							$.ajax({
+								url: url,
+								type : "POST",
+								data :$('#search-form').serialize(),
+								success : function(data){
+									if (data && data.search('filename') != -1){
+										var arrDispo = data.split(':');
+										var filename = arrDispo[1].trim();
+										document.getElementById('xlsfile').value = filename;
+										send();
+									}
+								},
+								error: function (jqXHR, textStatus, errorThrown)
+								{
+									alert('Error !');
+								}
+							});
+						}
+					}
+					
+					function sendemail(){
+						downloadPDF2();						
+					}
+					function send(){
+						
+						var url = "<?php echo base_url('print_report/sendemail')?>"+"/"+document.getElementById('pdffile').value+"/"+document.getElementById('pngfile').value+"/"+document.getElementById('xlsfile').value;
+						$.ajax({
+								url: url,
+								type : "POST",
+								data :$('#share-form').serialize(),
+								dataType : "JSON",
+								success : function(data){
+									if (data.status){
+										alert("Email Sent!");
+									}
+									else{
+										alert("Email Failed to Sent!");
+									}
+								},
+								error: function (jqXHR, textStatus, errorThrown)
+								{
+									alert('Error in Server!');
+									//$('#loading').toggle();
+								}
+							});
+						
+					}
 					function search(){
 						var valid = validateForm();
 						if (valid){
