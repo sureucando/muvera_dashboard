@@ -21,6 +21,30 @@ $(document).ready(function(){
   $('.search-keyword-main').click(function(){
     $('.search-keyword-tax').css('display', 'inline-block');
   });
+  /*$('.tax1').click(function(){
+    $('.tax2').css('display', 'inline-block');
+  });
+  $('.tax2').click(function(){
+    $('.tax3').css('display', 'inline-block');
+  });
+  $('.tax3').click(function(){
+    $('.tax4').css('display', 'inline-block');
+  });
+
+  $('.search-keyword-main').hover(function(){
+    $('.tax1').css('display', 'inline-block');
+  }), function(){
+    $('.tax1').css('display', 'none');
+  };
+  $('.tax1').hover(function(){
+    $('.tax2').css('display', 'inline-block');
+  });
+  $('.tax2').hover(function(){
+    $('.tax3').css('display', 'inline-block');
+  });
+  $('.tax3').hover(function(){
+    $('.tax4').css('display', 'inline-block');
+  });*/
 
   /* Generate Report */
   /*$('#btn-generate').click(function(){
@@ -186,8 +210,8 @@ function drawPDF(ctx, img1, img2,canvas, DOMURL){
 
 function showBarChart(data){
   d3.select("#pie_chart_visualisation").selectAll("svg").remove(); //remove all svg element
-  var margin = {top: 20, right: 20, bottom: 30, left: 40},
-  width = 600 - margin.left - margin.right,
+  var margin = {top: 50, right: 20, bottom: 50, left: 40},
+  width = 900 - margin.left - margin.right,
   height = 350 - margin.top - margin.bottom;
 
   var formatPercent = d3.format(".0%");
@@ -233,11 +257,9 @@ function showBarChart(data){
   .attr("transform", "translate(0," + height + ")")
   .call(xAxis)
   .selectAll("text")
-  .attr("transform", "rotate(-65)")
-  .attr("dx", "-.8em")
-  .attr("dy", ".15em")
-  .attr("x", "-27")
-  .attr("y", "-2");
+  .attr("transform", "rotate(-25)")
+  .attr("y", "20")
+  .attr("x", "-10");
 
   svg.append("g")
   .attr("class", "y axis")
@@ -247,14 +269,14 @@ function showBarChart(data){
   .attr("y", 6)
   .attr("dy", ".71em")
   .style("text-anchor", "end")
-  .style('font', '10px sans-serif')
+  .style('font', '10px "AvenirNext"')
   .text("Frequency");
 
   svg.selectAll(".bar")
   .data(data)
   .enter().append("rect")
   .attr("class", "bar")
-  .style('fill','steelblue')
+  .style('fill','#00FFB3')
   .style('fill-opacity','9')
   .attr("x", function(d) { return x(d.tablename); })
   .attr("width", x.rangeBand())
@@ -278,12 +300,12 @@ function showBarChart(data){
   svg.selectAll('.x.axis path')
   .style({'display': 'none'});
   svg.selectAll('.axis text')
-  .style({'font': '10px sans-serif'});
+  .style({'font': '10px "AvenirNext"'});
   d3.select("#sort_bar").on("change", change);
 
   var sortTimeout = setTimeout(function() {
     d3.select("#sort_bar").property("checked", true).each(change);
-  }, 2000);
+  }, 20000);
 
   function change() {
     clearTimeout(sortTimeout);
@@ -308,7 +330,10 @@ function showBarChart(data){
     transition.select(".x.axis")
     .call(xAxis)
     .selectAll("g")
-    .delay(delay);
+    .delay(delay)
+    .selectAll("text")
+    .attr("y", "20")
+    .attr("x", "-10");
   }
 }
 

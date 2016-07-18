@@ -650,6 +650,14 @@ a:hover {
 	background: rgba(0,0,0,0.3);
 }
 
+#loading>img {
+	position: fixed;
+	top:40%;
+	left:45%;
+	height: 15%;
+	opacity: 0.9;
+}
+
 /* Chart */
 .arc text {
   font: 10px sans-serif;
