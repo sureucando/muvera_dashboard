@@ -14,8 +14,8 @@
 						<div class="btn btn-orange btn-lg" id="report-sh">Share Report</div>
 						<div id="share-cont">
 							<form id="share-form" name="share-form">
-								<input type="text" placeholder="Insert Email Here...">
-								<div class="btn btn-green btn-md">Share</div>
+								<input type="text" name="email" placeholder="Insert Email Here...">
+								<div class="btn btn-green btn-md" onclick="sendemail()">Share</div>
 							</form>
 						</div>
 					</div>
