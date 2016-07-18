@@ -35,6 +35,7 @@
 					
 					
 					function downloadPDF(){
+						$('#loading').show();
 						var url = "<?php echo base_url('print_report/printpdf')?>";
 						$.ajax({
 							url: url,
@@ -58,7 +59,8 @@
 						});
 					}
 					
-					function downloadPDF2(){						
+					function downloadPDF2(){	
+						$('#loading').show();					
 						var url = "<?php echo base_url('print_report/printpdf')?>";
 						$.ajax({
 							url: url,
@@ -72,11 +74,12 @@
 									document.getElementById('pdffile').value = filename;
 									downloadPNG2();
 								}
+								$('#loading').hide();
 							},
 							error: function (jqXHR, textStatus, errorThrown)
 							{
 								alert('Error !');
-								//$('#loading').toggle();
+								$('#loading').hide();
 							}
 						});
 					}
@@ -141,7 +144,6 @@
 					}
 					
 					function drawPDF(ctx, img1, img2,canvas, DOMURL){
-						$('#loading').show();
 						ctx.clearRect(0, 0, canvas.width, canvas.height);
 						ctx.drawImage(img1, parseInt(0), parseInt(0),img1.width,img1.height);
 						ctx.drawImage(img2, parseInt(img1.width), 0);
@@ -149,7 +151,6 @@
 						var pdf = new jsPDF();
 						pdf.addImage(img, 'PNG', 10, 10);
 						pdf.save("download.pdf");
-						$('#loading').hide();
 					}
 										
 					function downloadXLS(){
