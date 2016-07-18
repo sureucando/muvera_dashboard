@@ -37,15 +37,15 @@ $(document).ready(function(){
     var srh = $('.section-report').height();
     $('#btn-dl-cont').slideToggle();
     if(flagdl){
-      $('.content-container').animate({height: cch+100}, 'slow');
-      $('.section-report').animate({height: srh+100}, 'slow');
-      $('.content').animate({scrollTop: y+100}, 'slow');
+      $('.content-container').animate({height: cch+150}, 'slow');
+      $('.section-report').animate({height: srh+150}, 'slow');
+      $('.content').animate({scrollTop: y+150}, 'slow');
       flagdl = false;
     }
     else{
-      $('.content-container').animate({height: cch-100}, 'slow');
-      $('.section-report').animate({height: srh-100}, 'slow');
-      $('.content').animate({scrollTop: y}, 'slow');
+      $('.content-container').animate({height: cch-150}, 'slow');
+      $('.section-report').animate({height: srh-150}, 'slow');
+      $('.content').animate({scrollTop: y-150}, 'slow');
       flagdl = true; 
     };
   });
@@ -56,15 +56,15 @@ $(document).ready(function(){
     var srh = $('.section-report').height();
     $('#share-cont').slideToggle();
     if(flagsh){
-      $('.content-container').animate({height: cch+200}, 'slow');
-      $('.section-report').animate({height: srh+200}, 'slow');
-      $('.content').animate({scrollTop: y+200}, 'slow');
+      $('.content-container').animate({height: cch+225}, 'slow');
+      $('.section-report').animate({height: srh+225}, 'slow');
+      $('.content').animate({scrollTop: y+225}, 'slow');
       flagsh = false;
     }
     else{
-      $('.content-container').animate({height: cch-200}, 'slow');
-      $('.section-report').animate({height: srh-200}, 'slow');
-      $('.content').animate({scrollTop: y}, 'slow');
+      $('.content-container').animate({height: cch-225}, 'slow');
+      $('.section-report').animate({height: srh-225}, 'slow');
+      $('.content').animate({scrollTop: y-225}, 'slow');
       flagsh = true; 
     };
   });

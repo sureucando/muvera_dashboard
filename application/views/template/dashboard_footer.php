@@ -16,9 +16,6 @@
 				<!-- Loading Div -->
 				<div id="loading"></div>
 
-				<script src="assets/js/jquery-1.12.3.js"></script>
-				<script src="assets/js/jquery-ui.js"></script>
-				<script src="assets/js/assets.js"></script>
 				<script src="https://d3js.org/d3.v3.min.js"></script>
 				<script src="assets/js/jspdf.js"></script> 
 				<script src="assets/js/addimage.js"></script> 
@@ -27,6 +24,9 @@
 				<script src="assets/js/zlib.js"></script> 
 				<script src="assets/js/xepOnline.jqPlugin.js"></script> 
 				<script src="assets/js/png_support.js"></script> 
+				<script src="assets/js/jquery-1.12.3.js"></script>
+				<script src="assets/js/jquery-ui.js"></script>
+				<script src="assets/js/assets.js"></script>
 				<script type="text/javascript"> 
 					
 					
