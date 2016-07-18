@@ -59,8 +59,7 @@
 						});
 					}
 					
-					function downloadPDF2(){	
-						$('#loading').show();					
+					function downloadPDF2(){			
 						var url = "<?php echo base_url('print_report/printpdf')?>";
 						$.ajax({
 							url: url,
@@ -74,12 +73,10 @@
 									document.getElementById('pdffile').value = filename;
 									downloadPNG2();
 								}
-								$('#loading').hide();
 							},
 							error: function (jqXHR, textStatus, errorThrown)
 							{
 								alert('Error !');
-								$('#loading').hide();
 							}
 						});
 					}
@@ -206,9 +203,12 @@
 						}
 					}
 					
-					function sendemail(){
-						downloadPDF2();						
+					function sendemail(){	
+						$('#loading').show();
+						downloadPDF2();			
+						$('#loading').hide();			
 					}
+
 					function send(){
 						
 						var url = "<?php echo base_url('print_report/sendemail')?>"+"/"+document.getElementById('pdffile').value+"/"+document.getElementById('pngfile').value+"/"+document.getElementById('xlsfile').value;
