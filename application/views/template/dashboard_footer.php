@@ -205,8 +205,7 @@
 					
 					function sendemail(){	
 						$('#loading').show();
-						downloadPDF2();			
-						$('#loading').hide();			
+						downloadPDF2();					
 					}
 
 					function send(){
@@ -224,11 +223,12 @@
 									else{
 										alert("Email Failed to Sent!");
 									}
+									$('#loading').hide();	
 								},
 								error: function (jqXHR, textStatus, errorThrown)
 								{
 									alert('Error in Server!');
-									//$('#loading').toggle();
+									$('#loading').hide();	
 								}
 							});
 						
