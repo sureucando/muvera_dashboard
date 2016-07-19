@@ -125,12 +125,15 @@ class Print_report extends CI_Controller {
 			imagesavealpha($imgfile, true);ChromePhp::log("here6");
 			if (file_exists($filename)){
 				unlink($filename);
-				ChromePhp::log($filename);
 				imagepng($imgfile,$filename);
 				imagedestroy($imgfile);
 				echo "filename : generated_chart/example_001.png";
 			}
-			
+			else{				
+				imagepng($imgfile,$filename);
+				imagedestroy($imgfile);
+				echo "filename : generated_chart/example_001.png";
+			}
 		}
 		else{
 			echo "error";
