@@ -102,26 +102,38 @@ class Print_report extends CI_Controller {
 	}
 	
 	function printPNG(){		
+		ChromePhp::log("kok gamasuk");
 		$imgdata = file_get_contents('php://input');
+				
+				ChromePhp::log("kok gamasuk");
 		if ($imgdata) {
-			$filename = APPPATH.'generated_chart\example_001.png';
-			$imgfile = imagecreatefrompng($imgdata);
+				ChromePhp::log("here");
+			$filename = APPPATH.'generated_chart/example_001.png';
+			$imgfile = imagecreatefrompng($imgdata);ChromePhp::log("here1");
 			// integer representation of the color black (rgb: 0,0,0)
-			$background = imagecolorallocate($imgfile, 0, 0, 0);
+			$background = imagecolorallocate($imgfile, 0, 0, 0);ChromePhp::log("here2");
 			// removing the black from the placeholder
-			imagecolortransparent($imgfile, $background);
+			imagecolortransparent($imgfile, $background);ChromePhp::log("here3");
 
 			// turning off alpha blending (to ensure alpha channel information 
 			// is preserved, rather than removed (blending with the rest of the 
 			// image in the form of black))
-			imagealphablending($imgfile, false);
+			imagealphablending($imgfile, false);ChromePhp::log("here4");
 
 			// turning on alpha channel information saving (to ensure the full range 
 			// of transparency is preserved)
-			imagesavealpha($imgfile, true);
-			imagepng($imgfile,$filename);
-			echo "filename : generated_chart/example_001.png";
-			imagedestroy($imgfile);
+			imagesavealpha($imgfile, true);ChromePhp::log("here6");
+			if (file_exists($filename)){
+				unlink($filename);
+				imagepng($imgfile,$filename);
+				imagedestroy($imgfile);
+				echo "filename : generated_chart/example_001.png";
+			}
+			else{				
+				imagepng($imgfile,$filename);
+				imagedestroy($imgfile);
+				echo "filename : generated_chart/example_001.png";
+			}
 		}
 		else{
 			echo "error";
@@ -167,7 +179,11 @@ class Print_report extends CI_Controller {
 		//Set an alternative reply-to address
 		$mail->addReplyTo('info@muvera.co', 'Muvera Co');
 		//Set who the message is to be sent to
-		$mail->addAddress($this->input->post('email'));
+		$EmailRecipient = $this->input->post('email');
+		$arrRecipient = explode(",", $EmailRecipient);
+		foreach ($arrRecipient as $email){
+			$mail->addAddress($email);
+		}
 		//Set the subject line
 		$mail->Subject = 'Example report';
 		//Read an HTML message body from an external file, convert referenced images to embedded,
