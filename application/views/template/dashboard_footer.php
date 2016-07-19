@@ -18,10 +18,7 @@
 
 				<input type='hidden' id='pdffile' value=""></input> 
 				<input type='hidden' id='pngfile' value=""></input> 
-				<input type='hidden' id='xlsfile' value=""></input> 
-				<script src="assets/js/jquery-1.12.3.js"></script>
-				<script src="assets/js/jquery-ui.js"></script>
-				<script src="assets/js/assets.js"></script>
+				<input type='hidden' id='xlsfile' value=""></input>
 				<script src="assets/js/d3.v3.min.js"></script>
 				<script src="assets/js/jspdf.js"></script> 
 				<script src="assets/js/addimage.js"></script> 
@@ -316,5 +313,5 @@
 						});
 					}
 				</script>
-</body>
+	</body>
 </html>
