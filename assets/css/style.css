@@ -642,12 +642,20 @@ a:hover {
 
 /* Loading */
 #loading {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
 	background: rgba(0,0,0,0.3);
+}
+
+#loading>img {
+	position: fixed;
+	top:40%;
+	left:45%;
+	height: 15%;
+	opacity: 0.9;
 }
 
 /* Chart */
