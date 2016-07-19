@@ -305,7 +305,7 @@ function showBarChart(data){
 
   var sortTimeout = setTimeout(function() {
     d3.select("#sort_bar").property("checked", true).each(change);
-  }, 20000);
+  }, 2000);
 
   function change() {
     clearTimeout(sortTimeout);

@@ -176,9 +176,7 @@
 								success : function(data){
 									if (data && data.search('filename') != -1){
 										var arrDispo = data.split(':');
-										console.log("here");
 										var filename = arrDispo[1].trim();
-										console.log(filename);
 										window.location.assign("<?php echo base_url('print_report/download/')?>"+"/"+filename);
 									}
 									$('#loading').hide();
