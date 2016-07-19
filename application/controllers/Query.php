@@ -35,15 +35,55 @@ class Query extends CI_Controller {
 			'thirdtax' => $this->input->post('third-tax'),
 			'fourthtax' => $this->input->post('fourth-tax'),
 			'datefrom' => $this->input->post('date-from'),
-			'timefrom' => $this->input->post('time-from'),
+			'hourfrom' => $this->input->post('hour-from'),
+			'minutefrom' => $this->input->post('minute-from'),
+			'periodfrom' => $this->input->post('from-period'),
+			'hourto' => $this->input->post('hour-to'),
+			'minuteto' => $this->input->post('minute-to'),
+			'periodto' => $this->input->post('to-period'),
 			'dateto' => $this->input->post('date-to'),
-			'timeto' => $this->input->post('time-to'),
 			'media' => $this->input->post('media')
 			);
 		$countData = [];
+		$timefrom = '';
+		$timeto = '';
+		if (trim($query1['periodfrom']) === 'am'){
+			if($query1['hourfrom'] === '12'){
+				$timefrom = '00:'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
+			}
+			else{
+				$timefrom = str_pad($query1['hourfrom'],2,'0',STR_PAD_LEFT).':'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
+			}
+		}
+		else {
+			if($query1['hourfrom'] === '12'){
+				$timefrom = '12:'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
+			}
+			else{
+				$hour = (int)$query1['hourfrom'] + 12;
+				$timefrom = str_pad((string)$hour,2,'0',STR_PAD_LEFT).':'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
+			}
+		}
+		if (trim($query1['periodto']) === 'am'){
+			if($query1['hourto'] === '12'){
+				$timeto = '00:'.str_pad($query1['minuteto'],2,'0',STR_PAD_LEFT).':00';
+			}
+			else{
+				$timeto = str_pad($query1['hourto'],2,'0',STR_PAD_LEFT).':'.str_pad($query1['minuteto'],2,'0',STR_PAD_LEFT).':00';
+			}
+		}
+		else {
+			if($query1['hourto'] == '12'){
+				$timeto = '12:'.str_pad($query1['minuteto'],2,'0',STR_PAD_LEFT).':00';
+			}
+			else{
+				$hour = (int)$query1['hourto'] + 12;
+				$timeto= str_pad((string)$hour,2,'0',STR_PAD_LEFT).':'.str_pad($query1['minuteto'],2,'0',STR_PAD_LEFT).':00';
+			}
+		}
 		$i = 0;
 		foreach($query1['media'] as &$tablename){	
-			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$query1['timefrom'], $query1['dateto'].' '.$query1['timeto'],$tablename);
+			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$tablename);
 			$table = explode("_",$tablename);
 			$countData[$i] = array ("tablename" => ucfirst($table[0]), "total" => (int)$result[0]->total);
 			$i++;
@@ -57,9 +97,9 @@ class Query extends CI_Controller {
 			"word4" => $query1['thirdtax'],
 			"word5" => $query1['fourthtax'],
 			"datefrom" => $query1['datefrom'],
-			"timefrom" => $query1['timefrom'],
+			"timefrom" => $timefrom,
 			"dateto" => $query1['dateto'],
-			"timeto" => $query1['timeto'],
+			"timeto" => $timeto,
 			"media" => $query1['media'],
 			"status" => TRUE,
 			"count" => $countData
@@ -77,17 +117,57 @@ class Query extends CI_Controller {
 			'thirdtax' => $this->input->post('third-tax'),
 			'fourthtax' => $this->input->post('fourth-tax'),
 			'datefrom' => $this->input->post('date-from'),
-			'timefrom' => $this->input->post('time-from'),
+			'hourfrom' => $this->input->post('hour-from'),
+			'minutefrom' => $this->input->post('minute-from'),
+			'periodfrom' => $this->input->post('from-period'),
+			'hourto' => $this->input->post('hour-to'),
+			'minuteto' => $this->input->post('minute-to'),
+			'periodto' => $this->input->post('to-period'),
 			'dateto' => $this->input->post('date-to'),
-			'timeto' => $this->input->post('time-to'),
 			'media' => $this->input->post('media')
 			);
 		$total = 0;
 		$countData = [];
+		$timefrom = '';
+		$timeto = '';
+		if (trim($query1['periodfrom']) === 'am'){
+			if($query1['hourfrom'] === '12'){
+				$timefrom = '00:'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
+			}
+			else{
+				$timefrom = str_pad($query1['hourfrom'],2,'0',STR_PAD_LEFT).':'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
+			}
+		}
+		else {
+			if($query1['hourfrom'] === '12'){
+				$timefrom = '12:'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
+			}
+			else{
+				$hour = (int)$query1['hourfrom'] + 12;
+				$timefrom = str_pad((string)$hour,2,'0',STR_PAD_LEFT).':'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
+			}
+		}
+		if (trim($query1['periodto']) === 'am'){
+			if($query1['hourto'] === '12'){
+				$timeto = '00:'.str_pad($query1['minuteto'],2,'0',STR_PAD_LEFT).':00';
+			}
+			else{
+				$timeto = str_pad($query1['hourto'],2,'0',STR_PAD_LEFT).':'.str_pad($query1['minuteto'],2,'0',STR_PAD_LEFT).':00';
+			}
+		}
+		else {
+			if($query1['hourto'] == '12'){
+				$timeto = '12:'.str_pad($query1['minuteto'],2,'0',STR_PAD_LEFT).':00';
+			}
+			else{
+				$hour = (int)$query1['hourto'] + 12;
+				$timeto= str_pad((string)$hour,2,'0',STR_PAD_LEFT).':'.str_pad($query1['minuteto'],2,'0',STR_PAD_LEFT).':00';
+			}
+		}
 		$i = 0;
 		foreach($query1['media'] as &$tablename){	
-			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$query1['timefrom'], $query1['dateto'].' '.$query1['timeto'],$tablename);
-			$total = $total + (int)$result[0]->total;
+			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$tablename);
+			$table = explode("_",$tablename);
 			$countData[$i] = array ("tablename" => $tablename, "total" => (int)$result[0]->total);
 			$i++;
 		}
@@ -95,7 +175,7 @@ class Query extends CI_Controller {
 			for($i=0;$i<count($countData);$i++){
 				$limit = floor(10000 * ($countData[$i]['total'] / $total));
 				ChromePhp::log($limit);
-				$result = $this->xlsdata($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$query1['timefrom'], $query1['dateto'].' '.$query1['timeto'],$countData[$i]['tablename'],$limit);
+				$result = $this->xlsdata($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$countData[$i]['tablename'],$limit);
 				if($result){
 					foreach ($result as $row){
 						$array = Array($row->title,$row->date, $row->link, $row->content);
@@ -107,7 +187,7 @@ class Query extends CI_Controller {
 		else{
 			for($i=0;$i<count($countData);$i++){
 				$limit = $countData[$i]['total'];
-				$result = $this->xlsdata($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$query1['timefrom'], $query1['dateto'].' '.$query1['timeto'],$countData[$i]['tablename'],$limit);
+				$result = $this->xlsdata($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$countData[$i]['tablename'],$limit);
 				
 				if($result){
 					foreach ($result as $row){
