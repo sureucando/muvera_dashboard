@@ -102,27 +102,24 @@ class Print_report extends CI_Controller {
 	}
 	
 	function printPNG(){		
-		ChromePhp::log("kok gamasuk");
 		$imgdata = file_get_contents('php://input');
 				
-				ChromePhp::log("kok gamasuk");
 		if ($imgdata) {
-				ChromePhp::log("here");
 			$filename = APPPATH.'generated_chart/example_001.png';
-			$imgfile = imagecreatefrompng($imgdata);ChromePhp::log("here1");
+			$imgfile = imagecreatefrompng($imgdata);
 			// integer representation of the color black (rgb: 0,0,0)
-			$background = imagecolorallocate($imgfile, 0, 0, 0);ChromePhp::log("here2");
+			$background = imagecolorallocate($imgfile, 0, 0, 0);
 			// removing the black from the placeholder
-			imagecolortransparent($imgfile, $background);ChromePhp::log("here3");
+			imagecolortransparent($imgfile, $background);
 
 			// turning off alpha blending (to ensure alpha channel information 
 			// is preserved, rather than removed (blending with the rest of the 
 			// image in the form of black))
-			imagealphablending($imgfile, false);ChromePhp::log("here4");
+			imagealphablending($imgfile, false);
 
 			// turning on alpha channel information saving (to ensure the full range 
 			// of transparency is preserved)
-			imagesavealpha($imgfile, true);ChromePhp::log("here6");
+			imagesavealpha($imgfile, true);
 			if (file_exists($filename)){
 				unlink($filename);
 				imagepng($imgfile,$filename);
