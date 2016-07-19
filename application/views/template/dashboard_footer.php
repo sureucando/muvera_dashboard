@@ -20,7 +20,7 @@
 				<script src="assets/js/jquery-1.12.3.js"></script>
 				<script src="assets/js/jquery-ui.js"></script>
 				<script src="assets/js/assets.js"></script>
-				<script src="https://d3js.org/d3.v3.min.js"></script>
+				<script src="assets/js/d3.v3.min.js"></script>
 				<script src="assets/js/jspdf.js"></script> 
 				<script src="assets/js/addimage.js"></script> 
 				<script src="assets/js/FileSaver.js"></script> 
@@ -132,7 +132,7 @@
 					
 					function drawImages(ctx, img1, img2,canvas, DOMURL){
 						ctx.clearRect(0, 0, canvas.width, canvas.height);
-						ctx.drawImage(img1, 0, 0,500,300);
+						ctx.drawImage(img1, x=0, y=0,width=canvas.width, height=canvas.height);
 						var png = canvas.toDataURL("image/png");
 						var url = "<?php echo base_url('print_report/printpng')?>";
 						$.ajax({
@@ -156,7 +156,7 @@
 					
 					function drawImages2(ctx, img1, img2,canvas, DOMURL){
 						ctx.clearRect(0, 0, canvas.width, canvas.height);
-						ctx.drawImage(img1, 0, 0,500,300);
+						ctx.drawImage(img1, 0, 0,900,300);
 						var png = canvas.toDataURL("image/png");
 						var url = "<?php echo base_url('print_report/printpng')?>";
 						$.ajax({
