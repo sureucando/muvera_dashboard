@@ -18,7 +18,13 @@ $(document).ready(function(){
   });
 
   /* Initialize Datepicker */
-  /*$('.datepicker').datepicker();*/
+  $('.datepicker').datepicker({
+    showAnim: "fadeIn",
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    changeMonth: true,
+    changeYear: true
+    });
 
   /* Search Keyword */
   $('.search-keyword-main').click(function(){

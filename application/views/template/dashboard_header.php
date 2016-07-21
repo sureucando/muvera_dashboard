@@ -6,9 +6,7 @@
 	<!-- Icon -->
 	<link rel="stylesheet" href="assets/css/font-awesome.css">
 	<!-- Style -->
-	<!--<link rel="stylesheet" href="assets/css/jquery-ui.css">-->
-	<!--<link rel="stylesheet" href="assets/css/bootstrap.css">-->
-	<!--<link rel="stylesheet" href="assets/css/datepicker.css">-->
+	<link rel="stylesheet" href="assets/css/jquery-ui.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
