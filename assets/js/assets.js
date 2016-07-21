@@ -281,7 +281,7 @@ function showBarChart(data){
   .data(data)
   .enter().append("rect")
   .attr("class", "bar")
-  .style('fill','#FFFF00')
+  .style('fill','#00FFB3')
   .style('fill-opacity','9')
   .attr("x", function(d) { return x(d.tablename); })
   .attr("width", x.rangeBand())
