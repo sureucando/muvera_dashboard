@@ -82,11 +82,14 @@
 					
 					function downloadPNG(){
 						var svgChart = new XMLSerializer().serializeToString(document.getElementById('ResultChart'));
+						console.log(svgChart);
 						var canvas = document.getElementById("canvas");
 						var ctx = canvas.getContext("2d");
+						ctx.font = '10px "AvenirNext"';
 						var DOMURL = self.URL || self.webkitURL || self;
 						var imgChart = new Image();
 						var svgCh = new Blob([svgChart], {type: "image/svg+xml;charset=utf-8"});
+						console.log(svgCh);
 						var urlChart = DOMURL.createObjectURL(svgCh);
 						var count = 1;
 						imgChart.onload = function() {	
@@ -100,6 +103,7 @@
 						var svgChart = new XMLSerializer().serializeToString(document.getElementById('ResultChart'));
 						var canvas = document.getElementById("canvas");
 						var ctx = canvas.getContext("2d");
+						ctx.font = '10px "AvenirNext"';
 						var DOMURL = self.URL || self.webkitURL || self;
 						var imgChart = new Image();
 						var svgCh = new Blob([svgChart], {type: "image/svg+xml;charset=utf-8"});
