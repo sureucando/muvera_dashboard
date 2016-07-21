@@ -49,9 +49,10 @@ class Query extends CI_Controller {
 		$timefrom = '';
 		$timeto = '';
 		$datefrom = strtotime($query1['datefrom']);
+		ChromePhp::log($datefrom);
 		$dateto = strtotime($query1['dateto']);
-		
-		$interval = DateInterval::createFromDateString('1 day');
+		ChromePhp::log($dateto);
+		$interval = new DateInterval('P1D');
 		$period = new DatePeriod($datefrom, $interval, $dateto);
 	
 		foreach($period as $dt){
@@ -104,7 +105,7 @@ class Query extends CI_Controller {
 			$table = explode("_",$tablename);
 			$countData[$i] = array ("tablename" => ucfirst($table[0]), "total" => (int)$result[0]->total);
 			foreach($result2 as $row){
-				$countTime[$row['tanggal']][ucfirst($table[0]] = $row['total'];
+				$countTime[$row['tanggal']][ucfirst($table[0])] = $row['total'];
 			}
 			$i++;
 		}
