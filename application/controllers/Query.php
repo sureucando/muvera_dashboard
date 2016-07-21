@@ -45,8 +45,25 @@ class Query extends CI_Controller {
 			'media' => $this->input->post('media')
 			);
 		$countData = [];
+		$countTime = [];
 		$timefrom = '';
 		$timeto = '';
+		$datefrom = strtotime($query1['datefrom']);
+		ChromePhp::log($datefrom);
+		$dateto = strtotime($query1['dateto']);
+		ChromePhp::log($dateto);
+		$interval = new DateInterval('P1D');
+		$period = new DatePeriod($datefrom, $interval, $dateto);
+	
+		foreach($period as $dt){
+			$value = [];
+			foreach($query1['media'] as &$tablename){
+				$table = explode("_",$tablename);
+				$value = $value + array(ucfirst($table[0]) => 0);
+			}
+			$countTime = $countTime + array ($dt => $value);
+		}
+
 		if (trim($query1['periodfrom']) === 'am'){
 			if($query1['hourfrom'] === '12'){
 				$timefrom = '00:'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
@@ -84,8 +101,12 @@ class Query extends CI_Controller {
 		$i = 0;
 		foreach($query1['media'] as &$tablename){	
 			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$tablename);
+			$result2 = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$tablename);
 			$table = explode("_",$tablename);
 			$countData[$i] = array ("tablename" => ucfirst($table[0]), "total" => (int)$result[0]->total);
+			foreach($result2 as $row){
+				$countTime[$row['tanggal']][ucfirst($table[0])] = $row['total'];
+			}
 			$i++;
 		}
 		
@@ -102,7 +123,8 @@ class Query extends CI_Controller {
 			"timeto" => $timeto,
 			"media" => $query1['media'],
 			"status" => TRUE,
-			"count" => $countData
+			"count" => $countData,
+			"countTime" => $countTime
 			);
 		echo json_encode($output);
 	}
