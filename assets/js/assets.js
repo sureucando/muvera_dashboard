@@ -18,9 +18,7 @@ $(document).ready(function(){
   });
 
   /* Initialize Datepicker */
-  $('.datepicker').datepicker({
-    format: 'mm/dd/yyyy'
-  });
+  /*$('.datepicker').datepicker();*/
 
   /* Search Keyword */
   $('.search-keyword-main').click(function(){
