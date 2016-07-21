@@ -27,10 +27,9 @@
 				<script src="assets/js/zlib.js"></script> 
 				<script src="assets/js/xepOnline.jqPlugin.js"></script> 
 				<script src="assets/js/png_support.js"></script> 
-				<!--<script src="assets/js/bootstrap-datepicker.js"></script>-->
 				<!--<script src="assets/js/jquery-1.12.3.js"></script>-->
-				<<script src="assets/js/jquery-3.1.0.js"></script>
-				<!--<script src="assets/js/jquery-ui.js"></script>-->
+				<script src="assets/js/jquery-3.1.0.js"></script>
+				<script src="assets/js/jquery-ui.js"></script>
 				<script src="assets/js/assets.js"></script>
 				<script type="text/javascript"> 
 					
