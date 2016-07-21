@@ -18,7 +18,7 @@ $(document).ready(function(){
   });
 
   /* Initialize Datepicker */
-  $('.datepicker').datepicker();
+  /*$('.datepicker').datepicker();*/
 
   /* Search Keyword */
   $('.search-keyword-main').click(function(){
