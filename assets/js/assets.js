@@ -17,6 +17,11 @@ $(document).ready(function(){
     $(this).hide();
   });
 
+  /* Initialize Datepicker */
+  $('.datepicker').datepicker({
+    format: 'mm/dd/yyyy'
+  });
+
   /* Search Keyword */
   $('.search-keyword-main').click(function(){
     $('.search-keyword-tax').css('display', 'inline-block');
@@ -96,7 +101,7 @@ $(document).ready(function(){
 
 
 /* Datepicker */
-$(function() {
+/*$(function() {
   $( "#from" ).datepicker({
     defaultDate: "+1w",
     changeMonth: true,
@@ -113,7 +118,7 @@ $(function() {
       $( "#from" ).datepicker( "option", "maxDate", selectedDate );
     }
   });
-});
+});*/
 
 function validateForm() {
   var main_word = document.forms["search-form"]["main-word"].value;
@@ -276,7 +281,7 @@ function showBarChart(data){
   .data(data)
   .enter().append("rect")
   .attr("class", "bar")
-  .style('fill','#00FFB3')
+  .style('fill','#FFFF00')
   .style('fill-opacity','9')
   .attr("x", function(d) { return x(d.tablename); })
   .attr("width", x.rangeBand())
