@@ -17,14 +17,14 @@
 			<div class="header-left">
 				<div class="header-logo">Muvera</div>
 			</div>
-			<div class="header-right">
-				<div class="header-login">Log In</div>
-				<div class="header-dashboard">DASHBOARD</div>
-			</div>
 			<div class="header-mid">
 				<div class="header-mediaonline header-active">MEDIA ONLINE</div>
 				<div class="header-twitter">TWITTER</div>
 				<div class="header-facebook">FACEBOOK</div>
+			</div>
+			<div class="header-right">
+				<div class="header-login">Log In</div>
+				<div class="header-dashboard">DASHBOARD</div>
 			</div>
 		</div>
 	</div>
