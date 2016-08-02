@@ -20,6 +20,7 @@
 				<input type='hidden' id='pngfile' value=""></input> 
 				<input type='hidden' id='xlsfile' value=""></input>
 				<script src="assets/js/d3.v3.min.js"></script>
+				<script src="assets/js/d3-time-format.min.js"></script>
 				<script src="assets/js/jspdf.js"></script> 
 				<script src="assets/js/addimage.js"></script> 
 				<script src="assets/js/FileSaver.js"></script> 
@@ -265,10 +266,11 @@
 									if (data.status){
 										alert(data.message+", Keyword pertama: "+data.word1+", Keyword kedua: "+data.word2+", Keyword ketiga: "+data.word3+", Keyword keempat: "+data.word4+", Keyword kelima: "+data.word5+", Waktu Mulai: "+data.datefrom+" "+data.timefrom+", Waktu Selesai: "+data.dateto+" "+data.timeto+", List Media: "+data.media);
 										var countMedia = data.count;									
-										document.getElementById('chart_count_report').innerHTML  = "";
+										/*document.getElementById('chart_count_report').innerHTML  = "";
 										for(var i=0;i<countMedia.length;i++){
 											document.getElementById('chart_count_report').innerHTML += '<tr><td>'.concat(countMedia[i].tablename,'</td><td>', countMedia[i].total, '</td></tr>');
-										}
+										}*/
+										showMultiLineChart(data.countTime);
 										//showPieChart(data.count);
 										showBarChart(data.count);
 									}
