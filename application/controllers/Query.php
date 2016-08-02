@@ -45,13 +45,11 @@ class Query extends CI_Controller {
 			'media' => $this->input->post('media')
 			);
 		$countData = [];
-		$countTime = [];
+		$countTime = array();
 		$timefrom = '';
 		$timeto = '';
-		$datefrom = strtotime($query1['datefrom']);
-		ChromePhp::log($datefrom);
-		$dateto = strtotime($query1['dateto']);
-		ChromePhp::log($dateto);
+		$datefrom = new DateTime($query1['datefrom']);
+		$dateto = new DateTime($query1['dateto']);
 		$interval = new DateInterval('P1D');
 		$period = new DatePeriod($datefrom, $interval, $dateto);
 	
@@ -61,7 +59,8 @@ class Query extends CI_Controller {
 				$table = explode("_",$tablename);
 				$value = $value + array(ucfirst($table[0]) => 0);
 			}
-			$countTime = $countTime + array ($dt => $value);
+			$temp = array ($dt->format('Y-m-d') => $value);
+			$countTime = $countTime + $temp;
 		}
 
 		if (trim($query1['periodfrom']) === 'am'){
@@ -100,12 +99,12 @@ class Query extends CI_Controller {
 		}
 		$i = 0;
 		foreach($query1['media'] as &$tablename){	
-			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$tablename);
-			$result2 = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$tablename);
+			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$tablename);
+			$result2 = $this->data2($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$tablename);
 			$table = explode("_",$tablename);
 			$countData[$i] = array ("tablename" => ucfirst($table[0]), "total" => (int)$result[0]->total);
 			foreach($result2 as $row){
-				$countTime[$row['tanggal']][ucfirst($table[0])] = $row['total'];
+				$countTime[$row->tanggal][ucfirst($table[0])] = $row->total;
 			}
 			$i++;
 		}
@@ -152,6 +151,8 @@ class Query extends CI_Controller {
 		$countData = [];
 		$timefrom = '';
 		$timeto = '';
+		$datefrom = new DateTime($query1['datefrom']);
+		$dateto = new DateTime($query1['dateto']);
 		if (trim($query1['periodfrom']) === 'am'){
 			if($query1['hourfrom'] === '12'){
 				$timefrom = '00:'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
@@ -188,7 +189,7 @@ class Query extends CI_Controller {
 		}
 		$i = 0;
 		foreach($query1['media'] as &$tablename){	
-			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$tablename);
+			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$tablename);
 			$table = explode("_",$tablename);
 			$countData[$i] = array ("tablename" => $tablename, "total" => (int)$result[0]->total);
 			$i++;
@@ -196,8 +197,7 @@ class Query extends CI_Controller {
 		if ($total > 10000){
 			for($i=0;$i<count($countData);$i++){
 				$limit = floor(10000 * ($countData[$i]['total'] / $total));
-				ChromePhp::log($limit);
-				$result = $this->xlsdata($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$countData[$i]['tablename'],$limit);
+				$result = $this->xlsdata($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$countData[$i]['tablename'],$limit);
 				if($result){
 					foreach ($result as $row){
 						$array = Array($row->title,$row->date, $row->link, $row->content);
@@ -209,7 +209,7 @@ class Query extends CI_Controller {
 		else{
 			for($i=0;$i<count($countData);$i++){
 				$limit = $countData[$i]['total'];
-				$result = $this->xlsdata($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$query1['datefrom'].' '.$timefrom, $query1['dateto'].' '.$timeto,$countData[$i]['tablename'],$limit);
+				$result = $this->xlsdata($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$countData[$i]['tablename'],$limit);
 				
 				if($result){
 					foreach ($result as $row){
@@ -231,6 +231,12 @@ class Query extends CI_Controller {
 		$this->load->model('model_query');
 		
 		return $this->model_query->getCountBasedKeyword($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename);
+	}
+	
+	private function data2($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename){
+		$this->load->model('model_query');
+		
+		return $this->model_query->getCountTimeSeriesBasedKeyword($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename);
 	}
 	
 	private function xlsdata($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename,$limit){
