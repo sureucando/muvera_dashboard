@@ -191,6 +191,7 @@ select {
 .content {
 	position: fixed;
 	top: 50px;
+	width: 100%;
 	height: calc(100% - 50px);
 	background-color: #eaeaea;
 	overflow-y: scroll;
@@ -428,6 +429,45 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 }
 
 /* Choose Media */
+.media-container {
+	margin: 0 6.3%;
+	padding: 0;
+}
+
+.media-box {
+	display: inline-block;
+	border: 1px solid #cdcdcd;
+	width: 115px;
+	height: 140px;
+	margin: 0.1%;
+	overflow-y: auto;
+}
+
+.media-box-cont {
+	width: 100%;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.media-box-cont>label:hover {
+	border: 0.1em solid #cdcdcd;
+	border-radius: 3px;
+	background: #dedede;
+	position: absolute;
+	display: inline-block;
+}
+
+.media-box-img {
+	position: absolute;
+	display: inline-block;
+	background: #cdcdcd;
+	width: 115px;
+	height: 140px;
+	font-size: 900%;
+	text-align: center;
+}
+/*
 .btn-media-container {
 	margin: 0 3%;
 	padding: 0;
@@ -444,12 +484,12 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	height: 10.59%;
 	width: 30.73%;
 }
-/*
+
 .btn-media-lg {
 	height: 100px;
 	width: 437px;
 }
-*/
+
 .btn-media label {
 	display: inline-block;
 	background-color: #131418;
@@ -466,7 +506,7 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	height: 100%;
 	width: 100%;
 }
-/*
+
 .btn-media-lg label {
 	padding: 25px 0px;
 	font-size: 34pt;
@@ -652,6 +692,7 @@ a:hover {
 	left:45%;
 	height: 15%;
 	opacity: 0.9;
+	z-index: 10;
 }
 
 /* Chart */

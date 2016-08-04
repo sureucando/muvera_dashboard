@@ -35,6 +35,7 @@
 								<input type="text" class="to to-date datepicker" name="date-to" value="00/00/0000">
 							</div>
 						</div>
+						<span></span>
 						<div id="timepicker-container">
 							<div class="timepicker-from">
 								<!--<label for="from">From</label>
@@ -58,90 +59,168 @@
 					</div>
 				</div>
 				<div class="section-choice">
-					<div class="btn-media-container">
-						<div class="btn btn-media btn-media-md">
-							<input id="Antara" type="checkbox" name="media[]" value="antaranews_data" >
-							<label for="Antara">Antara</label>
+					<div class="media-container">
+						<div class="media-box">
+						<div class="media-box-img">A</div>
+							<div class="media-box-cont">
+								<input id="Antara" type="checkbox" name="media[]" value="antaranews_data" >
+								<label for="Antara">Antara</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="BeritaSatu" type="checkbox" name="media[]" value="beritasatu_data">
-							<label for="BeritaSatu">Berita Satu</label>
+						<div class="media-box">
+						<div class="media-box-img">B</div>
+							<div class="media-box-cont">
+								<input id="BeritaSatu" type="checkbox" name="media[]" value="beritasatu_data">
+								<label for="BeritaSatu">Berita Satu</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="CNNIdn" type="checkbox" name="media[]" value="cnnindo_data" >
-							<label for="CNNIdn">CNN Idn</label>
+						<div class="media-box">
+						<div class="media-box-img">C</div>
+							<div class="media-box-cont">
+								<input id="CNNIdn" type="checkbox" name="media[]" value="cnnindo_data" >
+								<label for="CNNIdn">CNN Idn</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Detik" type="checkbox" name="media[]" value="detik_data" >
-							<label for="Detik">Detik</label>
+						<div class="media-box">
+						<div class="media-box-img">D</div>
+							<div class="media-box-cont">
+								<input id="Detik" type="checkbox" name="media[]" value="detik_data" >
+								<label for="Detik">Detik</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Fajar" type="checkbox" name="media[]" value="fajar_data" >
-							<label for="Fajar">Fajar</label>
+						<div class="media-box">
+						<div class="media-box-img">E</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Jakarta Post" type="checkbox" name="media[]" value="jakpost_data" >
-							<label for="Jakarta Post">Jakarta Post</label>
+						<div class="media-box">
+						<div class="media-box-img">F</div>
+							<div class="media-box-cont">
+								<input id="Fajar" type="checkbox" name="media[]" value="fajar_data" >
+								<label for="Fajar">Fajar</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="JPNN" type="checkbox" name="media[]" value="jpnn_data" >
-							<label for="JPNN">JPNN</label>
+						<div class="media-box">
+						<div class="media-box-img">G</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Kompas" type="checkbox" name="media[]" value="kompas_data" >
-							<label for="Kompas">Kompas</label>
+						<div class="media-box">
+						<div class="media-box-img">H</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Liputan6" type="checkbox" name="media[]" value="liputan6_data" >
-							<label for="Liputan6">Liputan6</label>
+						<div class="media-box">
+						<div class="media-box-img">I</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Merdeka" type="checkbox" name="media[]" value="merdeka_data" >
-							<label for="Merdeka">Merdeka</label>
+						<div class="media-box">
+						<div class="media-box-img">J</div>
+							<div class="media-box-cont">
+								<input id="Jakarta Post" type="checkbox" name="media[]" value="jakpost_data" >
+								<label for="Jakarta Post">Jakarta Post</label>
+							</div>
+							<div class="media-box-cont">
+								<input id="JPNN" type="checkbox" name="media[]" value="jpnn_data" >
+								<label for="JPNN">JPNN</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="MetroTV" type="checkbox" name="media[]" value="metrotvnews_data" >
-							<label for="MetroTV">Metro TV</label>
+						<div class="media-box">
+						<div class="media-box-img">K</div>
+							<div class="media-box-cont">
+								<input id="Kompas" type="checkbox" name="media[]" value="kompas_data" >
+								<label for="Kompas">Kompas</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="PojokSatu" type="checkbox" name="media[]" value="pojoksatu_data" >
-							<label for="PojokSatu">Pojok Satu</label>
+						<div class="media-box">
+						<div class="media-box-img">L</div>
+							<div class="media-box-cont">
+								<input id="Liputan6" type="checkbox" name="media[]" value="liputan6_data" >
+								<label for="Liputan6">Liputan6</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Republika" type="checkbox" name="media[]" value="republika_data" >
-							<label for="Republika">Republika</label>
+						<div class="media-box">
+						<div class="media-box-img">M</div>
+							<div class="media-box-cont">
+								<input id="Merdeka" type="checkbox" name="media[]" value="merdeka_data" >
+								<label for="Merdeka">Merdeka</label>
+							</div>
+							<div class="media-box-cont">
+								<input id="MetroTV" type="checkbox" name="media[]" value="metrotvnews_data" >
+								<label for="MetroTV">Metro TV</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Rima" type="checkbox" name="media[]" value="rimanews_data" >
-							<label for="Rima">Rima</label>
+						<div class="media-box">
+						<div class="media-box-img">N</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="RMOL" type="checkbox" name="media[]" value="rmol_data" >
-							<label for="RMOL">RMOL</label>
+						<div class="media-box">
+						<div class="media-box-img">O</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Sindo" type="checkbox" name="media[]" value="sindonews_data" >
-							<label for="Sindo">Sindo</label>
+						<div class="media-box">
+						<div class="media-box-img">P</div>
+							<div class="media-box-cont">
+								<input id="PojokSatu" type="checkbox" name="media[]" value="pojoksatu_data" >
+								<label for="PojokSatu">Pojok Satu</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Suara" type="checkbox" name="media[]" value="suara_data" >
-							<label for="Suara">Suara</label>
+						<div class="media-box">
+						<div class="media-box-img">Q</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Tempo" type="checkbox" name="media[]" value="tempo_data" >
-							<label for="Tempo">Tempo</label>
+						<div class="media-box">
+						<div class="media-box-img">R</div>
+							<div class="media-box-cont">
+								<input id="Republika" type="checkbox" name="media[]" value="republika_data" >
+								<label for="Republika">Republika</label>
+							</div>
+							<div class="media-box-cont">
+								<input id="Rima" type="checkbox" name="media[]" value="rimanews_data" >
+								<label for="Rima">Rima</label>
+							</div>
+							<div class="media-box-cont">
+								<input id="RMOL" type="checkbox" name="media[]" value="rmol_data" >
+								<label for="RMOL">RMOL</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="TeropongSenayan" type="checkbox" name="media[]" value="teropongsenayan_data" >
-							<label for="TeropongSenayan">Teropong Senayan</label>
+						<div class="media-box">
+						<div class="media-box-img">S</div>
+							<div class="media-box-cont">
+								<input id="Sindo" type="checkbox" name="media[]" value="sindonews_data" >
+								<label for="Sindo">Sindo</label>
+							</div>
+							<div class="media-box-cont">
+								<input id="Suara" type="checkbox" name="media[]" value="suara_data" >
+								<label for="Suara">Suara</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Tribun" type="checkbox" name="media[]" value="tribunnews_data" >
-							<label for="Tribun">Tribun</label>
+						<div class="media-box">
+						<div class="media-box-img">T</div>
+							<div class="media-box-cont">
+								<input id="Tempo" type="checkbox" name="media[]" value="tempo_data" >
+								<label for="Tempo">Tempo</label>
+							</div>
+							<div class="media-box-cont">
+								<input id="TeropongSenayan" type="checkbox" name="media[]" value="teropongsenayan_data" >
+								<label for="TeropongSenayan">Teropong Senayan</label>
+							</div>
+							<div class="media-box-cont">
+								<input id="Tribun" type="checkbox" name="media[]" value="tribunnews_data" >
+								<label for="Tribun">Tribun</label>
+							</div>
 						</div>
-						<div class="btn btn-media btn-media-md">
-							<input id="Viva" type="checkbox" name="media[]" value="viva_data" >
-							<label for="Viva">Viva</label>
+						<div class="media-box">
+						<div class="media-box-img">U</div>
+						</div>
+						<div class="media-box">
+						<div class="media-box-img">V</div>
+							<div class="media-box-cont">
+								<input id="Viva" type="checkbox" name="media[]" value="viva_data" >
+								<label for="Viva">Viva</label>
+							</div>
+						</div>
+						<div class="media-box">
+						<div class="media-box-img">W</div>
+						</div>
+						<div class="media-box">
+						<div class="media-box-img">X</div>
+						</div>
+						<div class="media-box">
+						<div class="media-box-img">Y</div>
+						</div>
+						<div class="media-box">
+						<div class="media-box-img">Z</div>
 						</div>
 					</div>
 					<div id="btn-generate" class="btn btn-orange btn-lg-rnd" onclick="search()">Generate Report</div>

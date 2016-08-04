@@ -101,6 +101,27 @@ $(document).ready(function(){
       flagsh = true; 
     };
   });
+
+  var check_flag = 0;
+  $(".media-box").hover(function(){
+    $(this).children(".media-box-img").css("display", "none");
+  },
+  function(){
+    $(this).children(".media-box-img").css("display", "inline-block");
+  });
+
+  $("input[type='checkbox']").change(function(){
+    if(this.checked){
+      $(this).parent().siblings('.media-box-img').css("background", "#000000").css("color", "#ffffff");
+      check_flag = check_flag + 1;
+    }
+    else {
+      check_flag = check_flag - 1;
+      if (!check_flag){
+        $(this).parent().siblings('.media-box-img').css("background", "#cdcdcd").css("color", "#000000");
+      }
+    }
+  });
 });
 
 
