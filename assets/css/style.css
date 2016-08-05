@@ -328,9 +328,22 @@ img.file {
 }
 
 /* Datepicker */
-#datepicker-container {
+.get-time {
 	position: relative;
-	margin: 20px 10% 20px 28%;
+	width: 73%;
+	margin: 1% 27%;
+}
+
+#datepicker-container {
+	width: inherit;
+	margin: 1%;
+	float: left;
+}
+
+#timepicker-container {
+	width: inherit;
+	margin: 1%;
+	float: left;
 }
 
 .datepicker-from {
@@ -338,7 +351,7 @@ img.file {
 }
 
 .timepicker-from {
-	margin-right: 0; 
+	margin-right: 0.8%; 
 }
 
 .datepicker-from, .datepicker-to/*,
@@ -348,15 +361,9 @@ img.file {
 }
 
 .timepicker-from, .timepicker-to {
-	margin-left: 55px;
+	margin-left: 8.9%;
 	background: #dcdcdc;
 	float: left;
-}
-
-#timepicker-container {
-	position: absolute;
-	top: 70%;
-	left: 32.78%;
 }
 
 input.from-date, input.to-date,

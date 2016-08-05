@@ -35,7 +35,6 @@
 								<input type="text" class="to to-date datepicker" name="date-to" value="00/00/0000">
 							</div>
 						</div>
-						<span></span>
 						<div id="timepicker-container">
 							<div class="timepicker-from">
 								<!--<label for="from">From</label>
