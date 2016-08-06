@@ -5,6 +5,8 @@ var flagdl, flagsh;
 /* Start Of Function */
 
 $(document).ready(function(){
+  $('.content').css("height", "100%").css("height", "-=50px");
+
   flagdl = true;
   flagsh = true;
 
@@ -123,7 +125,21 @@ $(document).ready(function(){
     }
   });
 });
+/* End Of Window Function */
 
+/* Compute Height */
+/*var setElementHeight = function () {
+  var conth = $('.window').height() - $('.header').height();
+  $('.content').css('height', (conth));
+  var height1 = $('.section-search').height() + $('.section-choice').height() + $('.header').height();
+  $('#search-form').css('height', (height1));
+  var height2 = $('#search-form').height() + $('.section-report').height();
+  $('.content-container').css('height', (height2));
+};
+
+$(window).on("resize", function () {
+  setElementHeight();
+}).resize();*/
 
 /* Datepicker */
 /*$(function() {

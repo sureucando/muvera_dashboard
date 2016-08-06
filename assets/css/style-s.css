@@ -1,79 +1,5 @@
-/*** CSS For Muvera ***/
-
-@font-face {
-	font-family: 'AvenirNext';
-	src: url('type/AvenirNextLTPro-Regular.woff') format('woff');
-}
-@font-face {
-	font-family: 'AvenirNextBold';
-	font-weight: bold;
-	src: url('type/AvenirRoman.otf');
-}
-@font-face {
-	font-family: 'AvenirNextMed';
-	font-weight: medium;
-	src: url('type/AvenirRoman.otf');
-}
-@font-face {
-	font-family: 'AvenirNextUltraLight';
-	src: url('type/AvenirNext-UltraLight.woff') format('woff');
-}
-@font-face {
-	font-family: 'GothamMed';
-	src: url('type/Gotham-Med.woff') format('woff');
-}
-
-html {
-	font-family: 'AvenirNext';
-	font-size: 9.15pt;
-	width: 100%;
-	height: 100%;
-	line-height: 1.28578;
-	-webkit-font-smoothing: subpixel-antialiasied;
-	text-rendering: optimizeLegibility;
-	overflow: hidden;
-}
-
-body {
-	margin: 0px;
-	padding: 0px;
-	height: 100%;
-	background-color: #eaeaea;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-}
-
-div {
-	display: block;
-}
-
-a {
-	padding: 0 5px;
-	color: #fff;
-	text-decoration: none; 
-}
-
-table {
-	text-align: center;
-	border: none;
-}
-th, tr{
-	border: none;
-}
-td{
-	border: none;
-}
-
-select {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-}
-
-/* 1000px */
-@media only screen and (min-width: 1000px) {
+/* Small View */
+@media only screen and (max-width: 1000px) {
 	/* Header Bar */
 	#header {
 		position: fixed;
@@ -136,7 +62,7 @@ select {
 
 	.header-dashboard {
 		position: fixed;
-		right: 10%;
+		right: 20%;
 		background: #F27321;
 		background: linear-gradient(to right, #E41E79, #F27321);
 		background: -webkit-linear-gradient(left, #E41E79 , #F27321); /* For Safari 5.1 to 6.0 */
@@ -197,6 +123,7 @@ select {
 		width: 100%;
 		background-color: #eaeaea;
 		overflow-y: scroll;
+		overflow-x: hidden;
 	}
 
 	.content-container {
@@ -216,12 +143,12 @@ select {
 
 	/* Section */
 	.section-search {
-		height: 350px;
+		height: 300px;
 		padding-top: 20px;
 	}
 
 	.section-choice {
-		padding: 0 20px;
+		padding: 0;
 		height: auto;
 	}
 
@@ -243,7 +170,7 @@ select {
 	/* Search Word */
 	#search-container {
 		position: relative;
-		margin: 20px 16%;
+		margin: 20px 10%;
 		margin-right: 0;
 		height: 60px;
 	}
@@ -251,9 +178,9 @@ select {
 	input.search-keyword {
 		margin: 0 1.4%;
 		padding: 15px 10px;
-		width: 90px;
+		width: 50px;
 		color: #cdcdcd;
-		font-size: 12pt;
+		font-size: 75%;
 		border: 3px solid #dcdcdc;
 		border-radius: 2px;
 		float: left;
@@ -332,7 +259,7 @@ select {
 	.get-time {
 		position: relative;
 		width: 73%;
-		margin: 1% 27%;
+		margin: 1% 20%;
 	}
 
 	#datepicker-container {
@@ -362,7 +289,7 @@ select {
 	}
 
 	.timepicker-from, .timepicker-to {
-		margin-left: 8.9%;
+		margin-left: 3%;
 		background: #dcdcdc;
 		float: left;
 	}
@@ -379,17 +306,17 @@ select {
 	}
 
 	input.from-date, input.to-date {
-		width: 10em;
+		width: 5em;
 		padding: 0 1em;
 	}
 
 	input.from-time, input.to-time {
-		width: 3.7em;
+		width: 3.0em;
 	}
 
 	select.from-period, select.to-period {
 		background: #B9C0FF;
-		width: 3.9em;
+		width: 3.0em;
 		padding-left: 15px;
 	}
 
@@ -438,15 +365,15 @@ select {
 
 	/* Choose Media */
 	.media-container {
-		margin: 0 6.66%;
+		margin: 0 2.7%;
 		padding: 0;
 	}
 
 	.media-box {
 		display: inline-block;
 		border: 1px solid #cdcdcd;
-		width: 115px;
-		height: 140px;
+		width: 70px;
+		height: 80px;
 		margin: 0.1%;
 		overflow-y: auto;
 	}
@@ -470,9 +397,9 @@ select {
 		position: absolute;
 		display: inline-block;
 		background: #cdcdcd;
-		width: 115px;
-		height: 140px;
-		font-size: 900%;
+		width: 70px;
+		height: 80px;
+		font-size: 500%;
 		text-align: center;
 	}
 	/*

@@ -275,10 +275,9 @@
 										showBarChart(data.count);
 									}
 									$('.section-report').show();
-									$('.content-container').animate({height:'1700px'}, 'slow');
 									$('#loading').hide();
 									var y = $('.content').scrollTop();
-   									$('.content').animate({scrollTop: y + 725}, 'slow');
+   									$('.content').animate({scrollTop: y + 525}, 'slow');
 								},
 								error: function (jqXHR, textStatus, errorThrown)
 								{
