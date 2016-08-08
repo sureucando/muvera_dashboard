@@ -18,13 +18,13 @@
 					<div id="contact-us-form">
 						<div class="contact-us-left"><div class="img-dummy"></div></div>
 						<div class="contact-us-right">
-							<div class="form-container">
+							<form class="form-container" action="#">
 								<h1 class="content-title">CONTACT US</h1>
-								<input type="text" placeholder="Name">
-								<input type="text" placeholder="Email">
-								<input type="textarea" placeholder="Message">
+								<input type="text" placeholder="Name" name="username">
+								<input type="text" placeholder="Email" name="email">
+								<textarea rows="7" placeholder="Message" name="message"></textarea> 
 								<div class="btn btn-blue btn-md" id="btn-cs">Send Message</div>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>	

@@ -147,6 +147,14 @@ $(document).ready(function(){
       $(this).attr('placeholder', placeholder);
     });
   });
+  /* Textarea Placeholder */
+  $('textarea').focus(function(){
+    var placeholder = $(this).attr('placeholder');
+    $(this).attr('placeholder', '');
+    $('textarea').blur(function(){
+      $(this).attr('placeholder', placeholder);
+    });
+  });
 });
 /* End Of Window Function */
 
