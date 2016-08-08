@@ -6,13 +6,11 @@
 }
 @font-face {
 	font-family: 'AvenirNextBold';
-	font-weight: bold;
-	src: url('type/AvenirRoman.otf');
+	src: url('type/AvenirNext-Bold.woff') format('woff');
 }
 @font-face {
 	font-family: 'AvenirNextMed';
-	font-weight: medium;
-	src: url('type/AvenirRoman.otf');
+	src: url('type/AvenirNext-Medium.woff') format('woff');
 }
 @font-face {
 	font-family: 'AvenirNextUltraLight';
@@ -209,6 +207,7 @@ select {
 	}
 
 	h1.content-title {
+		font-family: "AvenirNextBold"
 		margin-bottom: 20px;
 		text-align: center;
 		font-size: 50px
@@ -229,6 +228,68 @@ select {
 		padding: 0 20px;
 		height: auto;
 		display: none;
+	}
+
+	.section-cs {
+		padding: 50px;
+		text-align: center;
+	}
+
+	/* Contuct Us */
+	#get-in-touch>p {
+		margin: 25px 23%;
+		font-style: italic;
+		color: #dcdcdc;
+	}
+
+	#get-in-touch>img {
+		width: 90%;
+	}
+
+	#contact-us-form {
+		margin: 0;
+		padding: 0;
+		display: none;
+	}
+
+	.contact-us-left,
+	.contact-us-right {
+		width: 49%;
+		height: inherit;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.contact-us-right {
+	}
+	
+	.img-dummy {
+		background: #B9C0FF;
+		width: 800px;
+		height: 600px;		
+	}
+
+	.contact-us-left>.img-dummy {
+		width: 100%;
+	}
+
+	.form-container {
+		width: 100%;
+		padding: 20px;
+	}
+
+	.form-container>input {
+		display: block;
+		padding: 5px;
+		width: 90%;
+		font-size: 125%;
+		border: none;
+		border-bottom: 2px solid #cdcdcd;
+		outline: none;
+	}
+
+	.form-container>.btn-md {
+		font-size: 125%; 
 	}
 
 	/* Form */
@@ -578,12 +639,13 @@ select {
 	}
 
 	.btn-blue:hover,
-	.btn-blue:selected {
-		background: #F27321;
-		background: linear-gradient(to right, #E41E79, #F27321);
-		background: -webkit-linear-gradient(left, #E41E79 , #F27321); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #E41E79, #F27321); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #E41E79, #F27321); /* For Firefox 3.6 to 15 */ 
+	.btn-blue.selected {
+		background: #29f380;
+		background: linear-gradient(to right, #29f380, #29f380);
+		background: -webkit-linear-gradient(left, #29f380 , #29f380); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #29f380, #29f380); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #29f380, #29f380); /* For Firefox 3.6 to 15 */
+		color: #fff;
 	}
 
 	.btn-green {
@@ -633,20 +695,20 @@ select {
 	}
 
 	.btn-sm {
-		border-radius: 50px;
-		width: 7%;
+		border-radius: 7px;
+		width: 8%;
 		margin: 10px auto;
-		padding: 0.07% 0 0.07% 0.19%;
+		padding: 0.5% 0 0.5% 0.19%;
 		font-size: 0.45em;
 	}
 
 	.btn-md {
 		border-radius: 5px;
 		text-align: center;
-		width: 418px;
+		width: 25%;
 		margin: 20px auto;
-		padding: 5px 0;
-		font-size: 12pt;
+		padding: 7px 0;
+		font-size: 200%;
 	}
 
 	.btn-lg {
