@@ -116,6 +116,10 @@
 		width: 100%;
 	}
 
+	.banner-top .btn {
+		display: block;
+	}
+
 	/* Content */
 	.content {
 		position: fixed;
@@ -214,7 +218,6 @@
 		font-size: 125%;
 		border: none;
 		border-bottom: 2px solid #cdcdcd;
-		outline: none;
 		margin-bottom: 5px;
 	}
 
@@ -673,7 +676,11 @@
 		float: right;
 	}
 
-	a:hover {
+	#footer a {
+		padding: 0 5px;
+	}
+
+	#footer a:hover {
 		text-decoration: underline;
 	}
 

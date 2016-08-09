@@ -48,7 +48,6 @@ div {
 }
 
 a {
-	padding: 0 5px;
 	color: #fff;
 	text-decoration: none; 
 }
@@ -68,6 +67,10 @@ select {
    -webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
+}
+
+input, textarea, select {
+	outline: none;
 }
 
 /* 1000px */
@@ -188,6 +191,10 @@ select {
 		width: 100%;
 	}
 
+	.banner-top .btn {
+		display: block;
+	}
+
 	/* Content */
 	.content {
 		position: fixed;
@@ -286,7 +293,6 @@ select {
 		font-size: 125%;
 		border: none;
 		border-bottom: 2px solid #cdcdcd;
-		outline: none;
 		margin-bottom: 5px;
 	}
 
@@ -744,7 +750,11 @@ select {
 		float: right;
 	}
 
-	a:hover {
+	#footer a {
+		padding: 0 5px;
+	}
+
+	#footer a:hover {
 		text-decoration: underline;
 	}
 

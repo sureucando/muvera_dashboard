@@ -3,10 +3,9 @@
 		<div class="banner">
 			<div class="banner-top">
 				Discover News
-				<div class="btn btn-sm btn-orange">Learn More</div>
+				<a class="btn btn-sm btn-orange" href="<?php echo base_url('media_online'); ?>">Learn More</a>
 			</div>
-			<div class="banner-bot">
-			</div>
+			<div class="banner-bot"></div>
 			<div class="content-container">
 				<div class="section-cs">
 					<div id="get-in-touch">

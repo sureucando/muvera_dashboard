@@ -135,8 +135,8 @@ $(document).ready(function(){
       check_flag = check_flag - 1;
       if (!check_flag){
         $(this).parent().siblings('.media-box-img').css("background", "#cdcdcd").css("color", "#000000");
-      }
-    }
+      };
+    };
   });
 
   /* Input Placeholder */
@@ -155,6 +155,7 @@ $(document).ready(function(){
       $(this).attr('placeholder', placeholder);
     });
   });
+
 });
 /* End Of Window Function */
 
