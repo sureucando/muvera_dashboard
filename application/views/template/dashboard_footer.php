@@ -270,7 +270,7 @@
 										for(var i=0;i<countMedia.length;i++){
 											document.getElementById('chart_count_report').innerHTML += '<tr><td>'.concat(countMedia[i].tablename,'</td><td>', countMedia[i].total, '</td></tr>');
 										}*/
-										showMultiLineChart(data.countTime);
+										//showMultiLineChart(data.countTime);
 										//showPieChart(data.count);
 										showBarChart(data.count);
 									}
@@ -281,7 +281,7 @@
 								},
 								error: function (jqXHR, textStatus, errorThrown)
 								{
-									alert('Error !');
+									alert('Error !' + errorThrown);
 									$('#loading').hide();
 								}
 							});
