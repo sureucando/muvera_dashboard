@@ -100,11 +100,14 @@ class Query extends CI_Controller {
 		$i = 0;
 		foreach($query1['media'] as &$tablename){	
 			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$tablename);
-			$result2 = $this->data2($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$tablename);
 			$table = explode("_",$tablename);
 			$countData[$i] = array ("tablename" => ucfirst($table[0]), "total" => (int)$result[0]->total);
-			foreach($result2 as $row){
-				$countTime[$row->tanggal][ucfirst($table[0])] = $row->total;
+			if ((int)$result[0]->total > 0){
+				$result2 = $this->data2($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$tablename);
+				
+				foreach($result2 as $row){
+					$countTime[$row->tanggal][ucfirst($table[0])] = $row->total;
+				}
 			}
 			$i++;
 		}
