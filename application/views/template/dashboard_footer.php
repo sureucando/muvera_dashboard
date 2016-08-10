@@ -11,6 +11,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 
 				<!-- Aditional Div's -->
 				<!-- Loading Div -->

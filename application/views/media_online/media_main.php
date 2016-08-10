@@ -28,11 +28,11 @@
 						<div id="datepicker-container">
 							<div class="datepicker-from">
 								<label for="from">From</label>
-								<input type="text" class="from from-date datepicker" name="date-from" value="00/00/0000">
+								<input type="text" class="from from-date datepicker" name="date-from" value="mm/dd/yyyy">
 							</div>
 							<div class="datepicker-to">
 								<label for="to">to</label>
-								<input type="text" class="to to-date datepicker" name="date-to" value="00/00/0000">
+								<input type="text" class="to to-date datepicker" name="date-to" value="mm/dd/yyyy">
 							</div>
 						</div>
 						<div id="timepicker-container">

@@ -29,7 +29,6 @@ html {
 	line-height: 1.28578;
 	-webkit-font-smoothing: subpixel-antialiasied;
 	text-rendering: optimizeLegibility;
-	overflow: hidden;
 }
 
 body {
@@ -73,8 +72,25 @@ input, textarea, select {
 	outline: none;
 }
 
+.wrapper {
+	text-align: center;
+	vertical-align: bottom;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+/* For Landing Page */
+
+.btn-landing {
+	margin: auto;
+	width: 50%;
+	vertical-align: middle;
+}
+
 /* 1000px */
-@media only screen and (min-width: 1000px) {
+/*@media only screen and (min-width: 1000px) {*/
+	/* For Dashboard */
 	/* Header Bar */
 	#header {
 		position: fixed;
@@ -92,11 +108,13 @@ input, textarea, select {
 	}
 
 	.header-left {
+		text-align: left;
 		position: fixed;
 		width: 25%;
 	}
 
 	.header-right {
+		text-align: right;
 		position: fixed;
 		width: 25%;
 	}
@@ -211,6 +229,7 @@ input, textarea, select {
 		background-color: #fff;
 		margin: 0 9.5%;
 		padding: 0px 35px 55px 35px;
+		text-align: center;
 	}
 
 	h1.content-title {
@@ -311,16 +330,17 @@ input, textarea, select {
 
 	/* Search Word */
 	#search-container {
+		text-align: center;
 		position: relative;
-		margin: 20px 16%;
-		margin-right: 0;
+		margin: 20px auto;
+		width: 66%;
 		height: 60px;
 	}
 
 	input.search-keyword {
 		margin: 0 1.4%;
-		padding: 15px 10px;
-		width: 90px;
+		padding: 15px 1%;
+		width: 13.33%;
 		color: #cdcdcd;
 		font-size: 12pt;
 		border: 3px solid #dcdcdc;
@@ -368,6 +388,10 @@ input, textarea, select {
 		height: 350px;
 	}
 
+	.report-chart {
+		text-align: left;
+	}
+
 	/*
 	.chart-container {
 		margin-bottom: 20px;
@@ -399,41 +423,55 @@ input, textarea, select {
 
 	/* Datepicker */
 	.get-time {
-		position: relative;
-		width: 73%;
-		margin: 1% 27%;
+		text-align: center;
+		width: 65%;
+		margin: 1% auto;
 	}
 
 	#datepicker-container {
-		width: inherit;
-		margin: 1%;
-		float: left;
+		/*width: inherit;*/
+		margin: 5px 0;
 	}
 
 	#timepicker-container {
-		width: inherit;
-		margin: 1%;
-		float: left;
+		/*margin: 1%;*/
+		margin: 5px 0;
 	}
 
 	.datepicker-from {
-		margin-right: 4%;
+		/*margin-right: 4%;*/
 	}
 
 	.timepicker-from {
-		margin-right: 0.8%; 
+		/*margin-right: 0.8%;*/ 
 	}
 
-	.datepicker-from, .datepicker-to/*,
-	.timepicker-from, .timepicker-to*/ {
-		background: #B9C0FF;
-		float: left;
-	}
-
+	.datepicker-from, .datepicker-to, 
 	.timepicker-from, .timepicker-to {
-		margin-left: 8.9%;
+		display: inline-block;
+		/*float: left;*/
+	}
+
+	.datepicker-from, .datepicker-to {
+		background: #B9C0FF;
+		/*float: left;*/
+	}
+ 
+	.timepicker-from, .timepicker-to {
 		background: #dcdcdc;
-		float: left;
+		/*float: left;*/
+	}
+
+	.datepicker-from label, .datepicker-to label 
+	/*,.timepicker-from, .timepicker-to*/ {
+		background: #B9C0FF;
+		/*float: left;*/
+	}
+
+	.timepicker-from input, .timepicker-to input {
+		/*margin-left: 8.9%;*/
+		background: #dcdcdc;
+		/*float: left;*/
 	}
 
 	input.from-date, input.to-date,
@@ -501,13 +539,15 @@ input, textarea, select {
 
 	#datepicker-container label,
 	#timepicker-container label {
-		margin: 0;
-		padding: 9px 10px;
+		margin: auto;
+		padding: 0 10px;
 	}
 
 	/* Choose Media */
 	.media-container {
-		margin: 0 6.66%;
+		text-align: left;
+		width: 87.50%;
+		margin: 0 auto;
 		padding: 0;
 	}
 
@@ -678,7 +718,7 @@ input, textarea, select {
 		border-radius: 50px;
 		width: 46.74%;
 		margin: 55px auto;
-		padding: 1.23% 0 1.23% 29.47%;
+		padding: 1.23% 15%;
 		font-size: 14pt;
 		box-shadow: 0 15px 15px rgba(0,0,0,0.15);
 	}
@@ -693,7 +733,7 @@ input, textarea, select {
 		border-radius: 50px;
 		width: 100px;
 		height: 100px;
-		margin: 0 15px;
+		margin: 0 auto;
 	}
 
 	.btn-rnd>img {
@@ -800,4 +840,4 @@ input, textarea, select {
 	    pointer-events: none;     
 	}
 
-}
+/*}*/
