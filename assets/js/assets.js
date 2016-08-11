@@ -392,11 +392,11 @@ function showBarChart(data){
 
     var xAxis = d3.svg.axis()
     .scale(x)
-    .orient("bottom")
+    .orient("bottom");
 
     var yAxis = d3.svg.axis()
     .scale(y)
-    .orient("left")
+    .orient("left");
     //.tickFormat(formatPercent);
 
     var svg = d3.select("#pie_chart_visualisation").append("svg")
@@ -437,26 +437,29 @@ function showBarChart(data){
     .attr("y", 6)
     .attr("dy", ".71em")
     .style("text-anchor", "end")
-    .style('font', '10px "AvenirNext"')
+    .style('font', '12px "AvenirNext"')
     .text("Frequency");
 
     svg.selectAll(".bar")
     .data(data)
     .enter().append("rect")
     .attr("class", "bar")
-    .style('fill','#00FFB3')
+    .style('fill','#7381A5')
     .style('fill-opacity','9')
     .attr("x", function(d) { return x(d.tablename); })
-    .attr("width", x.rangeBand())
+    .attr("width", /*'24px'*/x.rangeBand())
     .attr("y", function(d) { return y(d.total); })
     .attr("height", function(d) { return height - y(d.total); })
     .on("mouseover", function(d) {    
       div.transition()    
       .duration(200)    
       .style("opacity", .9);    
-      div .html(d.tablename + "<br/>"  + d.total)  
-      .style("left", (d3.event.pageX - 200) + "px")   
-      .style("top", (d3.event.pageY - 28) + "px");  
+      div.html(d.tablename + "<br/>"  + d.total)
+      .style("width", "auto")
+      .style("height", "auto")
+      .style("padding", "5px")
+      .style("left", (d3.event.pageX - 30) + "px")   
+      .style("top", (d3.event.pageY + 1240) + "px");  
     })          
     .on("mouseout", function(d) {   
       div.transition()    
@@ -466,9 +469,9 @@ function showBarChart(data){
     svg.selectAll('.axis line, .axis path')
     .style({'stroke': '#000', 'fill': 'none', 'shape-rendering': 'crispEdges'});
     svg.selectAll('.x.axis path')
-    .style({'display': 'none'});
+    .style({'display': 'inherit'});
     svg.selectAll('.axis text')
-    .style({'font': '10px "AvenirNext"'});
+    .style({'font': '12px "AvenirNext"'});
     d3.select("#sort_bar").on("change", change);
 
     var sortTimeout = setTimeout(function() {

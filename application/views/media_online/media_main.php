@@ -19,10 +19,15 @@
 					<h1 class="content-title">MEDIA</h1>
 					<div id="search-container">
 						<input type="text" class="search-keyword search-keyword-main" placeholder="+ Add Word" name="main-word" >
+						<div class="label-word">Main Word</div>
 						<input type="text" class="search-keyword search-keyword-tax tax1" placeholder="+ Add Word" name="first-tax">
+						<div class="label-word">Taxonomy 1</div>
 						<input type="text" class="search-keyword search-keyword-tax tax2" placeholder="+ Add Word" name="second-tax">
+						<div class="label-word">Taxonomy 2</div>
 						<input type="text" class="search-keyword search-keyword-tax tax3" placeholder="+ Add Word" name="third-tax">
+						<div class="label-word">Taxonomy 3</div>
 						<input type="text" class="search-keyword search-keyword-tax tax4" placeholder="+ Add Word" name="fourth-tax">
+						<div class="label-word">Taxonomy 1</div>
 					</div>
 					<div class="get-time">
 						<div id="datepicker-container">
@@ -77,7 +82,7 @@
 						<div class="media-box-img">C</div>
 							<div class="media-box-cont">
 								<input id="CNNIdn" type="checkbox" name="media[]" value="cnnindo_data" >
-								<label for="CNNIdn">CNN Idn</label>
+								<label for="CNNIdn">CNN Indonesia</label>
 							</div>
 						</div>
 						<div class="media-box">

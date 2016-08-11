@@ -17,13 +17,17 @@
 	src: url('type/AvenirNext-UltraLight.woff') format('woff');
 }
 @font-face {
+	font-family: 'AvenirLight';
+	src: url('type/Avenir-Light.woff') format('woff');
+}
+@font-face {
 	font-family: 'GothamMed';
 	src: url('type/Gotham-Med.woff') format('woff');
 }
 
 html {
 	font-family: 'AvenirNext';
-	font-size: 9.15pt;
+	font-size: 10pt;
 	width: 100%;
 	height: 100%;
 	line-height: 1.28578;
@@ -81,16 +85,16 @@ input, textarea, select {
 }
 
 /* For Landing Page */
-
 .btn-landing {
 	margin: auto;
 	width: 50%;
 	vertical-align: middle;
 }
+/* End Of Landing Page */
 
 /* 1000px */
 /*@media only screen and (min-width: 1000px) {*/
-	/* For Dashboard */
+/* For Dashboard */
 	/* Header Bar */
 	#header {
 		position: fixed;
@@ -129,6 +133,7 @@ input, textarea, select {
 	.header-mediaonline {
 		position: fixed;
 		padding: 18px 20px;
+		display: none;
 	}
 
 	.header-twitter {
@@ -149,34 +154,52 @@ input, textarea, select {
 		padding: 7px 12px;
 		color: #FFFFFF;
 		font-family: "GothamMed";
-		font-size: 27.83pt;
-		line-height: 27.84pt;
+		font-size: 3.04em;
+		line-height: 1em;
 	}
 
 	.header-dashboard {
 		position: fixed;
-		right: 10%;
-		background: #F27321;
-		background: linear-gradient(to right, #E41E79, #F27321);
-		background: -webkit-linear-gradient(left, #E41E79 , #F27321); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #E41E79, #F27321); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #E41E79, #F27321); /* For Firefox 3.6 to 15 */
+		right: 20%;
+		background: #7381A5;
+		background: linear-gradient(to right, #856F9E, #7381A5);
+		background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
 		color: #FFFFFF;
-		height: 14px;
-		padding: 18px 15px;
+		height: 28px;
+		padding: 11px 15px;
+	}
+
+	.header-dashboard img {
+		vertical-align: middle;
+		width: 23px;
+		height: 29px;
+		padding-right: 15px;
 	}
 
 	.header-login {
 		position: fixed;
-		right: 0;
-		padding: 17px 53px; 
+		top: 10px;
+		right: 10%;
+		padding: 5px 25px; 
 		color: #FFFFFF;
+	}
+
+	.header-contactus {
+		position: fixed;
+		top: 10px;
+		right: 0;
+		padding: 5px 25px; 
+		color: #FFFFFF;
+		border-left: 1px solid #ffffff;
 	}
 
 	.header-mediaonline:hover,
 	.header-facebook:hover,
 	.header-twitter:hover,
-	.header-login:hover {
+	.header-login:hover,
+	.header-contactus:hover {
 		cursor: pointer;
 		color: #565B68;
 	}
@@ -222,21 +245,35 @@ input, textarea, select {
 		overflow-y: scroll;
 	}
 
-	.content-container {
-		min-height: 100%;
-		height: auto !important;
-		height: 100%;
-		background-color: #fff;
-		margin: 0 9.5%;
-		padding: 0px 35px 55px 35px;
-		text-align: center;
+	@media only screen and (min-width:1024px){
+		.content-container {
+			min-height: 100%;
+			height: auto !important;
+			height: 100%;
+			background-color: #fff;
+			margin: 0 9.5%;
+			padding: 0px 35px 55px 35px;
+			text-align: center;
+		}
+	}
+
+	@media only screen and (max-width:1024px){
+		.content-container {
+			min-height: 100%;
+			height: auto !important;
+			height: 100%;
+			background-color: #fff;
+			margin: 0;
+			padding: 0px 35px 55px 35px;
+			text-align: center;
+		}
 	}
 
 	h1.content-title {
-		font-family: "AvenirNextBold"
+		font-family: "AvenirNextBold";
 		margin-bottom: 20px;
 		text-align: center;
-		font-size: 50px
+		font-size: 5em;
 	}
 
 	/* Section */
@@ -330,28 +367,31 @@ input, textarea, select {
 
 	/* Search Word */
 	#search-container {
-		text-align: center;
+		text-align: left;
 		position: relative;
 		margin: 20px auto;
 		width: 66%;
 		height: 60px;
 	}
-
+	
+	.label-word {
+		display: none;
+	}
+	
 	input.search-keyword {
 		margin: 0 1.4%;
 		padding: 15px 1%;
 		width: 13.33%;
 		color: #cdcdcd;
-		font-size: 12pt;
+		font-size: 1.2em;
 		border: 3px solid #dcdcdc;
 		border-radius: 2px;
-		float: left;
 		cursor: pointer;
 	}
 
 	input.search-keyword-main:hover, 
 	input.search-keyword-main:focus {
-		border-left: 3px solid #E41E79;
+		border-left: 3px solid #856F9E;
 		color: #565B68;
 	}
 
@@ -423,6 +463,7 @@ input, textarea, select {
 
 	/* Datepicker */
 	.get-time {
+		font-family: "AvenirLight";
 		text-align: center;
 		width: 65%;
 		margin: 1% auto;
@@ -453,7 +494,7 @@ input, textarea, select {
 	}
 
 	.datepicker-from, .datepicker-to {
-		background: #B9C0FF;
+		background: #A5B6D6;
 		/*float: left;*/
 	}
  
@@ -464,7 +505,8 @@ input, textarea, select {
 
 	.datepicker-from label, .datepicker-to label 
 	/*,.timepicker-from, .timepicker-to*/ {
-		background: #B9C0FF;
+		width: 76.8px;
+		background: #A5B6D6;
 		/*float: left;*/
 	}
 
@@ -477,6 +519,8 @@ input, textarea, select {
 	input.from-date, input.to-date,
 	input.from-time, input.to-time,
 	select.from-period, select.to-period {
+		font-family: "AvenirLight";
+		font-style: ;
 		border: none;
 		background: #dcdcdc;
 		height: 2.4em;
@@ -495,7 +539,7 @@ input, textarea, select {
 	}
 
 	select.from-period, select.to-period {
-		background: #B9C0FF;
+		background: #A5B6D6;
 		width: 3.9em;
 		padding-left: 15px;
 	}
@@ -534,7 +578,7 @@ input, textarea, select {
 		border: none;
 		height: 50px;
 		width: 400px;
-		font-size: 12pt;
+		font-size: 1.2em;
 	}
 
 	#datepicker-container label,
@@ -544,24 +588,42 @@ input, textarea, select {
 	}
 
 	/* Choose Media */
-	.media-container {
-		text-align: left;
-		width: 87.50%;
-		margin: 0 auto;
-		padding: 0;
+	@media only screen and (min-width:1024px){
+			.media-container {
+			text-align: left;
+			width: 87.50%;
+			margin: 0 auto;
+			padding: 0;
+		}
 	}
 
+	@media only screen and (max-width:1024px){
+		.media-container {
+			text-align: left;
+			width: 97%;
+			margin: 0 auto;
+			padding: 0;
+		}
+	}
+
+	
+
 	.media-box {
+		font-family: "AvenirNextBold";
 		display: inline-block;
 		border: 1px solid #cdcdcd;
 		width: 115px;
 		height: 140px;
 		margin: 0.1%;
 		overflow-y: auto;
+		overflow-x: hidden;
 	}
 
 	.media-box-cont {
+		font-family: "AvenirNext";
+		margin: 5px 0 0 5px;
 		width: 100%;
+		font-size: 1.35em;
 		overflow-x: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
@@ -573,6 +635,7 @@ input, textarea, select {
 		background: #dedede;
 		position: absolute;
 		display: inline-block;
+		z-index: 3;
 	}
 
 	.media-box-img {
@@ -581,7 +644,7 @@ input, textarea, select {
 		background: #cdcdcd;
 		width: 115px;
 		height: 140px;
-		font-size: 900%;
+		font-size: 8.2em;
 		text-align: center;
 	}
 	/*
@@ -618,7 +681,7 @@ input, textarea, select {
 
 	.btn-media-md label {
 		padding: 5.28% 0;
-		font-size: 24pt;
+		font-size: 2.4em;
 		line-height: 24pt;
 		height: 100%;
 		width: 100%;
@@ -626,7 +689,7 @@ input, textarea, select {
 
 	.btn-media-lg label {
 		padding: 25px 0px;
-		font-size: 34pt;
+		font-size: 3.4em;
 		line-height: 34pt;
 		height: 50px;
 		width: 437px;
@@ -660,11 +723,11 @@ input, textarea, select {
 	}
 
 	.btn-orange {
-		background: #F27321;
-		background: linear-gradient(to right, #E41E79, #F27321);
-		background: -webkit-linear-gradient(left, #E41E79 , #F27321); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #E41E79, #F27321); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #E41E79, #F27321); /* For Firefox 3.6 to 15 */
+		background: #7381A5;
+		background: linear-gradient(to right, #856F9E, #7381A5);
+		background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
 		color: #fff;
 	}
 
@@ -719,7 +782,7 @@ input, textarea, select {
 		width: 46.74%;
 		margin: 55px auto;
 		padding: 1.23% 15%;
-		font-size: 14pt;
+		font-size: 1.4em;
 		box-shadow: 0 15px 15px rgba(0,0,0,0.15);
 	}
 
@@ -744,7 +807,7 @@ input, textarea, select {
 
 	.btn-sm {
 		border-radius: 7px;
-		width: 8%;
+		width: 10%;
 		margin: 10px auto;
 		padding: 0.5% 0 0.5% 0.19%;
 		font-size: 0.45em;
@@ -756,7 +819,7 @@ input, textarea, select {
 		width: 25%;
 		margin: 20px auto;
 		padding: 7px 0;
-		font-size: 200%;
+		font-size: 2em;
 	}
 
 	.btn-lg {
@@ -765,7 +828,7 @@ input, textarea, select {
 		width: 73.24%;
 		margin: 30px auto;
 		padding: 10px 0;
-		font-size: 14pt;
+		font-size: 1.4em;
 		box-shadow: 0 5px 5px rgba(0,0,0,0.15);
 	}
 
@@ -819,7 +882,7 @@ input, textarea, select {
 
 	/* Chart */
 	.arc text {
-	  font: 10px sans-serif;
+	  font: 1em sans-serif;
 	  text-anchor: middle;
 	}
 
@@ -833,11 +896,12 @@ input, textarea, select {
 	    width: 60px;          
 	    height: 28px;         
 	    padding: 2px;       
-	    font: 12px sans-serif;    
+	    font: 1.2em sans-serif;    
 	    background: lightsteelblue; 
 	    border: 0px;    
 	    border-radius: 8px;     
 	    pointer-events: none;     
+	    z-index: 5;
 	}
 
 /*}*/

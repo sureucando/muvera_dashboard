@@ -20,13 +20,14 @@
 				<a class="header-logo" href="<?php echo base_url(); ?>">Muvera</a>
 			</div>
 			<div class="header-mid">
-				<div class="header-mediaonline header-active">MEDIA ONLINE</div>
+				<div class="header-mediaonline">MEDIA ONLINE</div>
 				<div class="header-twitter">TWITTER</div>
 				<div class="header-facebook">FACEBOOK</div>
 			</div>
 			<div class="header-right">
 				<div class="header-login">Log In</div>
-				<div class="header-dashboard">DASHBOARD</div>
+				<a href="<?php echo base_url('contact_us'); ?>" class="header-contactus">Contact Us</a>
+				<div class="header-dashboard"><img src="assets\images\dashboard-icon.png">DASHBOARD</div>
 			</div>
 		</div>
 	</div>
