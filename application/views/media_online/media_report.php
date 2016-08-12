@@ -2,7 +2,7 @@
 							<h3 class="report-title"><img src="assets/images/icon-title2.png">Bar Chart</h3>
 							<div class="report-content-chart" id="pie_chart_visualisation">
 							</div>
-								<label><input type="checkbox" id="sort_bar" style="float:left"> Sort values</label>
+								<label><input type="checkbox" id="sort_bar" style="float: left;"> Sort values</label>
 							<canvas id="canvas" width="900" height="400" style="display:none"></canvas>
 						</div>
 						<div class="btn btn-orange btn-lg" id="report-dl">Download Report</div>

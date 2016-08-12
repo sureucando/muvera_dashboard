@@ -124,14 +124,21 @@ $(document).ready(function(){
   });
 
   $("input[type='checkbox']").change(function(){
+    var imgRandom = Math.floor(Math.random() * 2) + 1  ;
     if(this.checked){
-      $(this).parent().siblings('.media-box-img').css("background", "#000000").css("color", "#ffffff");
-      check_flag = check_flag + 1;
+      if(imgRandom == 1){
+        $(this).parent().siblings('.media-box-img').css("background-image", "url('assets/images/media1.jpg')").css("background-size", "100% 100%").css("background-repeat", "no-repeat").css("color", "#ffffff");
+        check_flag = check_flag + 1;
+      } 
+      else if (imgRandom == 2){
+        $(this).parent().siblings('.media-box-img').css("background-image", "url('assets/images/media2.jpg')").css("background-size", "100% 100%").css("background-repeat", "no-repeat").css("color", "#ffffff");
+        check_flag = check_flag + 1;
+      } 
     }
     else {
       check_flag = check_flag - 1;
       if (!check_flag){
-        $(this).parent().siblings('.media-box-img').css("background", "#cdcdcd").css("color", "#000000");
+        $(this).parent().siblings('.media-box-img').css("background-image", "none").css("background", "#cdcdcd").css("color", "#000000");
       };
     };
   });
@@ -382,16 +389,25 @@ function showBarChart(data){
     width = 900 - margin.left - margin.right,
     height = 350 - margin.top - margin.bottom;
 
-    var formatPercent = d3.format(".0%");
+    barOuterPad = 24;
+    barPad = 24;
+
+    //widthForBars = width - (barOuterPad * 2);
+    barWidth = 24;
+    //var formatPercent = d3.format(".0%");
 
     var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .1, 1);
+    .rangeRoundBands([0, width], 0.5, 0.1);
+
+    //var x = d3.scale.linear()
+    //.range([0,width])
 
     var y = d3.scale.linear()
     .range([height, 0]);
 
     var xAxis = d3.svg.axis()
     .scale(x)
+    //.attr("transform", "translate(#{barOuterPad}, 0)")
     .orient("bottom");
 
     var yAxis = d3.svg.axis()
@@ -425,6 +441,7 @@ function showBarChart(data){
     .attr("transform", "translate(0," + height + ")")
     .call(xAxis)
     .selectAll("text")
+    //.style("text-anchor", "start")
     .attr("transform", "rotate(-25)")
     .attr("y", "20")
     .attr("x", "-10");
@@ -446,8 +463,9 @@ function showBarChart(data){
     .attr("class", "bar")
     .style('fill','#7381A5')
     .style('fill-opacity','9')
-    .attr("x", function(d) { return x(d.tablename); })
-    .attr("width", /*'24px'*/x.rangeBand())
+    //.attr("x", function(d) { return x(d.tablename); })
+    .attr('x', (d, i) => (barWidth * i) + (i * barPad) + barOuterPad)
+    .attr("width", barWidth/*'24px'x.rangeBand()*/)
     .attr("y", function(d) { return y(d.total); })
     .attr("height", function(d) { return height - y(d.total); })
     .on("mouseover", function(d) {    
@@ -466,7 +484,7 @@ function showBarChart(data){
       .duration(500)    
       .style("opacity", 0); 
     });
-    svg.selectAll('.axis line, .axis path')
+    svg.selectAll('.axis path')
     .style({'stroke': '#000', 'fill': 'none', 'shape-rendering': 'crispEdges'});
     svg.selectAll('.x.axis path')
     .style({'display': 'inherit'});
@@ -496,7 +514,8 @@ function showBarChart(data){
 
       transition.selectAll(".bar")
       .delay(delay)
-      .attr("x", function(d) { return x0(d.tablename); });
+      //.attr("x", function(d) { return x0(d.tablename); });
+      .attr('x', (d, i) => (barWidth * i) + (i * barPad) + barOuterPad);
 
       transition.select(".x.axis")
       .call(xAxis)

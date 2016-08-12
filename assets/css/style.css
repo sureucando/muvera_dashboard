@@ -630,7 +630,8 @@ input, textarea, select {
 	}
 
 	.media-box-cont>label:hover {
-		border: 0.1em solid #cdcdcd;
+		margin: -1px 0 0 3.5px;
+		border: 1px solid #cdcdcd;
 		border-radius: 3px;
 		background: #dedede;
 		position: absolute;
