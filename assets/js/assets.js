@@ -115,7 +115,6 @@ $(document).ready(function(){
   });
 
   /* Media Chooser */
-  var check_flag = 0;
   $(".media-box").hover(function(){
     $(this).children(".media-box-img").css("display", "none");
   },
@@ -123,23 +122,28 @@ $(document).ready(function(){
     $(this).children(".media-box-img").css("display", "inline-block");
   });
 
+  var checkflag = {A:0,B:0,C:0,D:0,E:0,F:0,G:0,H:0,I:0,J:0,K:0,L:0,M:0,N:0,O:0,P:0,Q:0,R:0,S:0,T:0,U:0,V:0,W:0,X:0,Y:0,Z:0};
   $("input[type='checkbox']").change(function(){
-    var imgRandom = Math.floor(Math.random() * 2) + 1  ;
+    var imgRandom = Math.floor(Math.random() * 2) + 1;
+    var boxname = $(this).parent().siblings('.media-box-img').text();
+    console.log(boxname);
     if(this.checked){
+      checkflag[boxname] = checkflag[boxname] + 1;
       if(imgRandom == 1){
         $(this).parent().siblings('.media-box-img').css("background-image", "url('assets/images/media1.jpg')").css("background-size", "100% 100%").css("background-repeat", "no-repeat").css("color", "#ffffff");
-        check_flag = check_flag + 1;
+
       } 
       else if (imgRandom == 2){
         $(this).parent().siblings('.media-box-img').css("background-image", "url('assets/images/media2.jpg')").css("background-size", "100% 100%").css("background-repeat", "no-repeat").css("color", "#ffffff");
-        check_flag = check_flag + 1;
-      } 
+      };
+      console.log(checkflag);
     }
     else {
-      check_flag = check_flag - 1;
-      if (!check_flag){
+      checkflag[boxname] = checkflag[boxname] - 1;
+      if (checkflag[boxname] == 0){
         $(this).parent().siblings('.media-box-img').css("background-image", "none").css("background", "#cdcdcd").css("color", "#000000");
       };
+      console.log(checkflag);
     };
   });
 
@@ -397,10 +401,9 @@ function showBarChart(data){
     //var formatPercent = d3.format(".0%");
 
     var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], 0.5, 0.1);
+    .rangeRoundBands([0, width], 0.5);
 
-    //var x = d3.scale.linear()
-    //.range([0,width])
+    //var x = (d, i) => (barWidth * i) + (i * barPad) + barOuterPad;
 
     var y = d3.scale.linear()
     .range([height, 0]);
@@ -463,9 +466,9 @@ function showBarChart(data){
     .attr("class", "bar")
     .style('fill','#7381A5')
     .style('fill-opacity','9')
-    //.attr("x", function(d) { return x(d.tablename); })
-    .attr('x', (d, i) => (barWidth * i) + (i * barPad) + barOuterPad)
-    .attr("width", barWidth/*'24px'x.rangeBand()*/)
+    .attr("x", function(d) { return x(d.tablename); })
+    //.attr('x', (d, i) => (barWidth * i) + (i * barPad) + barOuterPad)
+    .attr("width", /*barWidth'24px'*/x.rangeBand())
     .attr("y", function(d) { return y(d.total); })
     .attr("height", function(d) { return height - y(d.total); })
     .on("mouseover", function(d) {    
@@ -514,8 +517,8 @@ function showBarChart(data){
 
       transition.selectAll(".bar")
       .delay(delay)
-      //.attr("x", function(d) { return x0(d.tablename); });
-      .attr('x', (d, i) => (barWidth * i) + (i * barPad) + barOuterPad);
+      .attr("x", function(d) { return x0(d.tablename); });
+      //.attr('x', (d, i) => (barWidth * i) + (i * barPad) + barOuterPad);
 
       transition.select(".x.axis")
       .call(xAxis)
