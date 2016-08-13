@@ -8,23 +8,26 @@
 	<!-- Style -->
 	<link rel="stylesheet" href="assets/css/jquery-ui.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<!--<link rel="stylesheet" href="assets/css/style-s.css">-->
 </head>
 
 <body>
 	<!-- Header Bar -->
+	<div class="wrapper">
 	<div id="header">
 		<div class="header-container">
 			<div class="header-left">
-				<div class="header-logo">Muvera</div>
+				<a class="header-logo">Muvera</a> <!-- href="<?php //echo base_url(); ?>" -->
+			</div>
+			<div class="header-mid">
+				<div class="header-mediaonline">MEDIA ONLINE</div>
+				<div class="header-twitter">TWITTER</div>
+				<div class="header-facebook">FACEBOOK</div>
 			</div>
 			<div class="header-right">
 				<div class="header-login">Log In</div>
-				<div class="header-dashboard">DASHBOARD</div>
-			</div>
-			<div class="header-mid">
-				<div class="header-mediaonline header-active">MEDIA ONLINE</div>
-				<div class="header-twitter">TWITTER</div>
-				<div class="header-facebook">FACEBOOK</div>
+				<a class="header-contactus" href="<?php echo base_url('contact_us'); ?>">Contact Us</a>
+				<div class="header-dashboard"><img src="assets\images\dashboard-icon.png">DASHBOARD</div>
 			</div>
 		</div>
 	</div>

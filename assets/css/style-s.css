@@ -1,100 +1,5 @@
-/*** CSS For Muvera ***/
-
-@font-face {
-	font-family: 'AvenirNext';
-	src: url('type/AvenirNextLTPro-Regular.woff') format('woff');
-}
-@font-face {
-	font-family: 'AvenirNextBold';
-	src: url('type/AvenirNext-Bold.woff') format('woff');
-}
-@font-face {
-	font-family: 'AvenirNextMed';
-	src: url('type/AvenirNext-Medium.woff') format('woff');
-}
-@font-face {
-	font-family: 'AvenirNextUltraLight';
-	src: url('type/AvenirNext-UltraLight.woff') format('woff');
-}
-@font-face {
-	font-family: 'AvenirLight';
-	src: url('type/Avenir-Light.woff') format('woff');
-}
-@font-face {
-	font-family: 'GothamMed';
-	src: url('type/Gotham-Med.woff') format('woff');
-}
-
-html {
-	font-family: 'AvenirNext';
-	font-size: 10pt;
-	width: 100%;
-	height: 100%;
-	line-height: 1.28578;
-	-webkit-font-smoothing: subpixel-antialiasied;
-	text-rendering: optimizeLegibility;
-}
-
-body {
-	margin: 0px;
-	padding: 0px;
-	height: 100%;
-	background-color: #eaeaea;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-}
-
-div {
-	display: block;
-}
-
-a {
-	color: #fff;
-	text-decoration: none; 
-}
-
-table {
-	text-align: center;
-	border: none;
-}
-th, tr{
-	border: none;
-}
-td{
-	border: none;
-}
-
-select {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-}
-
-input, textarea, select {
-	outline: none;
-}
-
-.wrapper {
-	text-align: center;
-	vertical-align: bottom;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-}
-
-/* For Landing Page */
-.btn-landing {
-	margin: auto;
-	width: 50%;
-	vertical-align: middle;
-}
-/* End Of Landing Page */
-
-/* 1000px */
-/*@media only screen and (min-width: 1000px) {*/
-/* For Dashboard */
+/* Small View */
+@media only screen and (max-width: 1000px) {
 	/* Header Bar */
 	#header {
 		position: fixed;
@@ -112,13 +17,11 @@ input, textarea, select {
 	}
 
 	.header-left {
-		text-align: left;
 		position: fixed;
 		width: 25%;
 	}
 
 	.header-right {
-		text-align: right;
 		position: fixed;
 		width: 25%;
 	}
@@ -133,7 +36,6 @@ input, textarea, select {
 	.header-mediaonline {
 		position: fixed;
 		padding: 18px 20px;
-		display: none;
 	}
 
 	.header-twitter {
@@ -154,52 +56,34 @@ input, textarea, select {
 		padding: 7px 12px;
 		color: #FFFFFF;
 		font-family: "GothamMed";
-		font-size: 3.04em;
-		line-height: 1em;
+		font-size: 27.83pt;
+		line-height: 27.84pt;
 	}
 
 	.header-dashboard {
 		position: fixed;
 		right: 20%;
-		background: #7381A5;
-		background: linear-gradient(to right, #856F9E, #7381A5);
-		background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
+		background: #F27321;
+		background: linear-gradient(to right, #E41E79, #F27321);
+		background: -webkit-linear-gradient(left, #E41E79 , #F27321); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #E41E79, #F27321); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #E41E79, #F27321); /* For Firefox 3.6 to 15 */
 		color: #FFFFFF;
-		height: 28px;
-		padding: 11px 15px;
-	}
-
-	.header-dashboard img {
-		vertical-align: middle;
-		width: 23px;
-		height: 29px;
-		padding-right: 15px;
+		height: 14px;
+		padding: 18px 15px;
 	}
 
 	.header-login {
 		position: fixed;
-		top: 10px;
-		right: 10%;
-		padding: 5px 25px; 
-		color: #FFFFFF;
-	}
-
-	.header-contactus {
-		position: fixed;
-		top: 10px;
 		right: 0;
-		padding: 5px 25px; 
+		padding: 17px 53px; 
 		color: #FFFFFF;
-		border-left: 1px solid #ffffff;
 	}
 
 	.header-mediaonline:hover,
 	.header-facebook:hover,
 	.header-twitter:hover,
-	.header-login:hover,
-	.header-contactus:hover {
+	.header-login:hover {
 		cursor: pointer;
 		color: #565B68;
 	}
@@ -243,47 +127,32 @@ input, textarea, select {
 		width: 100%;
 		background-color: #eaeaea;
 		overflow-y: scroll;
+		overflow-x: hidden;
 	}
 
-	@media only screen and (min-width:1024px){
-		.content-container {
-			min-height: 100%;
-			height: auto !important;
-			height: 100%;
-			background-color: #fff;
-			margin: 0 9.5%;
-			padding: 0px 35px 55px 35px;
-			text-align: center;
-		}
-	}
-
-	@media only screen and (max-width:1024px){
-		.content-container {
-			min-height: 100%;
-			height: auto !important;
-			height: 100%;
-			background-color: #fff;
-			margin: 0;
-			padding: 0px 35px 55px 35px;
-			text-align: center;
-		}
+	.content-container {
+		min-height: 100%;
+		height: auto !important;
+		height: 100%;
+		background-color: #fff;
+		margin: 0 9.5%;
+		padding: 0px 35px 55px 35px;
 	}
 
 	h1.content-title {
-		font-family: "AvenirNextBold";
 		margin-bottom: 20px;
 		text-align: center;
-		font-size: 5em;
+		font-size: 35px
 	}
 
 	/* Section */
 	.section-search {
-		height: 350px;
+		height: 300px;
 		padding-top: 20px;
 	}
 
 	.section-choice {
-		padding: 0 20px;
+		padding: 0;
 		height: auto;
 	}
 
@@ -338,7 +207,7 @@ input, textarea, select {
 
 	.form-container {
 		width: 100%;
-		padding: 20px;
+		padding: 10px;
 	}
 
 	.form-container>input,
@@ -353,8 +222,10 @@ input, textarea, select {
 	}
 
 	.form-container>.btn-md {
-		font-size: 125%;
+		font-size: 125%; 
+		width: 125px;
 	}
+
 
 	/* Form */
 	form#search-form{
@@ -367,31 +238,27 @@ input, textarea, select {
 
 	/* Search Word */
 	#search-container {
-		text-align: left;
 		position: relative;
-		margin: 20px auto;
-		width: 66%;
+		margin: 20px 10%;
+		margin-right: 0;
 		height: 60px;
 	}
-	
-	.label-word {
-		display: none;
-	}
-	
+
 	input.search-keyword {
 		margin: 0 1.4%;
-		padding: 15px 1%;
-		width: 13.33%;
+		padding: 15px 10px;
+		width: 50px;
 		color: #cdcdcd;
-		font-size: 1.2em;
+		font-size: 75%;
 		border: 3px solid #dcdcdc;
 		border-radius: 2px;
+		float: left;
 		cursor: pointer;
 	}
 
 	input.search-keyword-main:hover, 
 	input.search-keyword-main:focus {
-		border-left: 3px solid #856F9E;
+		border-left: 3px solid #E41E79;
 		color: #565B68;
 	}
 
@@ -428,10 +295,6 @@ input, textarea, select {
 		height: 350px;
 	}
 
-	.report-chart {
-		text-align: left;
-	}
-
 	/*
 	.chart-container {
 		margin-bottom: 20px;
@@ -463,64 +326,46 @@ input, textarea, select {
 
 	/* Datepicker */
 	.get-time {
-		font-family: "AvenirLight";
-		text-align: center;
-		width: 65%;
-		margin: 1% auto;
+		position: relative;
+		width: 73%;
+		margin: 1% 20%;
 	}
 
 	#datepicker-container {
-		/*width: inherit;*/
-		margin: 5px 0;
+		width: inherit;
+		margin: 1%;
+		float: left;
 	}
 
 	#timepicker-container {
-		/*margin: 1%;*/
-		margin: 5px 0;
+		width: inherit;
+		margin: 1%;
+		float: left;
 	}
 
 	.datepicker-from {
-		/*margin-right: 4%;*/
+		margin-right: 4%;
 	}
 
 	.timepicker-from {
-		/*margin-right: 0.8%;*/ 
+		margin-right: 0.8%; 
 	}
 
-	.datepicker-from, .datepicker-to, 
+	.datepicker-from, .datepicker-to/*,
+	.timepicker-from, .timepicker-to*/ {
+		background: #B9C0FF;
+		float: left;
+	}
+
 	.timepicker-from, .timepicker-to {
-		display: inline-block;
-		/*float: left;*/
-	}
-
-	.datepicker-from, .datepicker-to {
-		background: #A5B6D6;
-		/*float: left;*/
-	}
- 
-	.timepicker-from, .timepicker-to {
+		margin-left: 3%;
 		background: #dcdcdc;
-		/*float: left;*/
-	}
-
-	.datepicker-from label, .datepicker-to label 
-	/*,.timepicker-from, .timepicker-to*/ {
-		width: 76.8px;
-		background: #A5B6D6;
-		/*float: left;*/
-	}
-
-	.timepicker-from input, .timepicker-to input {
-		/*margin-left: 8.9%;*/
-		background: #dcdcdc;
-		/*float: left;*/
+		float: left;
 	}
 
 	input.from-date, input.to-date,
 	input.from-time, input.to-time,
 	select.from-period, select.to-period {
-		font-family: "AvenirLight";
-		font-style: ;
 		border: none;
 		background: #dcdcdc;
 		height: 2.4em;
@@ -530,17 +375,17 @@ input, textarea, select {
 	}
 
 	input.from-date, input.to-date {
-		width: 10em;
+		width: 5em;
 		padding: 0 1em;
 	}
 
 	input.from-time, input.to-time {
-		width: 3.7em;
+		width: 3.0em;
 	}
 
 	select.from-period, select.to-period {
-		background: #A5B6D6;
-		width: 3.9em;
+		background: #B9C0FF;
+		width: 3.0em;
 		padding-left: 15px;
 	}
 
@@ -578,74 +423,52 @@ input, textarea, select {
 		border: none;
 		height: 50px;
 		width: 400px;
-		font-size: 1.2em;
+		font-size: 12pt;
 	}
 
 	#datepicker-container label,
 	#timepicker-container label {
-		margin: auto;
-		padding: 0 10px;
+		margin: 0;
+		padding: 9px 10px;
 	}
 
 	/* Choose Media */
-	@media only screen and (min-width:1024px){
-			.media-container {
-			text-align: left;
-			width: 87.50%;
-			margin: 0 auto;
-			padding: 0;
-		}
+	.media-container {
+		margin: 0 2.7%;
+		padding: 0;
 	}
-
-	@media only screen and (max-width:1024px){
-		.media-container {
-			text-align: left;
-			width: 97%;
-			margin: 0 auto;
-			padding: 0;
-		}
-	}
-
-	
 
 	.media-box {
-		font-family: "AvenirNextBold";
 		display: inline-block;
 		border: 1px solid #cdcdcd;
-		width: 115px;
-		height: 140px;
+		width: 70px;
+		height: 80px;
 		margin: 0.1%;
 		overflow-y: auto;
-		overflow-x: hidden;
 	}
 
 	.media-box-cont {
-		font-family: "AvenirNext";
-		margin: 5px 0 0 5px;
 		width: 100%;
-		font-size: 1.35em;
 		overflow-x: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
 
 	.media-box-cont>label:hover {
-		margin: -1px 0 0 3.5px;
-		border: 1px solid #cdcdcd;
+		border: 0.1em solid #cdcdcd;
 		border-radius: 3px;
 		background: #dedede;
 		position: absolute;
 		display: inline-block;
-		z-index: 3;
 	}
 
 	.media-box-img {
 		position: absolute;
 		display: inline-block;
 		background: #cdcdcd;
-		width: 115px;
-		height: 140px;
-		font-size: 8.2em;
+		width: 70px;
+		height: 80px;
+		font-size: 500%;
 		text-align: center;
 	}
 	/*
@@ -682,7 +505,7 @@ input, textarea, select {
 
 	.btn-media-md label {
 		padding: 5.28% 0;
-		font-size: 2.4em;
+		font-size: 24pt;
 		line-height: 24pt;
 		height: 100%;
 		width: 100%;
@@ -690,7 +513,7 @@ input, textarea, select {
 
 	.btn-media-lg label {
 		padding: 25px 0px;
-		font-size: 3.4em;
+		font-size: 34pt;
 		line-height: 34pt;
 		height: 50px;
 		width: 437px;
@@ -724,11 +547,11 @@ input, textarea, select {
 	}
 
 	.btn-orange {
-		background: #7381A5;
-		background: linear-gradient(to right, #856F9E, #7381A5);
-		background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
+		background: #F27321;
+		background: linear-gradient(to right, #E41E79, #F27321);
+		background: -webkit-linear-gradient(left, #E41E79 , #F27321); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #E41E79, #F27321); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #E41E79, #F27321); /* For Firefox 3.6 to 15 */
 		color: #fff;
 	}
 
@@ -751,13 +574,12 @@ input, textarea, select {
 	}
 
 	.btn-blue:hover,
-	.btn-blue.selected {
-		background: #29f380;
-		background: linear-gradient(to right, #29f380, #29f380);
-		background: -webkit-linear-gradient(left, #29f380 , #29f380); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #29f380, #29f380); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #29f380, #29f380); /* For Firefox 3.6 to 15 */
-		color: #fff;
+	.btn-blue:selected {
+		background: #F27321;
+		background: linear-gradient(to right, #E41E79, #F27321);
+		background: -webkit-linear-gradient(left, #E41E79 , #F27321); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #E41E79, #F27321); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #E41E79, #F27321); /* For Firefox 3.6 to 15 */ 
 	}
 
 	.btn-green {
@@ -782,8 +604,8 @@ input, textarea, select {
 		border-radius: 50px;
 		width: 46.74%;
 		margin: 55px auto;
-		padding: 1.23% 15%;
-		font-size: 1.4em;
+		padding: 1.23% 0 1.23% 29.47%;
+		font-size: 14pt;
 		box-shadow: 0 15px 15px rgba(0,0,0,0.15);
 	}
 
@@ -797,7 +619,7 @@ input, textarea, select {
 		border-radius: 50px;
 		width: 100px;
 		height: 100px;
-		margin: 0 auto;
+		margin: 0 15px;
 	}
 
 	.btn-rnd>img {
@@ -807,20 +629,20 @@ input, textarea, select {
 	}
 
 	.btn-sm {
-		border-radius: 7px;
-		width: 10%;
+		border-radius: 50px;
+		width: 7%;
 		margin: 10px auto;
-		padding: 0.5% 0 0.5% 0.19%;
+		padding: 0.07% 0 0.07% 0.19%;
 		font-size: 0.45em;
 	}
 
 	.btn-md {
 		border-radius: 5px;
 		text-align: center;
-		width: 25%;
+		width: 418px;
 		margin: 20px auto;
-		padding: 7px 0;
-		font-size: 2em;
+		padding: 5px 0;
+		font-size: 12pt;
 	}
 
 	.btn-lg {
@@ -829,7 +651,7 @@ input, textarea, select {
 		width: 73.24%;
 		margin: 30px auto;
 		padding: 10px 0;
-		font-size: 1.4em;
+		font-size: 14pt;
 		box-shadow: 0 5px 5px rgba(0,0,0,0.15);
 	}
 
@@ -883,7 +705,7 @@ input, textarea, select {
 
 	/* Chart */
 	.arc text {
-	  font: 1em sans-serif;
+	  font: 10px sans-serif;
 	  text-anchor: middle;
 	}
 
@@ -897,12 +719,11 @@ input, textarea, select {
 	    width: 60px;          
 	    height: 28px;         
 	    padding: 2px;       
-	    font: 1.2em sans-serif;    
+	    font: 12px sans-serif;    
 	    background: lightsteelblue; 
 	    border: 0px;    
 	    border-radius: 8px;     
 	    pointer-events: none;     
-	    z-index: 5;
 	}
 
-/*}*/
+}

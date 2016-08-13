@@ -5,6 +5,12 @@ var flagdl, flagsh;
 /* Start Of Function */
 
 $(document).ready(function(){
+  $('.content').css("height", "100%").css("height", "-=50px");
+
+  $(window).on("resize", function () {
+    $('.content').css("height", "100%").css("height", "-=50px");
+  }).resize();
+
   flagdl = true;
   flagsh = true;
 
@@ -27,33 +33,30 @@ $(document).ready(function(){
     });
 
   /* Search Keyword */
-  $('.search-keyword-main').click(function(){
-    $('.search-keyword-tax').css('display', 'inline-block');
-  });
-  /*$('.tax1').click(function(){
-    $('.tax2').css('display', 'inline-block');
-  });
-  $('.tax2').click(function(){
-    $('.tax3').css('display', 'inline-block');
-  });
-  $('.tax3').click(function(){
-    $('.tax4').css('display', 'inline-block');
-  });
-
-  $('.search-keyword-main').hover(function(){
+  $('.search-keyword-main').focus(function(){
     $('.tax1').css('display', 'inline-block');
-  }), function(){
-    $('.tax1').css('display', 'none');
-  };
-  $('.tax1').hover(function(){
+//    $(this).blur(function(){
+//      $('.tax1').css('display', 'none');
+//    });
+  });
+  $('.tax1').focus(function(){
     $('.tax2').css('display', 'inline-block');
+//    $(this).blur(function(){
+//      $('.tax2').css('display', 'none');
+//    });
   });
-  $('.tax2').hover(function(){
+  $('.tax2').focus(function(){
     $('.tax3').css('display', 'inline-block');
+//    $(this).blur(function(){
+//      $('.tax3').css('display', 'none');
+//    });
   });
-  $('.tax3').hover(function(){
+  $('.tax3').focus(function(){
     $('.tax4').css('display', 'inline-block');
-  });*/
+//    $(this).blur(function(){
+//      $('.tax4').css('display', 'none');
+//    });
+  });
 
   /* Generate Report */
   /*$('#btn-generate').click(function(){
@@ -62,6 +65,15 @@ $(document).ready(function(){
     //$(this).attr('style', 'pointer-events: none;');
     //$(this).addClass('selected');
   });*/
+
+  /* Get In Touch Button */
+  $('#btn-git').click(function(){
+    $('#get-in-touch').fadeOut(500, function(){
+      $('.content-container').css('padding', '0');
+      $('.section-cs').css('margin', '0').css('padding', '0').css('textAlign', 'left');
+      $('#contact-us-form').fadeIn(500);
+    });
+  });
 
   /*Download Button*/
   $('#report-dl').click(function(){
@@ -101,8 +113,73 @@ $(document).ready(function(){
       flagsh = true; 
     };
   });
-});
 
+  /* Media Chooser */
+  $(".media-box").hover(function(){
+    $(this).children(".media-box-img").css("display", "none");
+  },
+  function(){
+    $(this).children(".media-box-img").css("display", "inline-block");
+  });
+
+  var checkflag = {A:0,B:0,C:0,D:0,E:0,F:0,G:0,H:0,I:0,J:0,K:0,L:0,M:0,N:0,O:0,P:0,Q:0,R:0,S:0,T:0,U:0,V:0,W:0,X:0,Y:0,Z:0};
+  $("input[type='checkbox']").change(function(){
+    var imgRandom = Math.floor(Math.random() * 2) + 1;
+    var boxname = $(this).parent().siblings('.media-box-img').text();
+    console.log(boxname);
+    if(this.checked){
+      checkflag[boxname] = checkflag[boxname] + 1;
+      if(imgRandom == 1){
+        $(this).parent().siblings('.media-box-img').css("background-image", "url('assets/images/media1.jpg')").css("background-size", "100% 100%").css("background-repeat", "no-repeat").css("color", "#ffffff");
+
+      } 
+      else if (imgRandom == 2){
+        $(this).parent().siblings('.media-box-img').css("background-image", "url('assets/images/media2.jpg')").css("background-size", "100% 100%").css("background-repeat", "no-repeat").css("color", "#ffffff");
+      };
+      console.log(checkflag);
+    }
+    else {
+      checkflag[boxname] = checkflag[boxname] - 1;
+      if (checkflag[boxname] == 0){
+        $(this).parent().siblings('.media-box-img').css("background-image", "none").css("background", "#cdcdcd").css("color", "#000000");
+      };
+      console.log(checkflag);
+    };
+  });
+
+  /* Input Placeholder */
+  $('input').focus(function(){
+    var placeholder = $(this).attr('placeholder');
+    $(this).attr('placeholder', '');
+    $('input').blur(function(){
+      $(this).attr('placeholder', placeholder);
+    });
+  });
+  /* Textarea Placeholder */
+  $('textarea').focus(function(){
+    var placeholder = $(this).attr('placeholder');
+    $(this).attr('placeholder', '');
+    $('textarea').blur(function(){
+      $(this).attr('placeholder', placeholder);
+    });
+  });
+
+});
+/* End Of Window Function */
+
+/* Compute Height */
+/*var setElementHeight = function () {
+  var conth = $('.window').height() - $('.header').height();
+  $('.content').css('height', (conth));
+  var height1 = $('.section-search').height() + $('.section-choice').height() + $('.header').height();
+  $('#search-form').css('height', (height1));
+  var height2 = $('#search-form').height() + $('.section-report').height();
+  $('.content-container').css('height', (height2));
+};
+
+$(window).on("resize", function () {
+  setElementHeight();
+}).resize();*/
 
 /* Datepicker */
 /*$(function() {
@@ -311,133 +388,147 @@ function showMultiLineChart(data){
 }
 
 function showBarChart(data){
-  d3.select("#pie_chart_visualisation").selectAll("svg").remove(); //remove all svg element
-  var margin = {top: 50, right: 20, bottom: 50, left: 40},
-  width = 900 - margin.left - margin.right,
-  height = 350 - margin.top - margin.bottom;
+    d3.select("#pie_chart_visualisation").selectAll("svg").remove(); //remove all svg element
+    var margin = {top: 50, right: 20, bottom: 50, left: 40},
+    width = 900 - margin.left - margin.right,
+    height = 350 - margin.top - margin.bottom;
 
-  var formatPercent = d3.format(".0%");
+    barOuterPad = 24;
+    barPad = 24;
 
-  var x = d3.scale.ordinal()
-  .rangeRoundBands([0, width], .1, 1);
+    //widthForBars = width - (barOuterPad * 2);
+    barWidth = 24;
+    //var formatPercent = d3.format(".0%");
 
-  var y = d3.scale.linear()
-  .range([height, 0]);
+    var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], 0.5);
 
-  var xAxis = d3.svg.axis()
-  .scale(x)
-  .orient("bottom")
+    //var x = (d, i) => (barWidth * i) + (i * barPad) + barOuterPad;
 
-  var yAxis = d3.svg.axis()
-  .scale(y)
-  .orient("left")
-  //.tickFormat(formatPercent);
+    var y = d3.scale.linear()
+    .range([height, 0]);
 
-  var svg = d3.select("#pie_chart_visualisation").append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  .attr("id", 'ResultChart')
-  .append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var xAxis = d3.svg.axis()
+    .scale(x)
+    //.attr("transform", "translate(#{barOuterPad}, 0)")
+    .orient("bottom");
 
-  // Define the div for the tooltip
-  var div = d3.select("#pie_chart_visualisation").append("div") 
-  .attr("class", "tooltip")
-  .attr("id", "tooltip-barchart")
-  .style("opacity", 0);
+    var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+    //.tickFormat(formatPercent);
+
+    var svg = d3.select("#pie_chart_visualisation").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("id", 'ResultChart')
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // Define the div for the tooltip
+    var div = d3.select("#pie_chart_visualisation").append("div") 
+    .attr("class", "tooltip")
+    .attr("id", "tooltip-barchart")
+    .style("opacity", 0);
 
 
-  data.forEach(function(d) {
-    d.total = +d.total;
-  });
+    data.forEach(function(d) {
+      d.total = +d.total;
+    });
 
-  x.domain(data.map(function(d) { return d.tablename; }));
-  y.domain([0, d3.max(data, function(d) { return d.total; })]);
+    x.domain(data.map(function(d) { return d.tablename; }));
+    y.domain([0, d3.max(data, function(d) { return d.total; })]);
 
-  svg.append("g")
-  .attr("class", "x axis")
-  .attr("transform", "translate(0," + height + ")")
-  .call(xAxis)
-  .selectAll("text")
-  .attr("transform", "rotate(-25)")
-  .attr("y", "20")
-  .attr("x", "-10");
-
-  svg.append("g")
-  .attr("class", "y axis")
-  .call(yAxis)
-  .append("text")
-  .attr("transform", "rotate(-90)")
-  .attr("y", 6)
-  .attr("dy", ".71em")
-  .style("text-anchor", "end")
-  .style('font', '10px "AvenirNext"')
-  .text("Frequency");
-
-  svg.selectAll(".bar")
-  .data(data)
-  .enter().append("rect")
-  .attr("class", "bar")
-  .style('fill','#00FFB3')
-  .style('fill-opacity','9')
-  .attr("x", function(d) { return x(d.tablename); })
-  .attr("width", x.rangeBand())
-  .attr("y", function(d) { return y(d.total); })
-  .attr("height", function(d) { return height - y(d.total); })
-  .on("mouseover", function(d) {    
-    div.transition()    
-    .duration(200)    
-    .style("opacity", .9);    
-    div .html(d.tablename + "<br/>"  + d.total)  
-    .style("left", (d3.event.pageX - 200) + "px")   
-    .style("top", (d3.event.pageY - 28) + "px");  
-  })          
-  .on("mouseout", function(d) {   
-    div.transition()    
-    .duration(500)    
-    .style("opacity", 0); 
-  });
-  svg.selectAll('.axis line, .axis path')
-  .style({'stroke': '#000', 'fill': 'none', 'shape-rendering': 'crispEdges'});
-  svg.selectAll('.x.axis path')
-  .style({'display': 'none'});
-  svg.selectAll('.axis text')
-  .style({'font': '10px "AvenirNext"'});
-  d3.select("#sort_bar").on("change", change);
-
-  var sortTimeout = setTimeout(function() {
-    d3.select("#sort_bar").property("checked", true).each(change);
-  }, 2000);
-
-  function change() {
-    clearTimeout(sortTimeout);
-
-    // Copy-on-write since tweens are evaluated after a delay.
-    var x0 = x.domain(data.sort(this.checked
-      ? function(a, b) { return b.total - a.total; }
-      : function(a, b) { return d3.ascending(a.tablename, b.tablename); })
-    .map(function(d) { return d.tablename; }))
-    .copy();
-
-    svg.selectAll(".bar")
-    .sort(function(a, b) { return x0(a.tablename) - x0(b.tablename); });
-
-    var transition = svg.transition().duration(750),
-    delay = function(d, i) { return i * 50; };
-
-    transition.selectAll(".bar")
-    .delay(delay)
-    .attr("x", function(d) { return x0(d.tablename); });
-
-    transition.select(".x.axis")
+    svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
     .call(xAxis)
-    .selectAll("g")
-    .delay(delay)
     .selectAll("text")
+    //.style("text-anchor", "start")
+    .attr("transform", "rotate(-25)")
     .attr("y", "20")
     .attr("x", "-10");
-  }
-}
+
+    svg.append("g")
+    .attr("class", "y axis")
+    .call(yAxis)
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+    .style('font', '12px "AvenirNext"')
+    .text("Frequency");
+
+    svg.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .style('fill','#7381A5')
+    .style('fill-opacity','9')
+    .attr("x", function(d) { return x(d.tablename); })
+    //.attr('x', (d, i) => (barWidth * i) + (i * barPad) + barOuterPad)
+    .attr("width", /*barWidth'24px'*/x.rangeBand())
+    .attr("y", function(d) { return y(d.total); })
+    .attr("height", function(d) { return height - y(d.total); })
+    .on("mouseover", function(d) {    
+      div.transition()    
+      .duration(200)    
+      .style("opacity", .9);    
+      div.html(d.tablename + "<br/>"  + d.total)
+      .style("width", "auto")
+      .style("height", "auto")
+      .style("padding", "5px")
+      .style("left", (d3.event.pageX - 30) + "px")   
+      .style("top", (d3.event.pageY + 1240) + "px");  
+    })          
+    .on("mouseout", function(d) {   
+      div.transition()    
+      .duration(500)    
+      .style("opacity", 0); 
+    });
+    svg.selectAll('.axis path')
+    .style({'stroke': '#000', 'fill': 'none', 'shape-rendering': 'crispEdges'});
+    svg.selectAll('.x.axis path')
+    .style({'display': 'inherit'});
+    svg.selectAll('.axis text')
+    .style({'font': '12px "AvenirNext"'});
+    d3.select("#sort_bar").on("change", change);
+
+    var sortTimeout = setTimeout(function() {
+      d3.select("#sort_bar").property("checked", true).each(change);
+    }, 2000);
+
+    function change() {
+      clearTimeout(sortTimeout);
+
+      // Copy-on-write since tweens are evaluated after a delay.
+      var x0 = x.domain(data.sort(this.checked
+        ? function(a, b) { return b.total - a.total; }
+        : function(a, b) { return d3.ascending(a.tablename, b.tablename); })
+      .map(function(d) { return d.tablename; }))
+      .copy();
+
+      svg.selectAll(".bar")
+      .sort(function(a, b) { return x0(a.tablename) - x0(b.tablename); });
+
+      var transition = svg.transition().duration(750),
+      delay = function(d, i) { return i * 50; };
+
+      transition.selectAll(".bar")
+      .delay(delay)
+      .attr("x", function(d) { return x0(d.tablename); });
+      //.attr('x', (d, i) => (barWidth * i) + (i * barPad) + barOuterPad);
+
+      transition.select(".x.axis")
+      .call(xAxis)
+      .selectAll("g")
+      .delay(delay)
+      .selectAll("text")
+      .attr("y", "20")
+      .attr("x", "-10");
+    }
+  };
 
 function showPieChart(data) {
   d3.select("#pie_chart_visualisation").selectAll("svg").remove(); //remove all svg element
