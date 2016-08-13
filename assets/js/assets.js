@@ -126,7 +126,7 @@ $(document).ready(function(){
   $("input[type='checkbox']").change(function(){
     var imgRandom = Math.floor(Math.random() * 2) + 1;
     var boxname = $(this).parent().siblings('.media-box-img').text();
-    console.log(boxname);
+    //console.log(boxname);
     if(this.checked){
       checkflag[boxname] = checkflag[boxname] + 1;
       if(imgRandom == 1){
@@ -136,14 +136,14 @@ $(document).ready(function(){
       else if (imgRandom == 2){
         $(this).parent().siblings('.media-box-img').css("background-image", "url('assets/images/media2.jpg')").css("background-size", "100% 100%").css("background-repeat", "no-repeat").css("color", "#ffffff");
       };
-      console.log(checkflag);
+      //console.log(checkflag);
     }
     else {
       checkflag[boxname] = checkflag[boxname] - 1;
       if (checkflag[boxname] == 0){
         $(this).parent().siblings('.media-box-img').css("background-image", "none").css("background", "#cdcdcd").css("color", "#000000");
       };
-      console.log(checkflag);
+      //console.log(checkflag);
     };
   });
 
@@ -479,8 +479,8 @@ function showBarChart(data){
       .style("width", "auto")
       .style("height", "auto")
       .style("padding", "5px")
-      .style("left", (d3.event.pageX - 30) + "px")   
-      .style("top", (d3.event.pageY + 1240) + "px");  
+      .style("left", (event.pageX - ($('#tooltip-barchart').width() / 2)) + "px")   
+      .style("top", (event.pageY - ($('#tooltip-barchart').height() / 2)) + "px");  
     })          
     .on("mouseout", function(d) {   
       div.transition()    
