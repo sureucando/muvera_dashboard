@@ -68,28 +68,28 @@
 						<div class="media-box">
 							<div class="media-box-img" iA">A</div>
 							<div class="media-box-cont">
-								<input id="Antara" type="checkbox" name="media[]" value="antaranews_data" >
+								<input id="Antara" type="checkbox" name="media[]" value="Antara" >
 								<label for="Antara">Antara</label>
 							</div>
 						</div>
 						<div class="media-box">
 							<div class="media-box-img">B</div>
 							<div class="media-box-cont">
-								<input id="BeritaSatu" type="checkbox" name="media[]" value="beritasatu_data">
+								<input id="BeritaSatu" type="checkbox" name="media[]" value="Berita Satu">
 								<label for="BeritaSatu">Berita Satu</label>
 							</div>
 						</div>
 						<div class="media-box">
 							<div class="media-box-img">C</div>
 							<div class="media-box-cont">
-								<input id="CNNIdn" type="checkbox" name="media[]" value="cnnindo_data" >
+								<input id="CNNIdn" type="checkbox" name="media[]" value="CNN Indonesia" >
 								<label for="CNNIdn">CNN Indonesia</label>
 							</div>
 						</div>
 						<div class="media-box">
 							<div class="media-box-img">D</div>
 							<div class="media-box-cont">
-								<input id="Detik" type="checkbox" name="media[]" value="detik_data" >
+								<input id="Detik" type="checkbox" name="media[]" value="Detik" >
 								<label for="Detik">Detik</label>
 							</div>
 						</div>
@@ -99,7 +99,7 @@
 						<div class="media-box">
 							<div class="media-box-img">F</div>
 							<div class="media-box-cont">
-								<input id="Fajar" type="checkbox" name="media[]" value="fajar_data" >
+								<input id="Fajar" type="checkbox" name="media[]" value="Fajar" >
 								<label for="Fajar">Fajar</label>
 							</div>
 						</div>
@@ -115,36 +115,36 @@
 						<div class="media-box">
 							<div class="media-box-img">J</div>
 							<div class="media-box-cont">
-								<input id="Jakarta Post" type="checkbox" name="media[]" value="jakpost_data" >
+								<input id="Jakarta Post" type="checkbox" name="media[]" value="Jakarta Post" >
 								<label for="Jakarta Post">Jakarta Post</label>
 							</div>
 							<div class="media-box-cont">
-								<input id="JPNN" type="checkbox" name="media[]" value="jpnn_data" >
+								<input id="JPNN" type="checkbox" name="media[]" value="JPNN" >
 								<label for="JPNN">JPNN</label>
 							</div>
 						</div>
 						<div class="media-box">
 							<div class="media-box-img">K</div>
 							<div class="media-box-cont">
-								<input id="Kompas" type="checkbox" name="media[]" value="kompas_data" >
+								<input id="Kompas" type="checkbox" name="media[]" value="Kompas" >
 								<label for="Kompas">Kompas</label>
 							</div>
 						</div>
 						<div class="media-box">
 							<div class="media-box-img">L</div>
 							<div class="media-box-cont">
-								<input id="Liputan6" type="checkbox" name="media[]" value="liputan6_data" >
+								<input id="Liputan6" type="checkbox" name="media[]" value="Liputan 6" >
 								<label for="Liputan6">Liputan6</label>
 							</div>
 						</div>
 						<div class="media-box">
 							<div class="media-box-img">M</div>
 							<div class="media-box-cont">
-								<input id="Merdeka" type="checkbox" name="media[]" value="merdeka_data" >
+								<input id="Merdeka" type="checkbox" name="media[]" value="Merdeka" >
 								<label for="Merdeka">Merdeka</label>
 							</div>
 							<div class="media-box-cont">
-								<input id="MetroTV" type="checkbox" name="media[]" value="metrotvnews_data" >
+								<input id="MetroTV" type="checkbox" name="media[]" value="Metro TV" >
 								<label for="MetroTV">Metro TV</label>
 							</div>
 						</div>
@@ -157,7 +157,7 @@
 						<div class="media-box">
 							<div class="media-box-img">P</div>
 							<div class="media-box-cont">
-								<input id="PojokSatu" type="checkbox" name="media[]" value="pojoksatu_data" >
+								<input id="PojokSatu" type="checkbox" name="media[]" value="Pojok Satu" >
 								<label for="PojokSatu">Pojok Satu</label>
 							</div>
 						</div>
@@ -167,41 +167,41 @@
 						<div class="media-box">
 							<div class="media-box-img">R</div>
 							<div class="media-box-cont">
-								<input id="Republika" type="checkbox" name="media[]" value="republika_data" >
+								<input id="Republika" type="checkbox" name="media[]" value="Republika" >
 								<label for="Republika">Republika</label>
 							</div>
 							<div class="media-box-cont">
-								<input id="Rima" type="checkbox" name="media[]" value="rimanews_data" >
+								<input id="Rima" type="checkbox" name="media[]" value="Rima" >
 								<label for="Rima">Rima</label>
 							</div>
 							<div class="media-box-cont">
-								<input id="RMOL" type="checkbox" name="media[]" value="rmol_data" >
+								<input id="RMOL" type="checkbox" name="media[]" value="RMOL" >
 								<label for="RMOL">RMOL</label>
 							</div>
 						</div>
 						<div class="media-box">
 							<div class="media-box-img">S</div>
 							<div class="media-box-cont">
-								<input id="Sindo" type="checkbox" name="media[]" value="sindonews_data" >
+								<input id="Sindo" type="checkbox" name="media[]" value="Sindo" >
 								<label for="Sindo">Sindo</label>
 							</div>
 							<div class="media-box-cont">
-								<input id="Suara" type="checkbox" name="media[]" value="suara_data" >
+								<input id="Suara" type="checkbox" name="media[]" value="Suara" >
 								<label for="Suara">Suara</label>
 							</div>
 						</div>
 						<div class="media-box">
 							<div class="media-box-img">T</div>
 							<div class="media-box-cont">
-								<input id="Tempo" type="checkbox" name="media[]" value="tempo_data" >
+								<input id="Tempo" type="checkbox" name="media[]" value="Tempo" >
 								<label for="Tempo">Tempo</label>
 							</div>
 							<div class="media-box-cont">
-								<input id="TeropongSenayan" type="checkbox" name="media[]" value="teropongsenayan_data" >
+								<input id="TeropongSenayan" type="checkbox" name="media[]" value="Teropong Senayan" >
 								<label for="TeropongSenayan">Teropong Senayan</label>
 							</div>
 							<div class="media-box-cont">
-								<input id="Tribun" type="checkbox" name="media[]" value="tribunnews_data" >
+								<input id="Tribun" type="checkbox" name="media[]" value="Tribun" >
 								<label for="Tribun">Tribun</label>
 							</div>
 						</div>
@@ -211,7 +211,7 @@
 						<div class="media-box">
 							<div class="media-box-img">V</div>
 							<div class="media-box-cont">
-								<input id="Viva" type="checkbox" name="media[]" value="viva_data" >
+								<input id="Viva" type="checkbox" name="media[]" value="Viva" >
 								<label for="Viva">Viva</label>
 							</div>
 						</div>

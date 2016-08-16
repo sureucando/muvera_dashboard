@@ -31,6 +31,7 @@ class Query extends CI_Controller {
 		$interval = new DateInterval('P1D');
 		$period = new DatePeriod($datefrom, $interval, $dateto);
 	
+		/*initiate value for count every day each media*/
 		foreach($period as $dt){
 			$value = [];
 			foreach($query1['media'] as &$tablename){
@@ -76,7 +77,7 @@ class Query extends CI_Controller {
 			}
 		}
 		$i = 0;
-		foreach($query1['media'] as &$tablename){	
+		/*foreach($query1['media'] as &$tablename){	
 			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$tablename);
 			$table = explode("_",$tablename);
 			$countData[$i] = array ("tablename" => ucfirst($table[0]), "total" => (int)$result[0]->total);
@@ -88,6 +89,27 @@ class Query extends CI_Controller {
 				}
 			}
 			$i++;
+		}*/
+		$includeTable = "";
+		$totalMedia = count($query1['media']);
+		foreach($query1['media'] as &$tablename){
+			$i++;
+			if ($i < $totalMedia) {
+				$includeTable =  $includeTable."'".$tablename."', ";
+			}
+			else{
+				$includeTable =  $includeTable."'".$tablename."'";
+			}
+		}
+		
+		$result = $this->dataOneTable($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$includeTable);
+		
+		$i = 0;
+		if ($result != NULL){
+			foreach($result as $row){
+				$countData[$i] = array ("tablename" => $row->media, "total" => (int)$row->total);
+				$i++;
+			}
 		}
 		
 		$output = array(
@@ -103,15 +125,15 @@ class Query extends CI_Controller {
 			"timeto" => $timeto,
 			"media" => $query1['media'],
 			"status" => TRUE,
-			"count" => $countData,
-			"countTime" => $countTime
+			//"countTime" => $countTime,
+			"count" => $countData
 			);
 		echo json_encode($output);
 	}
 	
 	public function getXLS(){
 		$filecsv = fopen(APPPATH."generated_file/example_001.csv", 'w');
-		fputcsv($filecsv, array('title','date','link','content'));
+		fputcsv($filecsv, array('media', 'title','date','link','content', 'quote1', 'quote2', 'quote3', 'quote4', 'quote5'));
 		$query1 = array (
 			'mainword' => $this->input->post('main-word'),
 			'firsttax' => $this->input->post('first-tax'),
@@ -134,6 +156,21 @@ class Query extends CI_Controller {
 		$timeto = '';
 		$datefrom = new DateTime($query1['datefrom']);
 		$dateto = new DateTime($query1['dateto']);
+		
+		/*get all media want to query*/
+		$includeTable = "";
+		$totalMedia = count($query1['media']);
+		$i=0;
+		foreach($query1['media'] as &$tablename){
+			$i++;
+			if ($i < $totalMedia) {
+				$includeTable =  $includeTable."'".$tablename."', ";
+			}
+			else{
+				$includeTable =  $includeTable."'".$tablename."'";
+			}
+		}
+		
 		if (trim($query1['periodfrom']) === 'am'){
 			if($query1['hourfrom'] === '12'){
 				$timefrom = '00:'.str_pad($query1['minutefrom'],2,'0',STR_PAD_LEFT).':00';
@@ -169,12 +206,12 @@ class Query extends CI_Controller {
 			}
 		}
 		$i = 0;
-		foreach($query1['media'] as &$tablename){	
+		/*foreach($query1['media'] as &$tablename){	
 			$result = $this->data($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$tablename);
 			$table = explode("_",$tablename);
 			$countData[$i] = array ("tablename" => $tablename, "total" => (int)$result[0]->total);
 			$i++;
-		}
+		}*/
 		if ($total > 10000){
 			for($i=0;$i<count($countData);$i++){
 				$limit = floor(10000 * ($countData[$i]['total'] / $total));
@@ -188,7 +225,14 @@ class Query extends CI_Controller {
 			}
 		}
 		else{
-			for($i=0;$i<count($countData);$i++){
+			$result = $this->xlsdataOneTable($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$includeTable);
+			if($result){
+				foreach ($result as $row){
+					$array = Array($row->media, $row->title,$row->date, $row->link, $row->content, $row->quote1, $row->quote2, $row->quote3, $row->quote4, $row->quote5);
+					fputcsv($filecsv, $array);
+				}
+			}
+			/*for($i=0;$i<count($countData);$i++){
 				$limit = $countData[$i]['total'];
 				$result = $this->xlsdata($query1['mainword'],$query1['firsttax'],$query1['secondtax'],$query1['thirdtax'],$query1['fourthtax'],$datefrom->format('Y-m-d').' '.$timefrom, $dateto->format('Y-m-d').' '.$timeto,$countData[$i]['tablename'],$limit);
 				
@@ -198,7 +242,7 @@ class Query extends CI_Controller {
 						fputcsv($filecsv, $array);
 					}
 				}
-			}
+			}*/
 		}
 		fclose($filecsv);
 		echo "filename : generated_file/example_001.csv";
@@ -214,16 +258,22 @@ class Query extends CI_Controller {
 		return $this->model_query->getCountBasedKeyword($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename);
 	}
 	
+	private function dataOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$includeTable){
+		$this->load->model('model_query');
+		
+		return $this->model_query->getCountBasedKeywordOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$includeTable);
+	}
+	
 	private function data2($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename){
 		$this->load->model('model_query');
 		
 		return $this->model_query->getCountTimeSeriesBasedKeyword($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename);
 	}
 	
-	private function xlsdata($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename,$limit){
+	private function xlsdataOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename){
 		$this->load->model('model_query');
 		
-		return $this->model_query->getRawData($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename,$limit);
+		return $this->model_query->getRawDataOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename);
 	}
 }
 ?>
