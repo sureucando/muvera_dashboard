@@ -18,7 +18,7 @@
 	<div id="header">
 		<div class="header-container">
 			<div class="header-left">
-				<a class="header-logo">Muvera</a> <!-- href="<?php //echo base_url(); ?>" -->
+				<a class="header-logo" href="<?php echo base_url(); ?>">Muvera</a> <!--  -->
 			</div>
 			<div class="header-mid">
 				<div class="header-mediaonline">MEDIA ONLINE</div>
@@ -26,7 +26,7 @@
 				<div class="header-facebook">FACEBOOK</div>
 			</div>
 			<div class="header-right">
-				<div class="header-login">Log In</div>
+				<a class="header-login" href="<?php echo base_url('login'); ?>">Log In</a>
 				<a class="header-contactus" href="<?php echo base_url('contact_us'); ?>">Contact Us</a>
 				<div class="header-dashboard"><img src="assets\images\dashboard-icon.png">DASHBOARD</div>
 			</div>

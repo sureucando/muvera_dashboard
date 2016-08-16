@@ -139,23 +139,28 @@ img#pattern2 {
 	height: 100%;
 }
 
-#landing-container h1 {
+.section-product h1 {
 	font-family: "BebasNeue";
 	font-size: 1500%;
 }
 
-#landing-container h2 {
+.section-product h2 {
 	font-family: "AvenirNextUltraLight";
 	font-size: 300%;
 	margin-top: -50px;
 	margin-right: -120px;
 }
 
-#landing-container h3 {
+.section-product h3 {
 	font-family: "AvenirNextUltraLight";
 	font-size: 125%;
 	margin-top: 0px;
 	margin-right: -385px;
+}
+
+.section-product .btn {
+	position: absolute;
+	margin-left: -170px;
 }
 
 .btn-landing {
@@ -535,15 +540,17 @@ img#pattern2 {
 		display: none;
 	}
 
-	.contact-us-left,
-	.contact-us-right {
+	#login-form {
+		margin: 0;
+		padding: 0;	
+	}
+
+	.contact-us-left, .contact-us-right,
+	.login-left, .login-right {
 		width: 49%;
 		height: inherit;
 		display: inline-block;
 		vertical-align: top;
-	}
-
-	.contact-us-right {
 	}
 	
 	.img-dummy {
@@ -552,6 +559,7 @@ img#pattern2 {
 		height: 600px;		
 	}
 
+	.contact-us-left>.img-dummy,
 	.contact-us-left>.img-dummy {
 		width: 100%;
 	}
@@ -1068,6 +1076,24 @@ img#pattern2 {
 		padding: 10px 0;
 		font-size: 1.4em;
 		box-shadow: 0 5px 5px rgba(0,0,0,0.15);
+	}
+
+	.section-product .btn-lg{
+		border-radius: 10px;
+		padding: 5px 10px;
+		font-size: 200%;
+		width: 300px;
+		border: 2px solid #ffffff;
+		background: none;
+		box-shadow: none;
+	}
+
+	.section-product .btn-lg:hover{
+		background: #9FC9FF;
+		background: linear-gradient(to right, #B9C0FF, #9FC9FF);
+		background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
 	}
 
 	/* Footer Bar */

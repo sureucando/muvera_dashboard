@@ -19,6 +19,7 @@
 				<h1>S C R A P</h1>
 				<h2>MEDIA INTELLIGENCE</h2>
 				<h3>Powered by Muvera</h3>
+				<a class="btn btn-lg btn-orange" id="btn-" href="<?php echo base_url('login'); ?>">LOG IN</a>
 			</div>
 			<!--<img src="assets/images/landing1.jpg">-->
 		</div>
