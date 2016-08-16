@@ -5,6 +5,9 @@ var flagdl, flagsh;
 /* Start Of Function */
 
 $(document).ready(function(){
+  //var baseWidth = $(window).width();
+  //var baseHeight = $(window).height();
+
   $('.content').css("height", "100%").css("height", "-=50px");
 
   $(window).on("resize", function () {
@@ -13,6 +16,8 @@ $(document).ready(function(){
 
   flagdl = true;
   flagsh = true;
+
+  //$('.section-product').css("width", baseWidth).css("height", baseHeight);
 
   /* Loading Screen */
   $('#loading').hide()

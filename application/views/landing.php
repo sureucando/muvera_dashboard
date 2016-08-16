@@ -12,8 +12,15 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div class="landing">
-			<img src="assets/images/landing1.jpg">
+		<div id="landing-container">
+			<div class="section-product">
+				<img src="assets/images/pattern1.png" id="pattern1">
+				<img src="assets/images/pattern2.png" id="pattern2">
+				<h1>S C R A P</h1>
+				<h2>MEDIA INTELLIGENCE</h2>
+				<h3>Powered by Muvera</h3>
+			</div>
+			<!--<img src="assets/images/landing1.jpg">-->
 		</div>
 		<!--<div class="btn-landing">
 			<a class="btn btn-lg btn-blue" href="<?php //echo base_url('media_online'); ?>">Media Monitoring</a>

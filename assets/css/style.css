@@ -5,6 +5,10 @@
 	src: url('type/AvenirNextLTPro-Regular.woff') format('woff');
 }
 @font-face {
+	font-family: 'AvenirBook';
+	src: url('type/Avenir-Book.woff') format('woff');
+}
+@font-face {
 	font-family: 'AvenirNextBold';
 	src: url('type/AvenirNext-Bold.woff') format('woff');
 }
@@ -23,6 +27,10 @@
 @font-face {
 	font-family: 'GothamMed';
 	src: url('type/Gotham-Med.woff') format('woff');
+}
+@font-face {
+	font-family: 'BebasNeue';
+	src: url('type/BebasNeue.woff') format('woff');
 }
 
 html {
@@ -81,14 +89,73 @@ input, textarea, select {
 	vertical-align: bottom;
 	width: 100%;
 	height: 100%;
-	overflow: auto;
+	overflow: hidden;
 }
 
 /* For Landing Page */
+#landing-container {
+	min-height: 73.6%;
+	min-width: 100%;
+	padding: 12% 0;
+	background-color: #7381A5;
+	background: #7381A5;
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, #7381A5, #856F9E); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #7381A5, #856F9E); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #7381A5, #856F9E); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #7381A5, #856F9E); /* Standard syntax */
+	color: #fff;
+	overflow: hidden;
+}
 
-.landing img {
-	max-width: 100%;
-	height: auto;
+#landing-container img,
+#landing-container h1,
+#landing-container h2,
+#landing-container h3 {
+	-webkit-touch-callout: none; /* iOS Safari */
+  	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+  	-khtml-user-select: none;    /* Konqueror */
+  	-moz-user-select: none;      /* Firefox */
+  	-ms-user-select: none;       /* Internet Explorer/Edge */
+  	user-select: none;
+}
+
+img#pattern1 {
+	position: absolute;
+	width: 30%;
+	top: 0;
+	right: 0;
+}
+
+img#pattern2 {
+	position: absolute;
+	width: 30%;
+	left: 0;
+	bottom: 0;
+}
+
+.section-product {
+	width: 100%;
+	height: 100%;
+}
+
+#landing-container h1 {
+	font-family: "BebasNeue";
+	font-size: 1500%;
+}
+
+#landing-container h2 {
+	font-family: "AvenirNextUltraLight";
+	font-size: 300%;
+	margin-top: -50px;
+	margin-right: -120px;
+}
+
+#landing-container h3 {
+	font-family: "AvenirNextUltraLight";
+	font-size: 125%;
+	margin-top: 0px;
+	margin-right: -385px;
 }
 
 .btn-landing {
