@@ -32,6 +32,7 @@
 				<!--<script src="assets/js/jquery-1.12.3.js"></script>-->
 				<script src="assets/js/jquery-3.1.0.js"></script>
 				<script src="assets/js/jquery-ui.js"></script>
+				<script src="assets/js/tokenizer.js"></script>
 				<script src="assets/js/assets.js"></script>
 				<script type="text/javascript"> 
 					

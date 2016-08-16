@@ -128,20 +128,33 @@ $(document).ready(function(){
     var boxname = $(this).parent().siblings('.media-box-img').text();
     //console.log(boxname);
     if(this.checked){
-      checkflag[boxname] = checkflag[boxname] + 1;
-      if(imgRandom == 1){
-        $(this).parent().siblings('.media-box-img').css("background-image", "url('assets/images/media1.jpg')").css("background-size", "100% 100%").css("background-repeat", "no-repeat").css("color", "#ffffff");
-
-      } 
-      else if (imgRandom == 2){
-        $(this).parent().siblings('.media-box-img').css("background-image", "url('assets/images/media2.jpg')").css("background-size", "100% 100%").css("background-repeat", "no-repeat").css("color", "#ffffff");
-      };
+      //checkflag[boxname] = checkflag[boxname] + 1;
+      $(this).parent().siblings('.media-box-img')
+        .css("background", "#000000")
+        .css("color", "#ffffff");
+      //if(imgRandom == 1){
+        //$(this).parent().siblings('.media-box-img')
+          //.css("background-image", "url('assets/images/media1.jpg')")
+          //.css("background-size", "100% 100%")
+          //.css("background-repeat", "no-repeat")
+          //.css("color", "#ffffff");
+      //} 
+      //else if (imgRandom == 2){
+        //$(this).parent().siblings('.media-box-img')
+          //.css("background-image", "url('assets/images/media2.jpg')")
+          //.css("background-size", "100% 100%")
+          //.css("background-repeat", "no-repeat")
+          //.css("color", "#ffffff");
+      //};
       //console.log(checkflag);
     }
     else {
       checkflag[boxname] = checkflag[boxname] - 1;
       if (checkflag[boxname] == 0){
-        $(this).parent().siblings('.media-box-img').css("background-image", "none").css("background", "#cdcdcd").css("color", "#000000");
+        $(this).parent().siblings('.media-box-img')
+          //.css("background-image", "none")
+          .css("background", "#cdcdcd")
+          .css("color", "#000000");
       };
       //console.log(checkflag);
     };
@@ -164,8 +177,16 @@ $(document).ready(function(){
     });
   });
 
+  //$("#email-share").tokenfield();
+
 });
 /* End Of Window Function */
+
+/* Tokenizer */
+//var tokenInput = $('input#email-share').tokenizer({ 
+  /* options */
+  //separators: [',',' ','.',';','  ']
+//});
 
 /* Compute Height */
 /*var setElementHeight = function () {
@@ -390,7 +411,7 @@ function showMultiLineChart(data){
 function showBarChart(data){
     d3.select("#pie_chart_visualisation").selectAll("svg").remove(); //remove all svg element
     var margin = {top: 50, right: 20, bottom: 50, left: 40},
-    width = 900 - margin.left - margin.right,
+    width = $('.content-container').width() - $('.content-container').css('padding-left').replace('px','') - $('.content-container').css('padding-right').replace('px','');
     height = 350 - margin.top - margin.bottom;
 
     barOuterPad = 24;

@@ -4,19 +4,20 @@
 	<!-- Content -->
 	<div class="content">
 		<!-- Banner -->
-		<div class="banner">
+		<!--<div class="banner">
 			<div class="banner-top">
 				Media Monitoring - Muvera
 				<div class="btn btn-sm btn-orange">Learn More</div>
 			</div>
 			<div class="banner-bot">
 			</div>
-		</div>
+		</div>-->
 		<div class="content-container">
 			<!-- Search Config Section -->
 			<form id="search-form" name="search-form">
 				<div class="section-search">
-					<h1 class="content-title">MEDIA</h1>
+					<h1 class="content-title">SCRAP</h1>
+					<h3>Media Intelligence</h3>
 					<div id="search-container">
 						<input type="text" class="search-keyword search-keyword-main" placeholder="+ Add Word" name="main-word" >
 						<div class="label-word">Main Word</div>
