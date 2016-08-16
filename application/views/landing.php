@@ -12,11 +12,14 @@
 </head>
 <body>
 	<div class="wrapper">
-		<div class="btn-landing">
-			<a class="btn btn-lg btn-blue" href="<?php echo base_url('media_online'); ?>">Media Monitoring</a>
-			<a class="btn btn-lg btn-blue" href="<?php echo base_url('subscription'); ?>">Subscription</a>
-			<a class="btn btn-lg btn-blue" href="<?php echo base_url('contact_us'); ?>">Contact Us</a>
+		<div class="landing">
+			<img src="assets/images/landing1.jpg">
 		</div>
+		<!--<div class="btn-landing">
+			<a class="btn btn-lg btn-blue" href="<?php //echo base_url('media_online'); ?>">Media Monitoring</a>
+			<a class="btn btn-lg btn-blue" href="<?php //echo base_url('subscription'); ?>">Subscription</a>
+			<a class="btn btn-lg btn-blue" href="<?php //echo base_url('contact_us'); ?>">Contact Us</a>
+		</div>-->
 	</div>
 </body>
 </html>

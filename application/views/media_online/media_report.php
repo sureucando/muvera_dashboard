@@ -1,5 +1,5 @@
 						<div class="report-chart" id="report-2">
-							<h3 class="report-title"><img src="assets/images/icon-title2.png">Bar Chart</h3>
+							<h3 class="report-title"><img src="assets/images/icon-title2.png">Frequency Chart</h3>
 							<div class="report-content-chart" id="pie_chart_visualisation">
 							</div>
 								<label><input type="checkbox" id="sort_bar" style="float: left;"> Sort values</label>
@@ -14,7 +14,7 @@
 						<div class="btn btn-orange btn-lg" id="report-sh">Share Report</div>
 						<div id="share-cont">
 							<form id="share-form" name="share-form">
-								<input type="text" name="email" placeholder="Insert Email Here...">
+								<input type="text" name="email" placeholder="Insert Email Here..." id="email-share">
 								<div class="btn btn-green btn-md" onclick="sendemail()">Share</div>
 							</form>
 						</div>
