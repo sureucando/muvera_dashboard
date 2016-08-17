@@ -559,18 +559,23 @@ img#pattern2 {
 		height: 600px;		
 	}
 
-	.contact-us-left>.img-dummy,
-	.contact-us-left>.img-dummy {
+	.contact-us-left .img-dummy,
+	.login-left .img-dummy {
 		width: 100%;
 	}
 
 	.form-container {
+		text-align: left;
 		width: 100%;
 		padding: 20px;
 	}
 
-	.form-container>input,
-	.form-container>textarea {
+	.form-container label {
+		font-size: 125%;
+	}
+
+	.form-container input,
+	.form-container textarea {
 		display: block;
 		padding: 5px;
 		width: 90%;
@@ -580,16 +585,18 @@ img#pattern2 {
 		margin-bottom: 5px;
 	}
 
-	.form-container>.btn-md {
+	.form-container .btn-md {
 		font-size: 125%;
 	}
 
 	/* Form */
-	form#search-form{
+	#search-form form,
+	#login-form form{
 		height: auto;
 	}
 
-	form#share-form{
+	#search-form form,
+	#login-form form{
 		height: 175px;
 	}
 

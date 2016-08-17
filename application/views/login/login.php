@@ -3,7 +3,7 @@
 		<div class="banner">
 			<!--<div class="banner-top">
 				Discover News
-				<a class="btn btn-sm btn-orange" href="<?php echo base_url('media_online'); ?>">Learn More</a>
+				<a class="btn btn-sm btn-orange" href="<?php //echo base_url('media_online'); ?>">Learn More</a>
 			</div>
 			<div class="banner-bot"></div>-->
 			<div class="content-container">
@@ -13,10 +13,10 @@
 						<div class="login-right">
 							<form class="form-container" action="#">
 								<h1 class="content-title">LOG IN</h1>
-								<label for="Name">
+								<label for="Name">Name :
 									<input type="text" placeholder="Name" name="username">
 								</label>
-								<label for="Password">
+								<label for="Password">Password :
 									<input type="password" placeholder="Password" name="password">
 								</label>
 								<div class="btn btn-blue btn-md" id="btn-cs">LOG IN</div>

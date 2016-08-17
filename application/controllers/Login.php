@@ -10,7 +10,7 @@ class Login extends CI_Controller {
 
 	public function home()
 	{
-		$data['title'] = 'Contact Us';
+		$data['title'] = 'Login';
 
 		$this->load->view('template/dashboard_header.php', $data);
 		$this->load->view('login/login.php', $data);
