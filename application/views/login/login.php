@@ -11,15 +11,16 @@
 					<div id="login-form">
 						<div class="login-left"><div class="img-dummy"></div></div>
 						<div class="login-right">
-							<form class="form-container" action="#">
+							<form class="form-container" action="<?php echo base_url('login/login_process'); ?>" method="post">
 								<h1 class="content-title">LOG IN</h1>
-								<label for="Name">Name
+								<label for="Username">Username
 									<input type="text" name="username">
 								</label>
 								<label for="Password">Password
 									<input type="password" name="password">
 								</label>
-								<div class="btn btn-blue btn-md" id="btn-cs">LOG IN</div>
+								<input type="submit" class="btn btn-blue btn-md" id="btn-login" value="LOG IN">
+								<!--<div class="btn btn-blue btn-md" id="btn-cs">LOG IN</div>-->
 							</form>
 						</div>
 					</div>

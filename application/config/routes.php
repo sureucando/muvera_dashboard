@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'landing';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['media_online'] = 'media_online';
+//$route['media_online'] = 'media_online';
 $route['contact_us'] = 'contact_us';
 $route['login'] = 'login';
 $route['subscription'] = 'subscription';

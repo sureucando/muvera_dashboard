@@ -25,9 +25,9 @@
 				<div class="header-facebook">FACEBOOK</div>
 			</div>
 			<div class="header-right">
-				<a class="header-login" href="<?php echo base_url('login'); ?>">Log In</a>
+				<a class="header-login" href="<?php echo base_url('login/logout'); ?>">Logout</a>
 				<a class="header-contactus" href="<?php echo base_url('contact_us'); ?>">Contact Us</a>
-				<!--<div class="header-dashboard"><img src="assets\images\dashboard-icon.png">DASHBOARD</div>-->
+				<div class="header-dashboard"><img src="assets\images\dashboard-icon.png">DASHBOARD</div>
 			</div>
 		</div>
 	</div>

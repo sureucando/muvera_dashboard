@@ -589,6 +589,11 @@ img#pattern2 {
 		color: #ababab;
 	}
 
+	.form-container input[type=submit] {
+		width: 100px;
+		box-shadow: none;
+	}
+
 	.form-container .btn-md {
 		font-size: 125%;
 		padding: 5px;

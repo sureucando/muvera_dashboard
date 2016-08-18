@@ -3,6 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Media_online extends CI_Controller {
 
+	function __construct()
+    {
+        parent::__construct();
+        if ( ! $this->session->userdata('logged_in'))
+        { 
+            redirect('login', 'location');
+        }
+    }
+
 	public function index()
 	{
 		$this->home();
@@ -15,9 +24,8 @@ class Media_online extends CI_Controller {
 
 	public function home()
 	{
-		$this->load->helper('form');
 		
-		$data['title'] = 'Dashboard';
+		$data['title'] = 'Media';
 
 		#$this->load->model('model_cnnidn');
 		#$this->load->model('model_detik');
@@ -45,7 +53,7 @@ class Media_online extends CI_Controller {
 		#	'main-word' => $this->input->post('main-word'),
 		#	);
 
-		$this->load->view('template/dashboard_header', $data);
+		$this->load->view('template/dashboard_headerv2', $data);
 		$this->load->view('media_online/media_main', $data);
 		$this->load->view('media_online/search_word', $data);
 		$this->load->view('media_online/media_report', $data);
