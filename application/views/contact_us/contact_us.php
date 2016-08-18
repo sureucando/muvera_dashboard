@@ -1,7 +1,7 @@
 <!-- Content -->
 	<div class="content">
-		<div class="banner">
-			<!--<div class="banner-top">
+		<!--<div class="banner">
+			<div class="banner-top">
 				Discover News
 				<a class="btn btn-sm btn-orange" href="<?php echo base_url('media_online'); ?>">Learn More</a>
 			</div>
@@ -19,13 +19,18 @@
 						<div class="contact-us-right">
 							<form class="form-container" action="#">
 								<h1 class="content-title">CONTACT US</h1>
-								<input type="text" placeholder="Name" name="username">
-								<input type="text" placeholder="Email" name="email">
-								<textarea rows="7" placeholder="Message" name="message"></textarea> 
+								<label for="Name">Name
+									<input type="text" name="username">
+								</label>
+								<label for="Email">Email
+									<input type="text" name="email">
+								</label>
+								<label for="Message">Message
+								<textarea rows="7" name="message"></textarea>
+								</label>
 								<div class="btn btn-blue btn-md" id="btn-cs">Send Message</div>
 							</form>
 						</div>
 					</div>
 				</div>	
 			</div>
-		</div>

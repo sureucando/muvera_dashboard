@@ -11,6 +11,12 @@ $(document).ready(function(){
   $('.content').css("height", "100%").css("height", "-=50px");
 
   $(window).on("resize", function () {
+    var imgDummy = $('.content-container').height();
+    if (imgDummy > 550) {
+      $('.img-dummy').css("height", imgDummy);
+    } else {
+      $('.img-dummy').css("height", "0");
+    };
     $('.content').css("height", "100%").css("height", "-=50px");
   }).resize();
 
@@ -75,7 +81,7 @@ $(document).ready(function(){
   $('#btn-git').click(function(){
     $('#get-in-touch').fadeOut(500, function(){
       $('.content-container').css('padding', '0');
-      $('.section-cs').css('margin', '0').css('padding', '0').css('textAlign', 'left');
+      $('.section-cs').css('margin', '0').css('padding', '0');
       $('#contact-us-form').fadeIn(500);
     });
   });

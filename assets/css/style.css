@@ -456,7 +456,7 @@ img#pattern2 {
 
 	@media only screen and (min-width:1025px) and (max-width: 1366px){
 		.content-container {
-			min-height: 100%;
+			min-height: 95%;
 			height: auto !important;
 			height: 100%;
 			background-color: #fff;
@@ -468,7 +468,7 @@ img#pattern2 {
 
 	@media only screen and (min-width: 801px) and (max-width:1024px){
 		.content-container {
-			min-height: 100%;
+			min-height: 95%;
 			height: auto !important;
 			height: 100%;
 			background-color: #fff;
@@ -480,12 +480,12 @@ img#pattern2 {
 
 	@media only screen and (max-width:800px){
 		.content-container {
-			min-height: 100%;
+			min-height: 95%;
 			height: auto !important;
 			height: 100%;
 			background-color: #fff;
 			margin: 0;
-			padding: 0px 55px 55px 55px;
+			padding: 0px 0px 55px 0px;
 			text-align: center;
 		}
 	}
@@ -523,7 +523,7 @@ img#pattern2 {
 		text-align: center;
 	}
 
-	/* Contuct Us */
+	/* Contact Us & Login */
 	#get-in-touch>p {
 		margin: 25px 23%;
 		font-style: italic;
@@ -542,36 +542,35 @@ img#pattern2 {
 
 	#login-form {
 		margin: 0;
-		padding: 0;	
+		padding: 0;
+		min-height: 100%;
 	}
 
 	.contact-us-left, .contact-us-right,
 	.login-left, .login-right {
-		width: 49%;
+		width: 49.84%;
 		height: inherit;
 		display: inline-block;
 		vertical-align: top;
 	}
 	
-	.img-dummy {
-		background: #B9C0FF;
-		width: 800px;
-		height: 600px;		
-	}
+	@media only screen and (min-width: 1366px){
+		.img-dummy {
+			background: #B9C0FF;
+			width: 800px;
+			height: 600px;
+		}
 
-	.contact-us-left .img-dummy,
-	.login-left .img-dummy {
-		width: 100%;
+		.contact-us-left .img-dummy,
+		.login-left .img-dummy {
+			width: 100%;
+		}
 	}
 
 	.form-container {
 		text-align: left;
 		width: 100%;
 		padding: 20px;
-	}
-
-	.form-container label {
-		font-size: 125%;
 	}
 
 	.form-container input,
@@ -585,18 +584,26 @@ img#pattern2 {
 		margin-bottom: 5px;
 	}
 
+	.form-container label {
+		font-size: 125%;
+		color: #ababab;
+	}
+
 	.form-container .btn-md {
 		font-size: 125%;
+		padding: 5px;
+	}
+
+	#login-page {
+		padding: 0;
 	}
 
 	/* Form */
-	#search-form form,
-	#login-form form{
+	form#search-form{
 		height: auto;
 	}
 
-	#search-form form,
-	#login-form form{
+	form#share-form{
 		height: 175px;
 	}
 
