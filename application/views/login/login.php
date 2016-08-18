@@ -9,7 +9,7 @@
 			<div class="content-container" id="login-page">
 				<div class="section-login">
 					<div id="login-form">
-						<div class="login-left"><div class="img-dummy"></div></div>
+						<div class="login-left"><<div class="img-dummy"></div></div>
 						<div class="login-right">
 							<form class="form-container" action="<?php echo base_url('login/login_process'); ?>" method="post">
 								<h1 class="content-title">LOG IN</h1>

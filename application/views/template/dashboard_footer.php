@@ -277,6 +277,9 @@
 										showBarChart(data.count);
 									}
 									$('.section-report').show();
+									//var y = document.getElementById('media-container').clientHeight;
+									//console.log(y);
+									$('#reset-btn').show();
 									$('#loading').hide();
 									var y = $('.content').scrollTop();
    									$('.content').animate({scrollTop: y + 525}, 'slow');

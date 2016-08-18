@@ -9,14 +9,21 @@ $(document).ready(function(){
   //var baseHeight = $(window).height();
 
   $('.content').css("height", "100%").css("height", "-=50px");
+  //var whiteBG = $('.content-container').height();
+  //$('#login-form').css("height", whiteBG);
+  //$('#contact-us-form').css("height", whiteBG);
+    
 
   $(window).on("resize", function () {
-    var imgDummy = $('.content-container').height();
+    //whiteBG = $('.content-container').height();
+    //$('#login-form').css("height", whiteBG);
+    //$('#contact-us-form').css("height", whiteBG);
+    /*var imgDummy = $('.content-container').height();
     if (imgDummy > 550) {
       $('.img-dummy').css("height", imgDummy);
     } else {
       $('.img-dummy').css("height", "0");
-    };
+    };*/
     $('.content').css("height", "100%").css("height", "-=50px");
   }).resize();
 
@@ -167,7 +174,7 @@ $(document).ready(function(){
           .css("background", "#cdcdcd")
           .css("color", "#000000");
       };
-      //console.log(checkflag);
+      console.log(checkflag);
     };
   });
 
@@ -189,6 +196,23 @@ $(document).ready(function(){
   });
 
   //$("#email-share").tokenfield();
+
+  $("#reset-btn").on("click", function(){
+        $(".search-keyword").val("");
+        $(".datepicker").val("mm/dd/yyyy");
+        $(".hour").val("12");
+        $(".minute").val("12");
+        $(".minute").val("0");
+        $("#period-from").val($("#period-from option:first").val());
+        $("#period-to").val($("#period-to option:first").val());
+        //$("#period-from").val(1);
+        //$("#period-to").val(1);
+        $('.content').animate({scrollTop: 0}, 'slow');
+        $(".media-box-cont input[type='checkbox']:checked").prop('checked', false);
+        //$('input[type=checkbox]').attr('checked',false);
+        var checkflag = {A:0,B:0,C:0,D:0,E:0,F:0,G:0,H:0,I:0,J:0,K:0,L:0,M:0,N:0,O:0,P:0,Q:0,R:0,S:0,T:0,U:0,V:0,W:0,X:0,Y:0,Z:0};
+        $('.media-box-img').css("background", "#cdcdcd").css("color", "#000000");
+    });
 
 });
 /* End Of Window Function */
@@ -241,11 +265,11 @@ function validateForm() {
     alert("Search query must be filled out");
     return false;
   }
-  if (date_from == null || date_from == "" ) {
+  if (date_from == null || date_from == "" || date_from == "mm/dd/yyyy" ) {
     alert("Start date must be filled out");
     return false;
   }
-  if (date_to == null || date_to == "" ) {
+  if (date_to == null || date_to == "" || date_from == "mm/dd/yyyy" ) {
     alert("End date must be filled out");
     return false;
   }

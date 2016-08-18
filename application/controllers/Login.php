@@ -91,7 +91,7 @@ class Login extends CI_Controller {
 		$this->session->sess_destroy();
 		$data['message_display'] = 'Successfully Logout';
 
-		redirect('login', 'location');
+		redirect('', 'location');
 	}
 
 }

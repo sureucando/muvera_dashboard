@@ -30,5 +30,9 @@
 						<div class="btn btn-orange btn-lg">Share Excel Report</div>
 					</div>-->
 				</div>
+				<div id="reset-btn">
+					<div class="btn btn-orange btn-rnd"><img src="assets/images/reset-icon.png"></div>
+					<div class="label-reset">New Report</div>
+				</div>
 
 			</div>
