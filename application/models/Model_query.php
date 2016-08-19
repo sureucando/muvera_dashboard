@@ -56,4 +56,8 @@ require_once(APPPATH.'third_party/ChromePhp.php');
 				return NULL;
 			}
 		}
+
+		//function storeReportHistory($username, $keywords, $datefrom, $dateto, $table_name){
+		//	$query = $this->db->query("INSERT INTO report_history (username, keyword, media, filename, date_range_start, date_range_end) VALUES ('$username','$keywords', '$table_name', '', '$dateform', '$dateto')");
+		//}
 	}

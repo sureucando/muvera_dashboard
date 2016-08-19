@@ -16,7 +16,7 @@
 			<div class="section-product">
 				<img src="assets/images/pattern1.png" id="pattern1">
 				<img src="assets/images/pattern2.png" id="pattern2">
-				<h1>S C R A P</h1>
+				<h1>S C R A P<div class="beta-version"> beta version</div></h1>
 				<h2>MEDIA INTELLIGENCE</h2>
 				<h3>Powered by Muvera</h3>
 				<a class="btn btn-lg btn-orange" id="btn-" href="<?php echo base_url('login'); ?>">LOG IN</a>

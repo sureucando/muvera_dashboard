@@ -17,7 +17,7 @@
 	<div id="header">
 		<div class="header-container">
 			<div class="header-left">
-				<a class="header-logo" href="<?php echo base_url(); ?>">Muvera</a> <!--  -->
+				<a class="header-logo" href="<?php echo base_url(); ?>">Muvera<div class="beta-version">beta version</div></a> <!--  -->
 			</div>
 			<div class="header-mid">
 				<div class="header-mediaonline">MEDIA ONLINE</div>

@@ -240,6 +240,20 @@ img#pattern2 {
 		line-height: 1em;
 	}
 
+	.beta-version {
+		font-family: "AvenirNext";
+		display: inline-block;
+	}
+
+	.header-logo .beta-version {
+		font-size: 0.4em;
+		margin-left: 10px;
+	}
+
+	h1 .beta-version {
+		font-size: 0.1em;
+	}
+
 	@media only screen and (min-width: 1367px){
 		.header-dashboard {
 			position: fixed;

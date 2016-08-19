@@ -261,7 +261,13 @@ class Query extends CI_Controller {
 	private function dataOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$includeTable){
 		$this->load->model('model_query');
 		
+		//$username = $this->session->userdata('username');
+		/* Marge Keyword*/
+		//$keywords =  "'".$k1."', "."'".$k2."', "."'".$k3."', "."'".$k4."', "."'".$k5."'";
+		//$this->model_query->storeReportHistory($username,$keywords,$datefrom,$dateto,$includeTable);
+		
 		return $this->model_query->getCountBasedKeywordOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$includeTable);
+
 	}
 	
 	private function data2($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename){
@@ -275,5 +281,6 @@ class Query extends CI_Controller {
 		
 		return $this->model_query->getRawDataOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename);
 	}
+
 }
 ?>
