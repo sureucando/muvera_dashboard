@@ -65,29 +65,32 @@
 				</div>
 				<div class="section-choice">
 					<div class="media-container">
+						<div class="select-all-cont">
+							<label for="select-all-media"><input type="checkbox" id="select-all-media">Select All</label>
+						</div>
 						<div class="media-box">
-							<div class="media-box-img" iA">A</div>
+							<div class="media-box-img has-media">A</div>
 							<div class="media-box-cont">
-								<input id="Antara" type="checkbox" name="media[]" value="Antara" >
+								<input id="Antara" class="media-checkbox" type="checkbox" name="media[]" value="Antara" >
 								<label for="Antara">Antara</label>
 							</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">B</div>
+							<div class="media-box-img has-media">B</div>
 							<div class="media-box-cont">
 								<input id="BeritaSatu" type="checkbox" name="media[]" value="Berita Satu">
 								<label for="BeritaSatu">Berita Satu</label>
 							</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">C</div>
+							<div class="media-box-img has-media">C</div>
 							<div class="media-box-cont">
 								<input id="CNNIdn" type="checkbox" name="media[]" value="CNN Indonesia" >
 								<label for="CNNIdn">CNN Indonesia</label>
 							</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">D</div>
+							<div class="media-box-img has-media">D</div>
 							<div class="media-box-cont">
 								<input id="Detik" type="checkbox" name="media[]" value="Detik" >
 								<label for="Detik">Detik</label>
@@ -97,7 +100,7 @@
 							<div class="media-box-img">E</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">F</div>
+							<div class="media-box-img has-media">F</div>
 							<div class="media-box-cont">
 								<input id="Fajar" type="checkbox" name="media[]" value="Fajar" >
 								<label for="Fajar">Fajar</label>
@@ -113,7 +116,7 @@
 							<div class="media-box-img">I</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">J</div>
+							<div class="media-box-img has-media">J</div>
 							<div class="media-box-cont">
 								<input id="Jakarta Post" type="checkbox" name="media[]" value="Jakarta Post" >
 								<label for="Jakarta Post">Jakarta Post</label>
@@ -124,21 +127,21 @@
 							</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">K</div>
+							<div class="media-box-img has-media">K</div>
 							<div class="media-box-cont">
 								<input id="Kompas" type="checkbox" name="media[]" value="Kompas" >
 								<label for="Kompas">Kompas</label>
 							</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">L</div>
+							<div class="media-box-img has-media">L</div>
 							<div class="media-box-cont">
 								<input id="Liputan6" type="checkbox" name="media[]" value="Liputan 6" >
 								<label for="Liputan6">Liputan6</label>
 							</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">M</div>
+							<div class="media-box-img has-media">M</div>
 							<div class="media-box-cont">
 								<input id="Merdeka" type="checkbox" name="media[]" value="Merdeka" >
 								<label for="Merdeka">Merdeka</label>
@@ -155,7 +158,7 @@
 							<div class="media-box-img">O</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">P</div>
+							<div class="media-box-img has-media">P</div>
 							<div class="media-box-cont">
 								<input id="PojokSatu" type="checkbox" name="media[]" value="Pojok Satu" >
 								<label for="PojokSatu">Pojok Satu</label>
@@ -165,7 +168,7 @@
 							<div class="media-box-img">Q</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">R</div>
+							<div class="media-box-img has-media">R</div>
 							<div class="media-box-cont">
 								<input id="Republika" type="checkbox" name="media[]" value="Republika" >
 								<label for="Republika">Republika</label>
@@ -180,7 +183,7 @@
 							</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">S</div>
+							<div class="media-box-img has-media">S</div>
 							<div class="media-box-cont">
 								<input id="Sindo" type="checkbox" name="media[]" value="Sindo" >
 								<label for="Sindo">Sindo</label>
@@ -191,7 +194,7 @@
 							</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">T</div>
+							<div class="media-box-img has-media">T</div>
 							<div class="media-box-cont">
 								<input id="Tempo" type="checkbox" name="media[]" value="Tempo" >
 								<label for="Tempo">Tempo</label>
@@ -209,7 +212,7 @@
 							<div class="media-box-img">U</div>
 						</div>
 						<div class="media-box">
-							<div class="media-box-img">V</div>
+							<div class="media-box-img has-media">V</div>
 							<div class="media-box-cont">
 								<input id="Viva" type="checkbox" name="media[]" value="Viva" >
 								<label for="Viva">Viva</label>

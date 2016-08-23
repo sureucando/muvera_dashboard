@@ -612,8 +612,9 @@ img#pattern2 {
 	}
 
 	.form-container input[type=submit] {
-		width: 100px;
-		box-shadow: none;
+		width: auto;
+		padding: 5px 15px;
+		box-shadow: none !important;
 	}
 
 	.form-container .btn-md {
@@ -857,42 +858,55 @@ img#pattern2 {
 	}
 
 	/* Choose Media */
+	.media-container {
+		text-align: left;
+		margin: 0 auto;
+		padding: 0;
+	}
+
+	.select-all-cont{
+		font-family: "AvenirNext";
+		font-size: 1.35em;
+		text-align: right;
+		width: 95%;
+	}
+
 	@media only screen and (min-width: 1367px){
 		.media-container {
-			text-align: left;
 			width: 83%;
-			margin: 0 auto;
-			padding: 0;
+		}
+
+		.select-all-cont{
+			width: 99%;
 		}
 	}
 	@media only screen and (min-width: 1025px) and (max-width: 1366px){
 		.media-container {
-			text-align: left;
 			width: 87.50%;
-			margin: 0 auto;
-			padding: 0;
+		}
+
+		.select-all-cont{
+			width: 99%;
 		}
 	}
-
 	@media only screen and (min-width: 801px) and (max-width:1024px){
 		.media-container {
-			text-align: left;
 			width: 97%;
-			margin: 0 auto;
-			padding: 0;
+		}
+
+		.select-all-cont{
+			width: 99%;
 		}
 	}
-
 	@media only screen and (max-width: 800px){
 		.media-container {
-			text-align: left;
 			width: 97%;
-			margin: 0 auto;
-			padding: 0;
+		}
+
+		.select-all-cont{
+			width: 99%;
 		}
 	}
-
-	
 
 	.media-box {
 		font-family: "AvenirNextBold";

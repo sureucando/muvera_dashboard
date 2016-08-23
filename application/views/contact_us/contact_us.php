@@ -17,7 +17,7 @@
 					<div id="contact-us-form">
 						<div class="contact-us-left"><div class="img-dummy"></div></div>
 						<div class="contact-us-right">
-							<form class="form-container" action="#">
+							<form class="form-container" action="<?php echo base_url('contact_us/sent_message'); ?>" method="post">
 								<h1 class="content-title">CONTACT US</h1>
 								<label for="Name">Name
 									<input type="text" name="username">
@@ -28,7 +28,8 @@
 								<label for="Message">Message
 								<textarea rows="7" name="message"></textarea>
 								</label>
-								<div class="btn btn-blue btn-md" id="btn-cs">Send Message</div>
+								<input type="submit" class="btn btn-blue btn-md" id="btn-cs" value="Send Message">
+								<!--<div class="btn btn-blue btn-md" id="btn-cs">Send Message</div>-->
 							</form>
 						</div>
 					</div>

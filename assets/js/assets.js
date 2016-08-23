@@ -146,7 +146,7 @@ $(document).ready(function(){
     var boxname = $(this).parent().siblings('.media-box-img').text();
     //console.log(boxname);
     if(this.checked){
-      //checkflag[boxname] = checkflag[boxname] + 1;
+      checkflag[boxname] = checkflag[boxname] + 1;
       $(this).parent().siblings('.media-box-img')
         .css("background", "#000000")
         .css("color", "#ffffff");
@@ -174,7 +174,7 @@ $(document).ready(function(){
           .css("background", "#cdcdcd")
           .css("color", "#000000");
       };
-      console.log(checkflag);
+      //console.log(checkflag);
     };
   });
 
@@ -196,23 +196,54 @@ $(document).ready(function(){
   });
 
   //$("#email-share").tokenfield();
+  /* Select All Media */
+  //select all checkboxes
+  $("#select-all-media").change(function(){  //"select all" change
+    if($(this).prop("checked")){ //if this item is unchecked
+      $(".media-box-cont input[type='checkbox']").prop('checked', $(this).prop("checked")); //change all to checked status
+      checkflag = {A:1,B:1,C:1,D:1,E:0,F:1,G:0,H:0,I:0,J:2,K:1,L:1,M:2,N:0,O:0,P:1,Q:0,R:3,S:2,T:3,U:0,V:1,W:0,X:0,Y:0,Z:0};
+      $('.media-box-img.has-media')
+        .css("background", "#000000")
+        .css("color", "#ffffff");
+    }
+    else{
+      $(".media-box-cont input[type='checkbox']").prop('checked', $(this).prop("checked")); //change all to checked status
+      checkflag = {A:0,B:0,C:0,D:0,E:0,F:0,G:0,H:0,I:0,J:0,K:0,L:0,M:0,N:0,O:0,P:0,Q:0,R:0,S:0,T:0,U:0,V:0,W:0,X:0,Y:0,Z:0};
+      $('.media-box-img.has-media')
+        .css("background", "#cdcdcd")
+        .css("color", "#000000");
+    }
+      //console.log(checkflag)
+  });
+  //uncheck "select all", if one of the listed checkbox item is unchecked
+  $(".media-box-cont input[type='checkbox']").change(function(){ //".checkbox" change 
+      if(false == $(this).prop("checked")){ //if this item is unchecked
+          $("#select-all-media").prop('checked', $(this).prop("checked")); //change "select all" checked status to false
+      }
+  });
 
+  /* Reset Button */
   $("#reset-btn").on("click", function(){
-        $(".search-keyword").val("");
-        $(".datepicker").val("mm/dd/yyyy");
-        $(".hour").val("12");
-        $(".minute").val("12");
-        $(".minute").val("0");
-        $("#period-from").val($("#period-from option:first").val());
-        $("#period-to").val($("#period-to option:first").val());
-        //$("#period-from").val(1);
-        //$("#period-to").val(1);
-        $('.content').animate({scrollTop: 0}, 'slow');
-        $(".media-box-cont input[type='checkbox']:checked").prop('checked', false);
-        //$('input[type=checkbox]').attr('checked',false);
-        var checkflag = {A:0,B:0,C:0,D:0,E:0,F:0,G:0,H:0,I:0,J:0,K:0,L:0,M:0,N:0,O:0,P:0,Q:0,R:0,S:0,T:0,U:0,V:0,W:0,X:0,Y:0,Z:0};
-        $('.media-box-img').css("background", "#cdcdcd").css("color", "#000000");
-    });
+    $('.content').animate({scrollTop: 0}, 'slow');
+    $(".search-keyword").val("");
+    $('.search-keyword-tax').css("display", "none");
+    $(".datepicker").val("mm/dd/yyyy");
+    $(".hour").val("12");
+    $(".minute").val("12");
+    $(".minute").val("0");
+    $("#period-from").val($("#period-from option:first").val());
+    $("#period-to").val($("#period-to option:first").val());
+    //$("#period-from").val(1);
+    //$("#period-to").val(1);
+    $(".media-box-cont input[type='checkbox']:checked").prop('checked', false);
+    $("#select-all-media").prop('checked', false);
+    $("#sort_bar").prop('checked', false);
+    //$('input[type=checkbox]').attr('checked',false);
+    checkflag = {A:0,B:0,C:0,D:0,E:0,F:0,G:0,H:0,I:0,J:0,K:0,L:0,M:0,N:0,O:0,P:0,Q:0,R:0,S:0,T:0,U:0,V:0,W:0,X:0,Y:0,Z:0};
+    $('.media-box-img').css("background", "#cdcdcd").css("color", "#000000");
+    $('.section-report').fadeOut();
+    $(this).css("display", "none");
+  });
 
 });
 /* End Of Window Function */

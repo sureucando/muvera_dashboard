@@ -7,15 +7,15 @@ class Contact_us extends CI_Controller {
 	{
 		if ( ! $this->session->userdata('logged_in'))
         {
-			$this->loggedOut();
+			$this->logged_out();
         }
         else
         {
-			$this->loggedIn();
+			$this->logged_in();
         }
 	}
 
-	public function loggedIn()
+	public function logged_in()
 	{
 		$data['title'] = 'Contact Us';
 
@@ -24,13 +24,18 @@ class Contact_us extends CI_Controller {
 		$this->load->view('template/dashboard_footer.php', $data);
 	}
 
-	public function loggedOut()
+	public function logged_out()
 	{
 		$data['title'] = 'Contact Us';
 
 		$this->load->view('template/dashboard_header.php', $data);
 		$this->load->view('contact_us/contact_us.php', $data);
 		$this->load->view('template/dashboard_footer.php', $data);
+	}
+
+	public function sent_message()
+	{
+		redirect('contact_us', 'location');
 	}
 
 }
