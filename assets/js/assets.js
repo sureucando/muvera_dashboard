@@ -245,8 +245,36 @@ $(document).ready(function(){
     $(this).css("display", "none");
   });
 
+  /* Grid Change */
+  var opengrid = true;
+  $('.grid-content').click(function(){
+    if(opengrid){
+      $(this).animate({height: 400}, "slow");
+      $(this).parent().animate({height: 420}, "slow");
+      $(this).children('.grid-closed').fadeOut(function(){
+        $(this).siblings('.grid-opened').fadeIn();
+      });
+    }
+    else{
+      $(this).animate({height: 200}, "slow");
+      $(this).parent().animate({height: 220}, "slow");
+      $(this).children('.grid-opened').fadeOut(function(){
+        $(this).siblings('.grid-closed').fadeIn();
+      });
+    }
+    opengrid = !opengrid;
+    //$(this).parent().masonry();
+  });
 });
 /* End Of Window Function */
+
+/* Masonry Grid */
+/*$(function(){
+  $('.grid-col').masonry({
+    // options
+    itemSelector: '.grid-item'
+  });
+});*/
 
 /* Tokenizer */
 //var tokenInput = $('input#email-share').tokenizer({ 

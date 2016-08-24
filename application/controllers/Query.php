@@ -261,10 +261,13 @@ class Query extends CI_Controller {
 	private function dataOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$includeTable){
 		$this->load->model('model_query');
 		
-		//$username = $this->session->userdata('username');
+		$username = $this->session->userdata('username');
 		/* Marge Keyword*/
-		//$keywords =  "'".$k1."', "."'".$k2."', "."'".$k3."', "."'".$k4."', "."'".$k5."'";
-		//$this->model_query->storeReportHistory($username,$keywords,$datefrom,$dateto,$includeTable);
+		$keywords =  "'".$k1."', '".$k2."', '".$k3."', '".$k4."', '".$k5."'";
+		date_default_timezone_set('Asia/Jakarta');
+		$date = date('Y-m-d h:i:s a', time());
+		$this->model_query->storeReportHistory($username,$keywords,$datefrom,$dateto,$includeTable,$date);
+
 		
 		return $this->model_query->getCountBasedKeywordOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$includeTable);
 

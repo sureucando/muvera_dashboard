@@ -7,11 +7,19 @@ class Login extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('session_model');
+		
 	}
 
 	public function index()
 	{
-		$this->home();
+		if ( ! $this->session->userdata('logged_in'))
+        {
+			$this->home();
+        }
+        else
+        {
+			redirect('media_online', 'location');
+        }
 	}
 
 	public function home()

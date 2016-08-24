@@ -57,7 +57,19 @@ require_once(APPPATH.'third_party/ChromePhp.php');
 			}
 		}
 
-		//function storeReportHistory($username, $keywords, $datefrom, $dateto, $table_name){
-		//	$query = $this->db->query("INSERT INTO report_history (username, keyword, media, filename, date_range_start, date_range_end) VALUES ('$username','$keywords', '$table_name', '', '$dateform', '$dateto')");
-		//}
+		function storeReportHistory($username, $keywords, $datefrom, $dateto, $table_name, $hit_time){
+			$history = array (
+				'username' => $username,
+				'keyword' => $keywords,
+				'media' => $table_name,
+				'filename' => '',
+				'date_range_start' => $datefrom,
+				'date_range_end' => $dateto,
+				'hit_time' => $hit_time
+			);
+			
+			$this->db->insert('report_history', $history);
+
+			//$query = $this->db->query("insert into report_history (username, keyword, media, filename, date_range_start, date_range_end) values ('$username','$keywords', '$table_name', '', '$dateform', '$dateto')");
+		}
 	}

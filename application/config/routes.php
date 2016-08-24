@@ -55,5 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 //$route['media_online'] = 'media_online';
 $route['contact_us'] = 'contact_us';
 $route['login'] = 'login';
+$route['history'] = 'history';
 $route['subscription'] = 'subscription';
 $route['query'] = 'query';

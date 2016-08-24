@@ -10,7 +10,7 @@
 				<div class="section-cs">
 					<div id="get-in-touch">
 						<h1 class="content-title">DON'T HESITATE TO <div style="color: #29f380; display: inline-block;">ASK US</div></h1>
-						<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ex massa, elementum nec ullamcorper ut, posuere ut sem. Integer sed urna id ex feugiat aliquet."</p>
+						<!--<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ex massa, elementum nec ullamcorper ut, posuere ut sem. Integer sed urna id ex feugiat aliquet."</p>-->
 						<div class="btn btn-md btn-blue" id="btn-git">Get In Touch</div>
 						<img src="assets/images/contact-us.png">
 					</div>
