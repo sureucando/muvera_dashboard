@@ -5,8 +5,16 @@
 	src: url('type/AvenirNextLTPro-Regular.woff') format('woff');
 }
 @font-face {
+	font-family: 'AvenirBook';
+	src: url('type/Avenir-Book.woff') format('woff');
+}
+@font-face {
 	font-family: 'AvenirNextBold';
 	src: url('type/AvenirNext-Bold.woff') format('woff');
+}
+@font-face {
+	font-family: 'AvenirNextDemiBold';
+	src: url('type/AvenirNext-DemiBold.woff') format('woff');
 }
 @font-face {
 	font-family: 'AvenirNextMed';
@@ -23,6 +31,10 @@
 @font-face {
 	font-family: 'GothamMed';
 	src: url('type/Gotham-Med.woff') format('woff');
+}
+@font-face {
+	font-family: 'BebasNeue';
+	src: url('type/BebasNeue.woff') format('woff');
 }
 
 html {
@@ -67,9 +79,9 @@ td{
 }
 
 select {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 input, textarea, select {
@@ -81,14 +93,78 @@ input, textarea, select {
 	vertical-align: bottom;
 	width: 100%;
 	height: 100%;
-	overflow: auto;
+	overflow: hidden;
 }
 
 /* For Landing Page */
+#landing-container {
+	min-height: 73.6%;
+	min-width: 100%;
+	padding: 12% 0;
+	background-color: #7381A5;
+	background: #7381A5;
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, #7381A5, #856F9E); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #7381A5, #856F9E); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #7381A5, #856F9E); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #7381A5, #856F9E); /* Standard syntax */
+	color: #fff;
+	overflow: hidden;
+}
 
-.landing img {
-	max-width: 100%;
-	height: auto;
+#landing-container img,
+#landing-container h1,
+#landing-container h2,
+#landing-container h3 {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;
+}
+
+img#pattern1 {
+	position: absolute;
+	width: 30%;
+	top: 0;
+	right: 0;
+}
+
+img#pattern2 {
+	position: absolute;
+	width: 30%;
+	left: 0;
+	bottom: 0;
+}
+
+.section-product {
+	width: 100%;
+	height: 100%;
+}
+
+.section-product h1 {
+	font-family: "BebasNeue";
+	font-size: 1500%;
+}
+
+.section-product h2 {
+	font-family: "AvenirNextUltraLight";
+	font-size: 300%;
+	margin-top: -50px;
+	margin-right: -120px;
+}
+
+.section-product h3 {
+	font-family: "AvenirNextUltraLight";
+	font-size: 125%;
+	margin-top: 0px;
+	margin-right: -385px;
+}
+
+.section-product .btn {
+	position: absolute;
+	margin-left: -170px;
 }
 
 .btn-landing {
@@ -98,979 +174,1102 @@ input, textarea, select {
 }
 /* End Of Landing Page */
 
-/* 1000px */
-/*@media only screen and (min-width: 1000px) {*/
 /* For Dashboard */
-	/* Header Bar */
-	#header {
+/* Header Bar */
+#header {
+	position: fixed;
+	background-color: #131418;
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	margin: 0;
+	z-index: 3;
+}
+
+.header-container {
+	height: 50px;
+	clear: both;
+}
+
+.header-left {
+	text-align: left;
+	position: fixed;
+	width: 25%;
+}
+
+.header-right {
+	text-align: right;
+	position: fixed;
+	width: 25%;
+}
+
+.header-mid {
+	padding: 0 35%;
+	position: fixed;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.header-mediaonline {
+	position: fixed;
+	padding: 18px 20px;
+	display: none;
+}
+
+.header-twitter {
+	position: fixed;
+	padding: 18px 20px;
+	display: none;
+}
+
+.header-facebook {
+	position: fixed;
+	width: auto;
+	padding: 18px 0;
+	display: none;
+}
+
+.header-logo {
+	position: fixed;
+	padding: 7px 12px;
+	color: #FFFFFF;
+	font-family: "GothamMed";
+	font-size: 3.04em;
+	line-height: 1em;
+	height: 36px;
+}
+
+.beta-version {
+	font-family: "AvenirNext";
+	display: inline-block;
+}
+
+.header-logo .beta-version {
+	font-size: 0.4em;
+	margin-left: 10px;
+	height: 30px;
+}
+
+h1 .beta-version {
+	font-size: 0.1em;
+}
+
+.header-dashboard img {
+	vertical-align: middle;
+	width: 23px;
+	height: 29px;
+	padding-right: 15px;
+}
+
+@media only screen and (min-width: 1367px){
+	.header-dashboard {
 		position: fixed;
-		background-color: #131418;
-		height: 50px;
-		width: 100%;
-		position: fixed;
-		margin: 0;
-		z-index: 3;
-	}
-
-	.header-container {
-		height: 50px;
-		clear: both;
-	}
-
-	.header-left {
-		text-align: left;
-		position: fixed;
-		width: 25%;
-	}
-
-	.header-right {
-		text-align: right;
-		position: fixed;
-		width: 25%;
-	}
-
-	.header-mid {
-		padding: 0 35%;
-		position: fixed;
-		text-align: center;
-		color: #FFFFFF;
-	}
-
-	.header-mediaonline {
-		position: fixed;
-		padding: 18px 20px;
-		display: none;
-	}
-
-	.header-twitter {
-		position: fixed;
-		padding: 18px 20px;
-		display: none;
-	}
-
-	.header-facebook {
-		position: fixed;
-		width: auto;
-		padding: 18px 0;
-		display: none;
-	}
-
-	.header-logo {
-		position: fixed;
-		padding: 7px 12px;
-		color: #FFFFFF;
-		font-family: "GothamMed";
-		font-size: 3.04em;
-		line-height: 1em;
-	}
-
-	@media only screen and (min-width: 1367px){
-		.header-dashboard {
-			position: fixed;
-			right: 13.5%;
-			background: #7381A5;
-			background: linear-gradient(to right, #856F9E, #7381A5);
-			background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
-			background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
-			background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
-			color: #FFFFFF;
-			height: 28px;
-			padding: 11px 15px;
-		}
-
-		.header-dashboard img {
-			vertical-align: middle;
-			width: 23px;
-			height: 29px;
-			padding-right: 15px;
-		}
-
-		.header-login {
-			position: fixed;
-			top: 10px;
-			right: 7.5%;
-			padding: 5px 25px; 
-			color: #FFFFFF;
-		}
-
-		.header-contactus {
-			position: fixed;
-			top: 10px;
-			right: 0;
-			padding: 5px 25px; 
-			color: #FFFFFF;
-			border-left: 1px solid #ffffff;
-		}
-	}
-
-	@media only screen and (min-width: 1025px) and (max-width: 1366px) {
-		.header-dashboard {
-			position: fixed;
-			right: 18%;
-			background: #7381A5;
-			background: linear-gradient(to right, #856F9E, #7381A5);
-			background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
-			background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
-			background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
-			color: #FFFFFF;
-			height: 28px;
-			padding: 11px 15px;
-		}
-
-		.header-dashboard img {
-			vertical-align: middle;
-			width: 23px;
-			height: 29px;
-			padding-right: 15px;
-		}
-
-		.header-login {
-			position: fixed;
-			top: 10px;
-			right: 10%;
-			padding: 5px 25px; 
-			color: #FFFFFF;
-		}
-
-		.header-contactus {
-			position: fixed;
-			top: 10px;
-			right: 0;
-			padding: 5px 25px; 
-			color: #FFFFFF;
-			border-left: 1px solid #ffffff;
-		}
-	}
-
-	@media only screen and (min-width: 801px) and (max-width: 1024px) {
-		.header-dashboard {
-			position: fixed;
-			right: 23%;
-			background: #7381A5;
-			background: linear-gradient(to right, #856F9E, #7381A5);
-			background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
-			background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
-			background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
-			color: #FFFFFF;
-			height: 28px;
-			padding: 11px 15px;
-		}
-
-		.header-dashboard img {
-			vertical-align: middle;
-			width: 23px;
-			height: 29px;
-			padding-right: 15px;
-		}
-
-		.header-login {
-			position: fixed;
-			top: 10px;
-			right: 13%;
-			padding: 5px 25px; 
-			color: #FFFFFF;
-		}
-
-		.header-contactus {
-			position: fixed;
-			top: 10px;
-			right: 0;
-			padding: 5px 25px; 
-			color: #FFFFFF;
-			border-left: 1px solid #ffffff;
-		}
-	}
-
-	@media only screen and (max-width: 800px) {
-		.header-dashboard {
-			position: fixed;
-			right: 27.5%;
-			background: #7381A5;
-			background: linear-gradient(to right, #856F9E, #7381A5);
-			background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
-			background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
-			background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
-			color: #FFFFFF;
-			height: 28px;
-			padding: 11px 15px;
-		}
-
-		.header-dashboard img {
-			vertical-align: middle;
-			width: 23px;
-			height: 29px;
-			padding-right: 15px;
-		}
-
-		.header-login {
-			position: fixed;
-			top: 10px;
-			right: 15%;
-			padding: 5px 25px; 
-			color: #FFFFFF;
-		}
-
-		.header-contactus {
-			position: fixed;
-			top: 10px;
-			right: 0;
-			padding: 5px 25px; 
-			color: #FFFFFF;
-			border-left: 1px solid #ffffff;
-		}
-	}
-
-	.header-mediaonline:hover,
-	.header-facebook:hover,
-	.header-twitter:hover,
-	.header-login:hover,
-	.header-contactus:hover {
-		cursor: pointer;
-		color: #565B68;
-	}
-
-	.header-active {
-		color: #565B68;
-	}
-
-	/* Banner */
-	.banner {
-		margin: 0;
-		padding: 0;
-	}
-
-	.banner-top {
-		font-family: 'AvenirNextUltraLight';
-		padding-top: 35px;
-		background-color: rgba(19,20,24,0.65);
-		color: #FFFFFF;
-		height: 110px;
-		width: 100%;
-		text-align: center;
-		font-size: 20.25pt;
-	}
-
-	.banner-bot {
-		background-color: #fff;
-		border-bottom: 2px solid #cdcdcd; 
-		height: 55px;
-		width: 100%;
-	}
-
-	.banner-top .btn {
-		display: block;
-	}
-
-	/* Content */
-	.content {
-		position: fixed;
-		top: 50px;
-		width: 100%;
-		background-color: #eaeaea;
-		overflow-y: scroll;
-	}
-
-	@media only screen and (min-width: 1367px){
-		.content-container {
-			min-height: 100%;
-			height: auto !important;
-			height: 100%;
-			background-color: #fff;
-			margin: 0 9.5%;
-			padding: 0px 35px 55px 35px;
-			text-align: center;
-		}
-	}
-
-	@media only screen and (min-width:1025px) and (max-width: 1366px){
-		.content-container {
-			min-height: 100%;
-			height: auto !important;
-			height: 100%;
-			background-color: #fff;
-			margin: 0 9.5%;
-			padding: 0px 35px 55px 35px;
-			text-align: center;
-		}
-	}
-
-	@media only screen and (min-width: 801px) and (max-width:1024px){
-		.content-container {
-			min-height: 100%;
-			height: auto !important;
-			height: 100%;
-			background-color: #fff;
-			margin: 0;
-			padding: 0px 35px 55px 35px;
-			text-align: center;
-		}
-	}
-
-	@media only screen and (max-width:800px){
-		.content-container {
-			min-height: 100%;
-			height: auto !important;
-			height: 100%;
-			background-color: #fff;
-			margin: 0;
-			padding: 0px 55px 55px 55px;
-			text-align: center;
-		}
-	}
-
-	h1.content-title {
-		font-family: "AvenirNextBold";
-		margin-bottom: 20px;
-		text-align: center;
-		font-size: 5em;
-	}
-
-	/* Section */
-	.section-search {
-		height: 350px;
-		padding-top: 20px;
-	}
-
-	.section-search h1{
-		 margin: 0 auto;
-	}
-
-	.section-choice {
-		padding: 0 20px;
-		height: auto;
-	}
-
-	.section-report {
-		padding: 0 20px;
-		height: auto;
-		display: none;
-	}
-
-	.section-cs {
-		padding: 50px;
-		text-align: center;
-	}
-
-	/* Contuct Us */
-	#get-in-touch>p {
-		margin: 25px 23%;
-		font-style: italic;
-		color: #dcdcdc;
-	}
-
-	#get-in-touch>img {
-		width: 90%;
-	}
-
-	#contact-us-form {
-		margin: 0;
-		padding: 0;
-		display: none;
-	}
-
-	.contact-us-left,
-	.contact-us-right {
-		width: 49%;
-		height: inherit;
-		display: inline-block;
-		vertical-align: top;
-	}
-
-	.contact-us-right {
-	}
-	
-	.img-dummy {
-		background: #B9C0FF;
-		width: 800px;
-		height: 600px;		
-	}
-
-	.contact-us-left>.img-dummy {
-		width: 100%;
-	}
-
-	.form-container {
-		width: 100%;
-		padding: 20px;
-	}
-
-	.form-container>input,
-	.form-container>textarea {
-		display: block;
-		padding: 5px;
-		width: 90%;
-		font-size: 125%;
-		border: none;
-		border-bottom: 2px solid #cdcdcd;
-		margin-bottom: 5px;
-	}
-
-	.form-container>.btn-md {
-		font-size: 125%;
-	}
-
-	/* Form */
-	form#search-form{
-		height: auto;
-	}
-
-	form#share-form{
-		height: 175px;
-	}
-
-	/* Search Word */
-	#search-container {
-		text-align: left;
-		position: relative;
-		margin: 20px auto;
-		width: 66%;
-		height: 60px;
-	}
-	
-	.label-word {
-		display: none;
-	}
-	
-	input.search-keyword {
-		margin: 0 1.4%;
-		padding: 15px 1%;
-		width: 13.33%;
-		color: #cdcdcd;
-		font-size: 1.2em;
-		border: 3px solid #dcdcdc;
-		border-radius: 2px;
-		cursor: pointer;
-	}
-
-	input.search-keyword-main:hover, 
-	input.search-keyword-main:focus {
-		border-left: 3px solid #856F9E;
-		color: #565B68;
-	}
-
-	input.search-keyword-tax:hover,
-	input.search-keyword-tax:focus {
-		border-left: 3px solid #B9C0FF;
-		color: #565B68;
-	}
-
-	.tax1, .tax2, .tax3, .tax4 {
-		display: none;
-	}
-
-	/* Report */
-	h3 {
-		font-size: 20px;
-	}
-
-	h3>img {
-		height: 40px;
-		width: 40px;
-		margin-right: 20px;
-	}
-
-	#report-1 {
-		display: none;
-	}
-
-	.report-content-chart {
-		height: 350px;
-	}
-
-	.report-content-file {
-		height: 350px;
-	}
-
-	.report-chart {
-		text-align: left;
-	}
-
-	/*
-	.chart-container {
-		margin-bottom: 20px;
-	}
-
-	.file-container {
-		margin-top: 20px;
-	}
-
-	.report-file {
-		padding-top: 50px;
-	}
-
-	img.file {
-		margin-top: 60px;
-		margin-left: 300px;
-		height: 300px;
-	}
-	*/
-	#share-cont {
-		text-align: center;
-		margin: 10px auto;
-		border-radius: 5px;
-		height: 175px;
-		width: 500px;
-		background: #d6d8da;
-		display: none;
-	}
-
-	/* Datepicker */
-	.get-time {
-		font-family: "AvenirLight";
-		text-align: center;
-		width: 65%;
-		margin: 1% auto;
-	}
-
-	#datepicker-container {
-		/*width: inherit;*/
-		margin: 5px 0;
-	}
-
-	#timepicker-container {
-		/*margin: 1%;*/
-		margin: 5px 0;
-	}
-
-	.datepicker-from {
-		/*margin-right: 4%;*/
-	}
-
-	.timepicker-from {
-		/*margin-right: 0.8%;*/ 
-	}
-
-	.datepicker-from, .datepicker-to, 
-	.timepicker-from, .timepicker-to {
-		display: inline-block;
-		/*float: left;*/
-	}
-
-	.datepicker-from, .datepicker-to {
-		background: #A5B6D6;
-		/*float: left;*/
-	}
- 
-	.timepicker-from, .timepicker-to {
-		background: #dcdcdc;
-		/*float: left;*/
-	}
-
-	.datepicker-from label, .datepicker-to label 
-	/*,.timepicker-from, .timepicker-to*/ {
-		width: 76.8px;
-		background: #A5B6D6;
-		/*float: left;*/
-	}
-
-	.timepicker-from input, .timepicker-to input {
-		/*margin-left: 8.9%;*/
-		background: #dcdcdc;
-		/*float: left;*/
-	}
-
-	input.from-date, input.to-date,
-	input.from-time, input.to-time,
-	select.from-period, select.to-period {
-		font-family: "AvenirLight";
-		font-style: ;
-		border: none;
-		background: #dcdcdc;
-		height: 2.4em;
-		text-align: right;
-		border-radius: 0;
-		margin: 0;
-	}
-
-	input.from-date, input.to-date {
-		width: 10em;
-		padding: 0 1em;
-	}
-
-	input.from-time, input.to-time {
-		width: 3.7em;
-	}
-
-	select.from-period, select.to-period {
-		background: #A5B6D6;
-		width: 3.9em;
-		padding-left: 15px;
-	}
-
-	input[type=date] {
-		font-family: 'AvenirNext';
-	}
-
-	input[type=date]::-webkit-inner-spin-button {
-		display: none;
-	}
-
-	::-webkit-calendar-picker-indicator {
-		padding: 4px 7px;
-		background: #dcdcdc;
-	}
-
-	/*input[type=time]::-webkit-inner-spin-button {
-		padding: 7px 7px;
-		background: #dcdcdc;
-	}*/
-
-	input[type=number]::-webkit-inner-spin-button {
-		height: 2.5em;
-		color: #dcdcdc;
-	}
-
-	input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-	    color: #000000;
-	}
-
-	#share-form>input {
-		margin: 50px 40px 0 40px;
-		padding-left: 20px;
-		border-radius: 5px;
-		border: none;
-		height: 50px;
-		width: 400px;
-		font-size: 1.2em;
-	}
-
-	#datepicker-container label,
-	#timepicker-container label {
-		margin: auto;
-		padding: 0 10px;
-	}
-
-	/* Choose Media */
-	@media only screen and (min-width: 1367px){
-		.media-container {
-			text-align: left;
-			width: 83%;
-			margin: 0 auto;
-			padding: 0;
-		}
-	}
-	@media only screen and (min-width: 1025px) and (max-width: 1366px){
-		.media-container {
-			text-align: left;
-			width: 87.50%;
-			margin: 0 auto;
-			padding: 0;
-		}
-	}
-
-	@media only screen and (min-width: 801px) and (max-width:1024px){
-		.media-container {
-			text-align: left;
-			width: 97%;
-			margin: 0 auto;
-			padding: 0;
-		}
-	}
-
-	@media only screen and (max-width: 800px){
-		.media-container {
-			text-align: left;
-			width: 97%;
-			margin: 0 auto;
-			padding: 0;
-		}
-	}
-
-	
-
-	.media-box {
-		font-family: "AvenirNextBold";
-		display: inline-block;
-		border: 1px solid #cdcdcd;
-		width: 115px;
-		height: 140px;
-		margin: 0.1%;
-		overflow-y: auto;
-		overflow-x: hidden;
-	}
-
-	.media-box-cont {
-		font-family: "AvenirNext";
-		margin: 5px 0 0 5px;
-		width: 100%;
-		font-size: 1.35em;
-		overflow-x: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-	}
-
-	.media-box-cont>label:hover {
-		margin: -1px 0 0 3.5px;
-		border: 1px solid #cdcdcd;
-		border-radius: 3px;
-		background: #dedede;
-		position: absolute;
-		display: inline-block;
-		z-index: 3;
-	}
-
-	.media-box-img {
-		position: absolute;
-		display: inline-block;
-		background: #cdcdcd;
-		width: 115px;
-		height: 140px;
-		font-size: 8.2em;
-		text-align: center;
-	}
-	/*
-	.btn-media-container {
-		margin: 0 3%;
-		padding: 0;
-	}
-
-	.btn-media {
-		display: inline-block;
-		margin: 1% 1.15%;
-		background-color: #131418;
-		overflow: hidden;
-	}
-
-	.btn-media-md {
-		height: 10.59%;
-		width: 30.73%;
-	}
-
-	.btn-media-lg {
-		height: 100px;
-		width: 437px;
-	}
-
-	.btn-media label {
-		display: inline-block;
-		background-color: #131418;
-		font-weight: bold;
-		text-align: center;
-		color: #fff;
-		overflow: hidden;
-	}
-
-	.btn-media-md label {
-		padding: 5.28% 0;
-		font-size: 2.4em;
-		line-height: 24pt;
-		height: 100%;
-		width: 100%;
-	}
-
-	.btn-media-lg label {
-		padding: 25px 0px;
-		font-size: 3.4em;
-		line-height: 34pt;
-		height: 50px;
-		width: 437px;
-	}
-	*/
-	.btn-media input[type=checkbox] {
-		display: none;
-	}
-
-	.btn-media label:hover {
-		background: rgba(41,243,128,0.8);
-	}
-
-	.btn-media input[type=checkbox]:checked + label {
-		background: rgba(41,243,128,0.8);
-	}
-
-	.btn-media-md input[type=checkbox]:checked + label {
-		height: 100%;
-		width: 100%;
-	}
-	/*
-	.btn-media-lg input[type=checkbox]:checked + label {
-		height: 50px;
-		width: 437px;
-	}
-	*/
-	/* Button */
-	.btn {
-		cursor: pointer;
-	}
-
-	.btn-orange {
+		right: 13.5%;
 		background: #7381A5;
 		background: linear-gradient(to right, #856F9E, #7381A5);
 		background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
 		background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
 		background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
-		color: #fff;
-	}
-
-	.btn-orange:hover,
-	.btn-orange.selected {
-		background: #9FC9FF;
-		background: linear-gradient(to right, #B9C0FF, #9FC9FF);
-		background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
-	}
-
-	.btn-blue {
-		background: #9FC9FF;
-		background: linear-gradient(to right, #B9C0FF, #9FC9FF);
-		background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
-		color: #fff;
-	}
-
-	.btn-blue:hover,
-	.btn-blue.selected {
-		background: #29f380;
-		background: linear-gradient(to right, #29f380, #29f380);
-		background: -webkit-linear-gradient(left, #29f380 , #29f380); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #29f380, #29f380); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #29f380, #29f380); /* For Firefox 3.6 to 15 */
-		color: #fff;
-	}
-
-	.btn-green {
-		background: #29f380;
-		background: linear-gradient(to right, #29f380, #29f380);
-		background: -webkit-linear-gradient(left, #29f380 , #29f380); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #29f380, #29f380); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #29f380, #29f380); /* For Firefox 3.6 to 15 */
-		color: #fff;
-	}
-
-	.btn-green:hover,
-	.btn-green.selected {
-		background: #9FC9FF;
-		background: linear-gradient(to right, #B9C0FF, #9FC9FF);
-		background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
-	}
-
-	.btn-lg-rnd {
-		border-radius: 50px;
-		width: 46.74%;
-		margin: 55px auto;
-		padding: 1.23% 15%;
-		font-size: 1.4em;
-		box-shadow: 0 15px 15px rgba(0,0,0,0.15);
-	}
-
-	#btn-dl-cont {
-		text-align: center;
-		display: none;
-	}
-
-	.btn-rnd {
-		display: inline-block;
-		border-radius: 50px;
-		width: 100px;
-		height: 100px;
-		margin: 0 auto;
-	}
-
-	.btn-rnd>img {
-		height: 72%;
-		width: 60%;
-		margin: 13px auto;
-	}
-
-	.btn-sm {
-		border-radius: 7px;
-		width: 10%;
-		margin: 10px auto;
-		padding: 0.5% 0 0.5% 0.19%;
-		font-size: 0.45em;
-	}
-
-	.btn-md {
-		border-radius: 5px;
-		text-align: center;
-		width: 25%;
-		margin: 20px auto;
-		padding: 1px 0;
-		font-size: 2em;
-	}
-
-	.btn-lg {
-		border-radius: 10px;
-		text-align: center;
-		width: 73.24%;
-		margin: 30px auto;
-		padding: 10px 0;
-		font-size: 1.4em;
-		box-shadow: 0 5px 5px rgba(0,0,0,0.15);
-	}
-
-	/* Footer Bar */
-	#footer {
-		background-color: #131418;
-		height: 25px;
-		width: 100%;
-		position: relative;
-		margin: 0;
-	}
-
-	.footer-left {
-		padding: 3px 10px;
 		color: #FFFFFF;
-		float: left;
+		height: 28px;
+		padding: 11px 15px;
 	}
 
-	.footer-right {
-		padding: 3px 10px;
-		color:  #FFFFFF;
-		float: right;
-	}
-
-	#footer a {
-		padding: 0 5px;
-	}
-
-	#footer a:hover {
-		text-decoration: underline;
-	}
-
-	/* Loading */
-	#loading {
+	.header-login {
 		position: fixed;
-		top: 0;
-		left: 0;
+		top: 10px;
+		right: 7.5%;
+		padding: 5px 25px; 
+		color: #FFFFFF;
+	}
+
+	.header-contactus {
+		position: fixed;
+		top: 10px;
+		right: 0;
+		padding: 5px 25px; 
+		color: #FFFFFF;
+		border-left: 1px solid #ffffff;
+	}
+}
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+	.header-dashboard {
+		position: fixed;
+		right: 18%;
+		background: #7381A5;
+		background: linear-gradient(to right, #856F9E, #7381A5);
+		background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
+		color: #FFFFFF;
+		height: 28px;
+		padding: 11px 15px;
+	}
+
+	.header-login {
+		position: fixed;
+		top: 10px;
+		right: 10%;
+		padding: 5px 25px; 
+		color: #FFFFFF;
+	}
+
+	.header-contactus {
+		position: fixed;
+		top: 10px;
+		right: 0;
+		padding: 5px 25px; 
+		color: #FFFFFF;
+		border-left: 1px solid #ffffff;
+	}
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+	.header-dashboard {
+		position: fixed;
+		right: 23%;
+		background: #7381A5;
+		background: linear-gradient(to right, #856F9E, #7381A5);
+		background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
+		color: #FFFFFF;
+		height: 28px;
+		padding: 11px 15px;
+	}
+
+	.header-login {
+		position: fixed;
+		top: 10px;
+		right: 13%;
+		padding: 5px 25px; 
+		color: #FFFFFF;
+	}
+
+	.header-contactus {
+		position: fixed;
+		top: 10px;
+		right: 0;
+		padding: 5px 25px; 
+		color: #FFFFFF;
+		border-left: 1px solid #ffffff;
+	}
+}
+@media only screen and (max-width: 800px) {
+	.header-dashboard {
+		position: fixed;
+		right: 27.5%;
+		background: #7381A5;
+		background: linear-gradient(to right, #856F9E, #7381A5);
+		background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
+		color: #FFFFFF;
+		height: 28px;
+		padding: 11px 15px;
+	}
+
+	.header-login {
+		position: fixed;
+		top: 10px;
+		right: 15%;
+		padding: 5px 25px; 
+		color: #FFFFFF;
+	}
+
+	.header-contactus {
+		position: fixed;
+		top: 10px;
+		right: 0;
+		padding: 5px 25px; 
+		color: #FFFFFF;
+		border-left: 1px solid #ffffff;
+	}
+}
+
+.header-mediaonline:hover,
+.header-facebook:hover,
+.header-twitter:hover,
+.header-login:hover,
+.header-contactus:hover {
+	cursor: pointer;
+	color: #565B68;
+}
+
+.header-active {
+	color: #565B68;
+}
+
+/* Banner */
+.banner {
+	margin: 0;
+	padding: 0;
+}
+
+.banner-top {
+	font-family: 'AvenirNextUltraLight';
+	padding-top: 35px;
+	background-color: rgba(19,20,24,0.65);
+	color: #FFFFFF;
+	height: 110px;
+	width: 100%;
+	text-align: center;
+	font-size: 20.25pt;
+}
+
+.banner-bot {
+	background-color: #fff;
+	border-bottom: 2px solid #cdcdcd; 
+	height: 55px;
+	width: 100%;
+}
+
+.banner-top .btn {
+	display: block;
+}
+
+/* Content */
+.content {
+	position: fixed;
+	top: 50px;
+	width: 100%;
+	background-color: #F3F3F3;
+	overflow-y: scroll;
+}
+
+@media only screen and (min-width: 1367px){
+	.content-container {
+		min-height: 100%;
+		height: auto !important;
 		height: 100%;
+		background-color: #fff;
+		margin: 0 9.5%;
+		padding: 0px 35px 55px 35px;
+		text-align: center;
+	}
+}
+@media only screen and (min-width:1025px) and (max-width: 1366px){
+	.content-container {
+		min-height: 96%;
+		height: auto !important;
+		height: 100%;
+		background-color: #fff;
+		margin: 0 9.5%;
+		padding: 0px 35px 55px 35px;
+		text-align: center;
+	}
+}
+@media only screen and (min-width: 801px) and (max-width:1024px){
+	.content-container {
+		min-height: 95%;
+		height: auto !important;
+		height: 100%;
+		background-color: #fff;
+		margin: 0;
+		padding: 0px 35px 55px 35px;
+		text-align: center;
+	}
+}
+@media only screen and (max-width:800px){
+	.content-container {
+		min-height: 95%;
+		height: auto !important;
+		height: 100%;
+		background-color: #fff;
+		margin: 0;
+		padding: 0px 0px 55px 0px;
+		text-align: center;
+	}
+}
+
+h1.content-title {
+	font-family: "AvenirNextBold";
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 5em;
+}
+
+/* Section */
+.section-search {
+	height: 350px;
+	padding-top: 20px;
+}
+
+.section-search h1{
+	margin: 0 auto;
+}
+
+.section-choice {
+	padding: 0 20px;
+	height: auto;
+}
+
+.section-report {
+	padding: 0 20px;
+	height: auto;
+	display: none;
+}
+
+.section-cs {
+	padding: 50px;
+	text-align: center;
+}
+
+/* Contact Us & Login */
+#get-in-touch>p {
+	margin: 25px 23%;
+	font-style: italic;
+	color: #dcdcdc;
+}
+
+#get-in-touch>img {
+	width: 90%;
+}
+
+#contact-us-form {
+	margin: 0;
+	padding: 0;
+	display: none;
+}
+
+#login-form {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+
+.contact-us-left, .contact-us-right,
+.login-left, .login-right {
+	width: 49.84%;
+	height: inherit;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.contact-us-left, .login-left {
+	display: none;
+}
+
+/*@media only screen and (min-width: 1366px){
+	.img-dummy {
+		background: #B9C0FF;
+		width: 800px;
+		height: 600px;
+	}
+
+	.contact-us-left .img-dummy,
+	.login-left .img-dummy {
 		width: 100%;
-		background: rgba(0,0,0,0.3);
+	}
+}*/
+
+.form-container {
+	text-align: left;
+	width: 100%;
+	padding: 20px;
+}
+
+.form-container input,
+.form-container textarea {
+	display: block;
+	padding: 5px;
+	width: 90%;
+	font-size: 125%;
+	border: none;
+	border-bottom: 2px solid #cdcdcd;
+	margin-bottom: 5px;
+}
+
+.form-container label {
+	font-size: 125%;
+	color: #ababab;
+}
+
+.form-container input[type=submit] {
+	width: auto;
+	padding: 5px 15px;
+	box-shadow: none !important;
+}
+
+.form-container .btn-md {
+	font-size: 125%;
+	padding: 5px;
+}
+
+#login-page {
+	padding: 0;
+}
+
+/* Form */
+form#search-form{
+	height: auto;
+}
+
+form#share-form{
+	height: 175px;
+}
+
+/* Search Word */
+#search-container {
+	text-align: left;
+	position: relative;
+	margin: 20px auto;
+	width: 66%;
+	height: 60px;
+}
+
+.label-word {
+	display: none;
+}
+
+input.search-keyword {
+	margin: 0 1.4%;
+	padding: 15px 1%;
+	width: 13.33%;
+	color: #cdcdcd;
+	font-size: 1.2em;
+	border: 3px solid #dcdcdc;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+input.search-keyword-main:hover, 
+input.search-keyword-main:focus {
+	border-left: 3px solid #856F9E;
+	color: #565B68;
+}
+
+input.search-keyword-tax:hover,
+input.search-keyword-tax:focus {
+	border-left: 3px solid #B9C0FF;
+	color: #565B68;
+}
+
+.tax1, .tax2, .tax3, .tax4 {
+	display: none;
+}
+
+/* Report */
+h3 {
+	font-size: 20px;
+}
+
+h3>img {
+	height: 40px;
+	width: 40px;
+	margin-right: 20px;
+}
+
+#report-1 {
+	display: none;
+}
+
+.report-content-chart {
+	height: 350px;
+}
+
+.report-content-file {
+	height: 350px;
+}
+
+.report-chart {
+	text-align: left;
+}
+
+/*
+.chart-container {
+	margin-bottom: 20px;
+}
+
+.file-container {
+	margin-top: 20px;
+}
+
+.report-file {
+	padding-top: 50px;
+}
+
+img.file {
+	margin-top: 60px;
+	margin-left: 300px;
+	height: 300px;
+}
+*/
+#share-cont {
+	text-align: center;
+	margin: 10px auto;
+	border-radius: 5px;
+	height: 175px;
+	width: 500px;
+	background: #d6d8da;
+	display: none;
+}
+
+/* Datepicker */
+.get-time {
+	font-family: "AvenirLight";
+	text-align: center;
+	width: 65%;
+	margin: 1% auto;
+}
+
+#datepicker-container {
+	/*width: inherit;*/
+	margin: 5px 0;
+}
+
+#timepicker-container {
+	/*margin: 1%;*/
+	margin: 5px 0;
+}
+
+.datepicker-from {
+	/*margin-right: 4%;*/
+}
+
+.timepicker-from {
+	/*margin-right: 0.8%;*/ 
+}
+
+.datepicker-from, .datepicker-to, 
+.timepicker-from, .timepicker-to {
+	display: inline-block;
+	/*float: left;*/
+}
+
+.datepicker-from, .datepicker-to {
+	background: #A5B6D6;
+	/*float: left;*/
+}
+
+.timepicker-from, .timepicker-to {
+	background: #dcdcdc;
+	/*float: left;*/
+}
+
+.datepicker-from label, .datepicker-to label 
+/*,.timepicker-from, .timepicker-to*/ {
+	width: 76.8px;
+	background: #A5B6D6;
+	/*float: left;*/
+}
+
+.timepicker-from input, .timepicker-to input {
+	/*margin-left: 8.9%;*/
+	background: #dcdcdc;
+	/*float: left;*/
+}
+
+input.from-date, input.to-date,
+input.from-time, input.to-time,
+select.from-period, select.to-period {
+	font-family: "AvenirLight";
+	font-style: ;
+	border: none;
+	background: #dcdcdc;
+	height: 2.4em;
+	text-align: right;
+	border-radius: 0;
+	margin: 0;
+}
+
+input.from-date, input.to-date {
+	width: 10em;
+	padding: 0 1em;
+}
+
+input.from-time, input.to-time {
+	width: 3.7em;
+}
+
+select.from-period, select.to-period {
+	background: #A5B6D6;
+	width: 3.9em;
+	padding-left: 15px;
+}
+
+input[type=date] {
+	font-family: 'AvenirNext';
+}
+
+input[type=date]::-webkit-inner-spin-button {
+	display: none;
+}
+
+::-webkit-calendar-picker-indicator {
+	padding: 4px 7px;
+	background: #dcdcdc;
+}
+
+/*input[type=time]::-webkit-inner-spin-button {
+	padding: 7px 7px;
+	background: #dcdcdc;
+}*/
+
+input[type=number]::-webkit-inner-spin-button {
+	height: 2.5em;
+	color: #dcdcdc;
+}
+
+input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color: #000000;
+}
+
+#share-form>input {
+	margin: 50px 40px 0 40px;
+	padding-left: 20px;
+	border-radius: 5px;
+	border: none;
+	height: 50px;
+	width: 400px;
+	font-size: 1.2em;
+}
+
+#datepicker-container label,
+#timepicker-container label {
+	margin: auto;
+	padding: 0 10px;
+}
+
+/* Choose Media */
+.media-container {
+	text-align: left;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.select-all-cont{
+	font-family: "AvenirNext";
+	font-size: 1.35em;
+	text-align: right;
+	width: 95%;
+}
+
+@media only screen and (min-width: 1367px){
+	.media-container {
+		width: 83%;
 	}
 
-	#loading>img {
-		position: fixed;
-		top:40%;
-		left:45%;
-		height: 15%;
-		opacity: 0.9;
-		z-index: 10;
+	.select-all-cont{
+		width: 99%;
+	}
+}
+@media only screen and (min-width: 1025px) and (max-width: 1366px){
+	.media-container {
+		width: 87.50%;
 	}
 
-	/* Chart */
-	.arc text {
-	  font: 1em sans-serif;
-	  text-anchor: middle;
+	.select-all-cont{
+		width: 99%;
+	}
+}
+@media only screen and (min-width: 801px) and (max-width:1024px){
+	.media-container {
+		width: 97%;
 	}
 
-	.arc path {
-	  stroke: #fff;
+	.select-all-cont{
+		width: 99%;
+	}
+}
+@media only screen and (max-width: 800px){
+	.media-container {
+		width: 97%;
 	}
 
-	div.tooltip { 
-	    position: fixed;     
-	    text-align: center;
-	    padding: 2px;       
-	    font: 1.2em sans-serif;    
-	    background: lightsteelblue; 
-	    border: 0px;    
-	    border-radius: 8px;     
-	    pointer-events: none;     
-	    z-index: 5;
+	.select-all-cont{
+		width: 99%;
 	}
+}
 
-/*}*/
+.media-box {
+	font-family: "AvenirNextBold";
+	display: inline-block;
+	border: 1px solid #cdcdcd;
+	width: 115px;
+	height: 140px;
+	margin: 0.1%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.media-box-cont {
+	font-family: "AvenirNext";
+	margin: 5px 0 0 5px;
+	width: 100%;
+	font-size: 1.35em;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.media-box-cont>label:hover {
+	margin: -1px 0 0 3.5px;
+	border: 1px solid #cdcdcd;
+	border-radius: 3px;
+	background: #dedede;
+	position: absolute;
+	display: inline-block;
+	z-index: 3;
+}
+
+.media-box-img {
+	position: absolute;
+	display: inline-block;
+	background: #cdcdcd;
+	width: 115px;
+	height: 140px;
+	font-size: 8.2em;
+	text-align: center;
+}
+/*
+.btn-media-container {
+	margin: 0 3%;
+	padding: 0;
+}
+
+.btn-media {
+	display: inline-block;
+	margin: 1% 1.15%;
+	background-color: #131418;
+	overflow: hidden;
+}
+
+.btn-media-md {
+	height: 10.59%;
+	width: 30.73%;
+}
+
+.btn-media-lg {
+	height: 100px;
+	width: 437px;
+}
+
+.btn-media label {
+	display: inline-block;
+	background-color: #131418;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	overflow: hidden;
+}
+
+.btn-media-md label {
+	padding: 5.28% 0;
+	font-size: 2.4em;
+	line-height: 24pt;
+	height: 100%;
+	width: 100%;
+}
+
+.btn-media-lg label {
+	padding: 25px 0px;
+	font-size: 3.4em;
+	line-height: 34pt;
+	height: 50px;
+	width: 437px;
+}
+*/
+/*.btn-media input[type=checkbox] {
+	display: none;
+}
+
+.btn-media label:hover {
+	background: rgba(41,243,128,0.8);
+}
+
+.btn-media input[type=checkbox]:checked + label {
+	background: rgba(41,243,128,0.8);
+}
+
+.btn-media-md input[type=checkbox]:checked + label {
+	height: 100%;
+	width: 100%;
+}*/
+/*
+.btn-media-lg input[type=checkbox]:checked + label {
+	height: 50px;
+	width: 437px;
+}
+*/
+/* Button */
+.btn {
+	cursor: pointer;
+}
+
+.btn-orange {
+	background: #7381A5;
+	background: linear-gradient(to right, #856F9E, #7381A5);
+	background: -webkit-linear-gradient(left, #856F9E , #7381A5); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #856F9E, #7381A5); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #856F9E, #7381A5); /* For Firefox 3.6 to 15 */
+	color: #fff;
+}
+
+.btn-orange:hover,
+.btn-orange.selected {
+	background: #9FC9FF;
+	background: linear-gradient(to right, #B9C0FF, #9FC9FF);
+	background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
+}
+
+.btn-blue {
+	background: #9FC9FF;
+	background: linear-gradient(to right, #B9C0FF, #9FC9FF);
+	background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
+	color: #fff;
+}
+
+.btn-blue:hover,
+.btn-blue.selected {
+	background: #29f380;
+	background: linear-gradient(to right, #29f380, #29f380);
+	background: -webkit-linear-gradient(left, #29f380 , #29f380); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #29f380, #29f380); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #29f380, #29f380); /* For Firefox 3.6 to 15 */
+	color: #fff;
+}
+
+.btn-green {
+	background: #29f380;
+	background: linear-gradient(to right, #29f380, #29f380);
+	background: -webkit-linear-gradient(left, #29f380 , #29f380); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #29f380, #29f380); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #29f380, #29f380); /* For Firefox 3.6 to 15 */
+	color: #fff;
+}
+
+.btn-green:hover,
+.btn-green.selected {
+	background: #9FC9FF;
+	background: linear-gradient(to right, #B9C0FF, #9FC9FF);
+	background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
+}
+
+.btn-lg-rnd {
+	border-radius: 50px;
+	width: 46.74%;
+	margin: 55px auto;
+	padding: 1.23% 15%;
+	font-size: 1.4em;
+	box-shadow: 0 15px 15px rgba(0,0,0,0.15);
+}
+
+#btn-dl-cont {
+	text-align: center;
+	display: none;
+}
+
+.btn-rnd {
+	display: inline-block;
+	border-radius: 50px;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+.btn-rnd>img {
+	width: 60%;
+	height: auto;
+	margin: 13px auto;
+}
+
+.btn-sm {
+	border-radius: 7px;
+	width: 10%;
+	margin: 10px auto;
+	padding: 0.5% 0 0.5% 0.19%;
+	font-size: 0.45em;
+}
+
+.btn-md {
+	border-radius: 5px;
+	text-align: center;
+	width: 25%;
+	margin: 20px auto;
+	padding: 1px 0;
+	font-size: 2em;
+}
+
+.btn-lg {
+	border-radius: 10px;
+	text-align: center;
+	width: 73.24%;
+	margin: 30px auto;
+	padding: 10px 0;
+	font-size: 1.4em;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.15);
+}
+
+.section-product .btn-lg{
+	border-radius: 10px;
+	padding: 5px 10px;
+	font-size: 200%;
+	width: 300px;
+	border: 2px solid #ffffff;
+	background: none;
+	box-shadow: none;
+}
+
+.section-product .btn-lg:hover{
+	background: #9FC9FF;
+	background: linear-gradient(to right, #B9C0FF, #9FC9FF);
+	background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
+}
+
+/* Reset Button */
+#reset-btn {
+	position: relative;
+	height: auto;
+	display: none;
+}
+
+#reset-btn img {
+	width: 66%;
+}
+
+.label-reset {
+	margin-top: 5px;
+	color: #747575;
+	font-size: 1.4em;
+}
+
+/* Footer Bar */
+#footer {
+	background-color: #131418;
+	height: 25px;
+	width: 100%;
+	position: relative;
+	margin: 0;
+}
+
+.footer-left {
+	padding: 3px 10px;
+	color: #FFFFFF;
+	float: left;
+}
+
+.footer-right {
+	padding: 3px 10px;
+	color:  #FFFFFF;
+	float: right;
+}
+
+#footer a {
+	padding: 0 5px;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+}
+
+/* Loading */
+#loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.3);
+}
+
+#loading>img {
+	position: fixed;
+	top:40%;
+	left:45%;
+	height: 15%;
+	opacity: 0.9;
+	z-index: 10;
+}
+
+/* Chart */
+.arc text {
+	font: 1em sans-serif;
+	text-anchor: middle;
+}
+
+.arc path {
+	stroke: #fff;
+}
+
+div.tooltip { 
+	position: fixed;     
+	text-align: center;
+	padding: 2px;       
+	font: 1.2em sans-serif;    
+	background: lightsteelblue; 
+	border: 0px;    
+	border-radius: 8px;     
+	pointer-events: none;     
+	z-index: 5;
+}
+
+/* Grid History */
+.section-history {
+	padding: 20px 0;
+}
+
+.grid-col {
+	vertical-align: top;
+	display: inline-block;
+	width: 32%;
+}
+
+.grid-item { 
+	display: block;
+	width: 96%;
+	height: 220px;
+	margin: 10px 0;
+	box-shadow: 0px 0px 10px 0px #cdcdcd;
+	cursor: pointer;
+}
+
+.grid-header {
+	float: right;
+	padding: 5px 10px;
+	height: 20px;
+}
+
+.grid-content {
+	vertical-align: middle;
+	height: 200px;
+}
+
+.grid-opened {
+	display: none;
+}
+
+.grid-footer {
+	text-align: right;
+	background-color: #cdcdcd;
+	width: 100%;
+	height: 20px;
+	margin: 0;
+	padding: 0;
+	bottom: 0;
+}
+
+.grid-tanggal {
+	float: right;
+	padding: 0px 15px;
+}
+
+.grid-content-open {
+	padding: 10px;
+}
+
+.grid-btn-cont.border-bot {
+	border-bottom: 2px solid #eaeaea; 
+}
+
+.grid-content-open>div {
+	display: block;
+	margin: 10px auto;
+}
