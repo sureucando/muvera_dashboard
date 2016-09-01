@@ -7,9 +7,18 @@
 						</div>
 						<div class="btn btn-orange btn-lg" id="report-dl">Download Report</div>
 						<div id="btn-dl-cont">
-							<div class="btn btn-orange btn-rnd" onclick="downloadPNG()"><img src="assets/images/file-png.png"></div>
-							<div class="btn btn-orange btn-rnd" onclick="downloadPDF()"><img src="assets/images/file-pdf.png"></div>
-							<div class="btn btn-orange btn-rnd" onclick="downloadXLS()"><img src="assets/images/file-csv.png"></div>
+							<div class="btn-cont-share border-right">
+								<div class="btn btn-orange btn-rnd" onclick="downloadPNG()"><img src="assets/images/file-png.png"></div>
+								<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
+							</div>
+							<div class="btn-cont-share border-right">
+								<div class="btn btn-orange btn-rnd" onclick="downloadPDF()"><img src="assets/images/file-pdf.png"></div>
+								<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
+							</div>
+							<div class="btn-cont-share">
+								<div class="btn btn-orange btn-rnd" onclick="downloadXLS()"><img src="assets/images/file-csv.png"></div>
+								<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
+							</div>
 						</div>
 						<div class="btn btn-orange btn-lg" id="report-sh">Share Report</div>
 						<div id="share-cont">

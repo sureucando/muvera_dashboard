@@ -42,12 +42,21 @@ $(document).ready(function(){
   });
 
   /* Initialize Datepicker */
-  $('.datepicker').datepicker({
+  $('.from-date.datepicker').datepicker({
     showAnim: "fadeIn",
     showOtherMonths: true,
     selectOtherMonths: true,
     changeMonth: true,
-    changeYear: true
+    changeYear: true,
+    maxDate: "-1"
+    });
+  $('.to-date.datepicker').datepicker({
+    showAnim: "fadeIn",
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    changeMonth: true,
+    changeYear: true,
+    maxDate: "0"
     });
 
   /* Search Keyword */
@@ -247,18 +256,18 @@ $(document).ready(function(){
 
   /* Grid Change */
   var opengrid = true;
-  $('.grid-content').click(function(){
+  $('.grid-header').click(function(){
     if(opengrid){
-      $(this).animate({height: 400}, "slow");
-      $(this).parent().animate({height: 420}, "slow");
-      $(this).children('.grid-closed').fadeOut(function(){
+      $(this).parents('.grid-content').animate({height: 400}, "slow");
+      $(this).parents('.grid-content').parent().animate({height: 420}, "slow");
+      $(this).parents('.grid-content').children('.grid-closed').fadeOut(function(){
         $(this).siblings('.grid-opened').fadeIn();
       });
     }
     else{
-      $(this).animate({height: 200}, "slow");
-      $(this).parent().animate({height: 220}, "slow");
-      $(this).children('.grid-opened').fadeOut(function(){
+      $(this).parents('.grid-content').animate({height: 200}, "slow");
+      $(this).parents('.grid-content').parent().animate({height: 220}, "slow");
+      $(this).parents('.grid-content').children('.grid-opened').fadeOut(function(){
         $(this).siblings('.grid-closed').fadeIn();
       });
     }

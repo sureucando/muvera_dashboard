@@ -25,12 +25,15 @@
 										<div class="grid-content-open">
 											<div class="grid-btn-cont border-bot">
 												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
 											</div>
 											<div class="grid-btn-cont border-bot">
 												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
 											</div>
 											<div class="grid-btn-cont">
 												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
 											</div>
 											<div class="grid-page-cont">
 												<i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -55,6 +58,24 @@
 										<div class="grid-header">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
+										<div class="grid-content-open">
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
+											</div>
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
+											</div>
+											<div class="grid-btn-cont">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
+											</div>
+											<div class="grid-page-cont">
+												<i class="fa fa-angle-left" aria-hidden="true"></i>
+												<i class="fa fa-angle-right" aria-hidden="true"></i>
+											</div>
+										</div>
 									</div>
 								</div>
 								<div class="grid-footer">
@@ -72,6 +93,24 @@
 									<div class="grid-opened">
 										<div class="grid-header">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
+										</div>
+										<div class="grid-content-open">
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
+											</div>
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
+											</div>
+											<div class="grid-btn-cont">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
+											</div>
+											<div class="grid-page-cont">
+												<i class="fa fa-angle-left" aria-hidden="true"></i>
+												<i class="fa fa-angle-right" aria-hidden="true"></i>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -93,6 +132,24 @@
 										<div class="grid-header">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
+										<div class="grid-content-open">
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
+											</div>
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
+											</div>
+											<div class="grid-btn-cont">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
+											</div>
+											<div class="grid-page-cont">
+												<i class="fa fa-angle-left" aria-hidden="true"></i>
+												<i class="fa fa-angle-right" aria-hidden="true"></i>
+											</div>
+										</div>
 									</div>
 								</div>
 								<div class="grid-footer">
@@ -111,6 +168,24 @@
 										<div class="grid-header">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
+										<div class="grid-content-open">
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
+											</div>
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
+											</div>
+											<div class="grid-btn-cont">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
+											</div>
+											<div class="grid-page-cont">
+												<i class="fa fa-angle-left" aria-hidden="true"></i>
+												<i class="fa fa-angle-right" aria-hidden="true"></i>
+											</div>
+										</div>
 									</div>
 								</div>
 								<div class="grid-footer">
@@ -128,6 +203,24 @@
 									<div class="grid-opened">
 										<div class="grid-header">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
+										</div>
+										<div class="grid-content-open">
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
+											</div>
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
+											</div>
+											<div class="grid-btn-cont">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
+											</div>
+											<div class="grid-page-cont">
+												<i class="fa fa-angle-left" aria-hidden="true"></i>
+												<i class="fa fa-angle-right" aria-hidden="true"></i>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -149,25 +242,23 @@
 										<div class="grid-header">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
+										<div class="grid-content-open">
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
+											</div>
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
+											</div>
+											<div class="grid-btn-cont">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
+											</div>
+											<div class="grid-page-cont">
+												<i class="fa fa-angle-left" aria-hidden="true"></i>
+												<i class="fa fa-angle-right" aria-hidden="true"></i>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -186,6 +277,60 @@
 									<div class="grid-opened">
 										<div class="grid-header">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
+										</div>
+										<div class="grid-content-open">
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
+											</div>
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
+											</div>
+											<div class="grid-btn-cont">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
+											</div>
+											<div class="grid-page-cont">
+												<i class="fa fa-angle-left" aria-hidden="true"></i>
+												<i class="fa fa-angle-right" aria-hidden="true"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="grid-footer">
+									<div class="grid-tanggal">Tanggal</div>
+								</div>
+							</div>
+							<div class="grid-item">
+								<div class="grid-content">
+									<div class="grid-closed">
+										<div class="grid-header">
+											<i class="fa fa-angle-down" aria-hidden="true"></i>
+										</div>
+										<div class="btn-expand">Keyword</div>
+									</div>
+									<div class="grid-opened">
+										<div class="grid-header">
+											<i class="fa fa-angle-up" aria-hidden="true"></i>
+										</div>
+										<div class="grid-content-open">
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
+											</div>
+											<div class="grid-btn-cont border-bot">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
+											</div>
+											<div class="grid-btn-cont">
+												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
+												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
+											</div>
+											<div class="grid-page-cont">
+												<i class="fa fa-angle-left" aria-hidden="true"></i>
+												<i class="fa fa-angle-right" aria-hidden="true"></i>
+											</div>
 										</div>
 									</div>
 								</div>

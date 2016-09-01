@@ -1065,6 +1065,10 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	display: none;
 }
 
+#btn-dl-cont>.btn-cont-share {
+	display: inline-block;
+}
+
 .btn-rnd {
 	display: inline-block;
 	border-radius: 50px;
@@ -1228,13 +1232,13 @@ div.tooltip {
 	height: 220px;
 	margin: 10px 0;
 	box-shadow: 0px 0px 10px 0px #cdcdcd;
-	cursor: pointer;
 }
 
 .grid-header {
 	float: right;
 	padding: 5px 10px;
 	height: 20px;
+	cursor: pointer;
 }
 
 .grid-content {
@@ -1265,11 +1269,37 @@ div.tooltip {
 	padding: 10px;
 }
 
+.grid-btn-cont {
+	text-align: center;
+}
+
 .grid-btn-cont.border-bot {
 	border-bottom: 2px solid #eaeaea; 
 }
 
-.grid-content-open>div {
+.btn-cont-share.border-right {
+	border-right: 2px solid #eaeaea;
+}
+
+.grid-btn-cont>.btn-rnd,
+.btn-cont-share>.btn-rnd {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.grid-btn-cont>.btn-rnd-desc,
+.btn-cont-share>.btn-rnd-desc {
+	display: inline-block;
+	text-align: left;
+	vertical-align: top;
+	margin: 10px 10px;
+}
+
+.grid-content-open>.grid-btn-cont {
 	display: block;
-	margin: 10px auto;
+	margin: 10px 20px;
+}
+
+.grid-content-open>.grid-page-cont {
+	margin: 0;
 }
