@@ -58,16 +58,22 @@ require_once(APPPATH.'third_party/ChromePhp.php');
 		}
 
 		function storeReportHistory($username, $keywords, $datefrom, $dateto, $table_name, $hit_time){
+			$time = str_replace('-','', $hit_time);
+			$time = str_replace(':','', $time);
+			$time = str_replace('AM','', $time);
+			$time = str_replace('PM','', $time);
+			$time = str_replace(' ','', $time);
 			$history = array (
 				'username' => $username,
 				'keyword' => $keywords,
 				'media' => $table_name,
-				'filename' => '',
+				'filename' => $username.'_'.$time,
 				'date_range_start' => $datefrom,
 				'date_range_end' => $dateto,
 				'hit_time' => $hit_time
 			);
-			
+			$session_data  = array('filename' => $username.'_'.$time);
+			$this->session->set_userdata($session_data);
 			$this->db->insert('report_history', $history);
 
 			//$query = $this->db->query("insert into report_history (username, keyword, media, filename, date_range_start, date_range_end) values ('$username','$keywords', '$table_name', '', '$dateform', '$dateto')");
