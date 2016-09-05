@@ -258,6 +258,7 @@ class Query extends CI_Controller {
 		return $this->model_query->getCountBasedKeyword($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$tablename);
 	}
 	
+	/*get data from all media that stored in one table*/
 	private function dataOneTable($k1,$k2,$k3,$k4,$k5,$datefrom,$dateto,$includeTable){
 		$this->load->model('model_query');
 		

@@ -92,13 +92,13 @@ class Print_report extends CI_Controller {
 
 		// Close and output PDF document
 		// This method has several options, check the source code documentation for more information.
-		$pdf->Output(APPPATH.'generated_report/example_001.pdf', 'F');
+		$pdf->Output(APPPATH.'generated_report/'.$this->session->userdata('filename').'.pdf', 'F');
 
 		//============================================================+
 		// END OF FILE
 		//============================================================+
 		//$this->download("generated_report/example_001.pdf");
-		echo "filename : generated_report/example_001.pdf";
+		echo "filename : generated_report/".$this->session->userdata('filename').'.pdf';
 	}
 	
 	function printPNG(){		
