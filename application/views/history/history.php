@@ -8,18 +8,25 @@
 			<div class="banner-bot"></div>-->
 			<div class="content-container">
 				<div class="section-history">
+					<div class="grid-title border-bot">
+						<div class="btn btn-marker btn-rnd-sm"></div>
+						<h3>Tag</h3>
+					</div>
 					<div class="grid">
 						<div class="grid-col" id="grid-col-1">
 							<div class="grid-item">
 								<div class="grid-content">
 									<div class="grid-closed">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-open">
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div class="btn-expand">Keyword</div>
+										<div class="grid-content-closed">
+											<div class="btn btn-marker btn-rnd2"><img src="assets/images/grid-chart.png"></div>
+											<div class="grid-main-key">Keyword</div>
+										</div>
 									</div>
 									<div class="grid-opened">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-close">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
 										<div class="grid-content-open">
@@ -49,13 +56,16 @@
 							<div class="grid-item">
 								<div class="grid-content">
 									<div class="grid-closed">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-open">
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div class="btn-expand">Keyword</div>
+										<div class="grid-content-closed">
+											<div class="btn btn-marker btn-rnd2"><img src="assets/images/grid-chart.png"></div>
+											<div class="grid-main-key">Keyword</div>
+										</div>
 									</div>
 									<div class="grid-opened">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-close">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
 										<div class="grid-content-open">
@@ -85,13 +95,16 @@
 							<div class="grid-item">
 								<div class="grid-content">
 									<div class="grid-closed">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-open">
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div class="btn-expand">Keyword</div>
+										<div class="grid-content-closed">
+											<div class="btn btn-marker btn-rnd2"><img src="assets/images/grid-chart.png"></div>
+											<div class="grid-main-key">Keyword</div>
+										</div>
 									</div>
 									<div class="grid-opened">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-close">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
 										<div class="grid-content-open">
@@ -123,13 +136,16 @@
 							<div class="grid-item">
 								<div class="grid-content">
 									<div class="grid-closed">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-open">
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div class="btn-expand">Keyword</div>
+										<div class="grid-content-closed">
+											<div class="btn btn-marker btn-rnd2"><img src="assets/images/grid-chart.png"></div>
+											<div class="grid-main-key">Keyword</div>
+										</div>
 									</div>
 									<div class="grid-opened">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-close">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
 										<div class="grid-content-open">
@@ -159,13 +175,16 @@
 							<div class="grid-item">
 								<div class="grid-content">
 									<div class="grid-closed">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-open">
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div class="btn-expand">Keyword</div>
+										<div class="grid-content-closed">
+											<div class="btn btn-marker btn-rnd2"><img src="assets/images/grid-chart.png"></div>
+											<div class="grid-main-key">Keyword</div>
+										</div>
 									</div>
 									<div class="grid-opened">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-close">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
 										<div class="grid-content-open">
@@ -195,13 +214,16 @@
 							<div class="grid-item">
 								<div class="grid-content">
 									<div class="grid-closed">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-open">
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div class="btn-expand">Keyword</div>
+										<div class="grid-content-closed">
+											<div class="btn btn-marker btn-rnd2"><img src="assets/images/grid-chart.png"></div>
+											<div class="grid-main-key">Keyword</div>
+										</div>
 									</div>
 									<div class="grid-opened">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-close">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
 										<div class="grid-content-open">
@@ -233,13 +255,16 @@
 							<div class="grid-item">
 								<div class="grid-content">
 									<div class="grid-closed">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-open">
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div class="btn-expand">Keyword</div>
+										<div class="grid-content-closed">
+											<div class="btn btn-marker btn-rnd2"><img src="assets/images/grid-chart.png"></div>
+											<div class="grid-main-key">Keyword</div>
+										</div>
 									</div>
 									<div class="grid-opened">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-close">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
 										<div class="grid-content-open">
@@ -269,13 +294,16 @@
 							<div class="grid-item">
 								<div class="grid-content">
 									<div class="grid-closed">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-open">
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div class="btn-expand">Keyword</div>
+										<div class="grid-content-closed">
+											<div class="btn btn-marker btn-rnd2"><img src="assets/images/grid-chart.png"></div>
+											<div class="grid-main-key">Keyword</div>
+										</div>
 									</div>
 									<div class="grid-opened">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-close">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
 										<div class="grid-content-open">
@@ -305,13 +333,16 @@
 							<div class="grid-item">
 								<div class="grid-content">
 									<div class="grid-closed">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-open">
 											<i class="fa fa-angle-down" aria-hidden="true"></i>
 										</div>
-										<div class="btn-expand">Keyword</div>
+										<div class="grid-content-closed">
+											<div class="btn btn-marker btn-rnd2"><img src="assets/images/grid-chart.png"></div>
+											<div class="grid-main-key">Keyword</div>
+										</div>
 									</div>
 									<div class="grid-opened">
-										<div class="grid-header">
+										<div class="grid-header btn-grid-close">
 											<i class="fa fa-angle-up" aria-hidden="true"></i>
 										</div>
 										<div class="grid-content-open">

@@ -504,7 +504,7 @@ h1.content-title {
 }
 
 .section-report {
-	padding: 0 20px;
+	padding: 20px;
 	height: auto;
 	display: none;
 }
@@ -1051,6 +1051,24 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
 }
 
+.btn-marker {
+	background: #AD0A0A;
+	background: linear-gradient(to right, #AD0A0A, #8C2E66);
+	background: -webkit-linear-gradient(left, #AD0A0A , #8C2E66); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #AD0A0A, #8C2E66); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #AD0A0A, #8C2E66); /* For Firefox 3.6 to 15 */
+	color: #fff;
+}
+
+.btn-marker:hover,
+.btn-marker.selected {
+	background: #9FC9FF;
+	background: linear-gradient(to right, #B9C0FF, #9FC9FF);
+	background: -webkit-linear-gradient(left, #B9C0FF ,#9FC9FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
+}
+
 .btn-lg-rnd {
 	border-radius: 50px;
 	width: 46.74%;
@@ -1077,10 +1095,32 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	margin: 0 auto;
 }
 
+.btn-rnd2 {
+	display: inline-block;
+	border-radius: 100px;
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+.btn-rnd-sm {
+	display: inline-block;
+	border-radius: 50px;
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+}
+
 .btn-rnd>img {
 	width: 60%;
 	height: auto;
 	margin: 13px auto;
+}
+
+.btn-marker>img {
+	width: 102%;
+	height: 102%;
+	margin: 0;
 }
 
 .btn-sm {
@@ -1220,6 +1260,20 @@ div.tooltip {
 	padding: 20px 0;
 }
 
+.grid-title {
+	text-align: left;
+	width: 100%;
+	margin: 10px auto;
+	padding-bottom: 10px;
+}
+
+.grid-title>h3 {
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 15px;
+	padding-left: 10px;
+}
+
 .grid-col {
 	vertical-align: top;
 	display: inline-block;
@@ -1229,7 +1283,7 @@ div.tooltip {
 .grid-item { 
 	display: block;
 	width: 96%;
-	height: 220px;
+	height: 270px;
 	margin: 10px 0;
 	box-shadow: 0px 0px 10px 0px #cdcdcd;
 }
@@ -1243,7 +1297,7 @@ div.tooltip {
 
 .grid-content {
 	vertical-align: middle;
-	height: 200px;
+	height: 250px;
 }
 
 .grid-opened {
@@ -1273,11 +1327,11 @@ div.tooltip {
 	text-align: center;
 }
 
-.grid-btn-cont.border-bot {
+.border-bot {
 	border-bottom: 2px solid #eaeaea; 
 }
 
-.btn-cont-share.border-right {
+.border-right {
 	border-right: 2px solid #eaeaea;
 }
 
@@ -1293,6 +1347,15 @@ div.tooltip {
 	text-align: left;
 	vertical-align: top;
 	margin: 10px 10px;
+}
+
+.grid-content-closed {
+	margin: 0px;
+	padding: 25px;
+}
+
+.grid-main-key {
+	padding-top: 10px;
 }
 
 .grid-content-open>.grid-btn-cont {
