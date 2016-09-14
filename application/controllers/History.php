@@ -41,7 +41,7 @@ class History extends CI_Controller {
 			}
 			$data['rowdata'] = $countData;
 			$data['item'] = $i;
-			$this->load->view('history/historyv2.php', $data);
+			$this->load->view('history/history.php', $data);
 		}
 		$this->load->view('template/dashboard_footer.php', $data);
 	}
