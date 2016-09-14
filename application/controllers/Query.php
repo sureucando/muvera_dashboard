@@ -132,7 +132,7 @@ class Query extends CI_Controller {
 	}
 	
 	public function getXLS(){
-		$filecsv = fopen(APPPATH."generated_file/example_001.csv", 'w');
+		$filecsv = fopen(APPPATH."generated_file/".$this->session->userdata('filename').".csv", 'w');
 		fputcsv($filecsv, array('media', 'title','date','link','content', 'quote1', 'quote2', 'quote3', 'quote4', 'quote5'));
 		$query1 = array (
 			'mainword' => $this->input->post('main-word'),
@@ -245,7 +245,7 @@ class Query extends CI_Controller {
 			}*/
 		}
 		fclose($filecsv);
-		echo "filename : generated_file/example_001.csv";
+		echo "filename : generated_file/".$this->session->userdata('filename').".csv";
 	}
 	
 	public function index(){
