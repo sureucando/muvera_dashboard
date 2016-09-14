@@ -15,15 +15,15 @@
 										</div>
 										<div class="grid-content-open">
 											<div class="grid-btn-cont border-bot">
-												<div class="btn btn-orange btn-rnd" onclick="<?php echo base_url("history/downloadpng"); ?>"><img src="assets/images/file-png.png"></div>
+												<div class="btn btn-orange btn-rnd" onclick='window.location.assign("<?php echo base_url('print_report/download/')?>"+"/generated_chart/"+"<?php echo $rowdata['filename'] ?>"+".png");'><img src="assets/images/file-png.png"></div>
 												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PNG</b></p></div>
 											</div>
 											<div class="grid-btn-cont border-bot">
-												<div class="btn btn-orange btn-rnd" onclick="<?php echo base_url("history/downloadpdf"); ?>"><img src="assets/images/file-pdf.png"></div>
+												<div class="btn btn-orange btn-rnd" onclick='window.location.assign("<?php echo base_url('print_report/download/')?>"+"/generated_report/"+"<?php echo $rowdata['filename'] ?>"+".pdf");'><img src="assets/images/file-pdf.png"></div>
 												<div class="btn-rnd-desc"><p>Download<br />Chart Report<br /><b>PDF</b></p></div>
 											</div>
 											<div class="grid-btn-cont">
-												<div class="btn btn-orange btn-rnd" onclick="<?php echo base_url("history/downloadcsv"); ?>"><img src="assets/images/file-csv.png"></div>
+												<div class="btn btn-orange btn-rnd" onclick='window.location.assign("<?php echo base_url('print_report/download/')?>"+"/generated_file/"+"<?php echo $rowdata['filename'] ?>"+".csv");'><img src="assets/images/file-csv.png"></div>
 												<div class="btn-rnd-desc"><p>Download<br />Excel Report<br /><b>CSV</b></p></div>
 											</div>
 											<div class="grid-page-cont">

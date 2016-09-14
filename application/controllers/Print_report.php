@@ -138,7 +138,6 @@ class Print_report extends CI_Controller {
 	}
 	
 	function download(){
-		$this->load->helper('download');
 		$data = file_get_contents(APPPATH.$this->uri->segment(3)."/".$this->uri->segment(4)); // Read the file's contents
 		$name = $this->uri->segment(4);
 		force_download($name, $data);
