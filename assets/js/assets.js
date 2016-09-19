@@ -256,8 +256,8 @@ $(document).ready(function(){
 
   /* Grid Change */
   $('.grid-header.btn-grid-open').click(function(){
-    $(this).parents('.grid-content').animate({height: 400}, "slow");
-    $(this).parents('.grid-content').parent().animate({height: 420}, "slow");
+    $(this).parents('.grid-content').animate({height: 410}, "slow");
+    $(this).parents('.grid-content').parent().animate({height: 430}, "slow");
     $(this).parents('.grid-content').children('.grid-closed').fadeOut(function(){
       $(this).siblings('.grid-opened').fadeIn();
     });

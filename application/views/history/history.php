@@ -9,7 +9,7 @@
 			<div class="content-container">
 				<div class="section-history">
 					<div class="grid-title border-bot">
-						<div class="btn btn-marker btn-rnd-sm"></div>
+						<div class="btn-tag btn-rnd-sm"></div>
 						<h3>Tag</h3>
 					</div>
 					<div class="grid">

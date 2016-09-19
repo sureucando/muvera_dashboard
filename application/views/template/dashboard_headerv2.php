@@ -30,8 +30,8 @@
 				<a class="header-logo" href="<?php echo base_url(); ?>">Muvera<div class="beta-version">beta version</div></a> <!--  -->
 			</div>
 			<div class="header-mid">
-				<div class="header-mediaonline">MEDIA ONLINE</div>
-				<div class="header-twitter">TWITTER</div>
+				<a class="header-history" href="<?php echo base_url('history'); ?>">HISTORY</a>
+				<a class="header-scrap" href="<?php echo base_url('media_online'); ?>">SCRAP</a>
 				<div class="header-facebook">FACEBOOK</div>
 			</div>
 			<div class="header-right">

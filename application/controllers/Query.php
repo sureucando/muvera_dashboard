@@ -133,7 +133,7 @@ class Query extends CI_Controller {
 	
 	public function getXLS(){
 		$filecsv = fopen(APPPATH."generated_file/".$this->session->userdata('filename').".csv", 'w');
-		fputcsv($filecsv, array('media', 'title','date','link','content', 'quote1', 'quote2', 'quote3', 'quote4', 'quote5'));
+		fputcsv($filecsv, array('media', 'title','date','link','content', 'quote1', 'quote2', 'quote3', 'quote4', 'quote5'), ';');
 		$query1 = array (
 			'mainword' => $this->input->post('main-word'),
 			'firsttax' => $this->input->post('first-tax'),
@@ -219,7 +219,7 @@ class Query extends CI_Controller {
 				if($result){
 					foreach ($result as $row){
 						$array = Array($row->title,$row->date, $row->link, $row->content);
-						fputcsv($filecsv, $array);
+						fputcsv($filecsv, $array, ';');
 					}
 				}
 			}
@@ -229,7 +229,7 @@ class Query extends CI_Controller {
 			if($result){
 				foreach ($result as $row){
 					$array = Array($row->media, $row->title,$row->date, $row->link, $row->content, $row->quote1, $row->quote2, $row->quote3, $row->quote4, $row->quote5);
-					fputcsv($filecsv, $array);
+					fputcsv($filecsv, $array, ';');
 				}
 			}
 			/*for($i=0;$i<count($countData);$i++){
@@ -239,7 +239,7 @@ class Query extends CI_Controller {
 				if($result){
 					foreach ($result as $row){
 						$array = Array($row->title,$row->date, $row->link, $row->content);
-						fputcsv($filecsv, $array);
+						fputcsv($filecsv, $array, ';');
 					}
 				}
 			}*/
@@ -266,7 +266,7 @@ class Query extends CI_Controller {
 		/* Marge Keyword*/
 		$keywords =  "'".$k1."', '".$k2."', '".$k3."', '".$k4."', '".$k5."'";
 		date_default_timezone_set('Asia/Jakarta');
-		$date = date('Y-m-d h:i:s a', time());
+		$date = date('Y-m-d H:i:s', time());
 		$this->model_query->storeReportHistory($username,$keywords,$datefrom,$dateto,$includeTable,$date);
 
 		

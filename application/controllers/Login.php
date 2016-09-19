@@ -39,9 +39,11 @@ class Login extends CI_Controller {
 		);
 
 		$result = $this->model_session->login($data);
-		if($result == true){
-			$username = $this->input->post('username');
-			$result = $this->model_session->getUserData($username);
+		//echo '<script>';
+		//echo 'console.log('. json_encode($result[0]->activated).')';
+		//echo '</script>';
+		if(($result == true) AND ($result[0]->activated == 0)){
+			$result = $this->model_session->getUserData($data['username']);
 			if($result != false){
 				$session_data = array(
 					'username' => $result[0]->username,

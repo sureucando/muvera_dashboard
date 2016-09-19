@@ -210,18 +210,6 @@ img#pattern2 {
 	color: #FFFFFF;
 }
 
-.header-mediaonline {
-	position: fixed;
-	padding: 18px 20px;
-	display: none;
-}
-
-.header-twitter {
-	position: fixed;
-	padding: 18px 20px;
-	display: none;
-}
-
 .header-facebook {
 	position: fixed;
 	width: auto;
@@ -291,6 +279,20 @@ h1 .beta-version {
 		color: #FFFFFF;
 		border-left: 1px solid #ffffff;
 	}
+
+	.header-scrap {
+		position: fixed;
+		top: 10px;
+		padding: 5px 25px;
+	}
+
+	.header-history {
+		position: fixed;
+		padding: 5px 25px;
+		top: 10px;
+		left: 40%;
+		border-left: 1px solid #ffffff;
+	}
 }
 @media only screen and (min-width: 1025px) and (max-width: 1366px) {
 	.header-dashboard {
@@ -320,6 +322,20 @@ h1 .beta-version {
 		right: 0;
 		padding: 5px 25px; 
 		color: #FFFFFF;
+		border-left: 1px solid #ffffff;
+	}
+
+	.header-scrap {
+		position: fixed;
+		top: 10px;
+		padding: 5px 25px;
+	}
+
+	.header-history {
+		position: fixed;
+		padding: 5px 25px;
+		top: 10px;
+		left: 42%;
 		border-left: 1px solid #ffffff;
 	}
 }
@@ -353,6 +369,20 @@ h1 .beta-version {
 		color: #FFFFFF;
 		border-left: 1px solid #ffffff;
 	}
+
+	.header-scrap {
+		position: fixed;
+		top: 10px;
+		padding: 5px 25px;
+	}
+
+	.header-history {
+		position: fixed;
+		padding: 5px 25px;
+		top: 10px;
+		left: 45%;
+		border-left: 1px solid #ffffff;
+	}
 }
 @media only screen and (max-width: 800px) {
 	.header-dashboard {
@@ -382,6 +412,20 @@ h1 .beta-version {
 		right: 0;
 		padding: 5px 25px; 
 		color: #FFFFFF;
+		border-left: 1px solid #ffffff;
+	}
+
+	.header-scrap {
+		position: fixed;
+		top: 10px;
+		padding: 5px 25px;
+	}
+
+	.header-history {
+		position: fixed;
+		padding: 5px 25px;
+		top: 10px;
+		left: 45%;
 		border-left: 1px solid #ffffff;
 	}
 }
@@ -1069,6 +1113,15 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	background: -moz-linear-gradient(right, #B9C0FF, #9FC9FF); /* For Firefox 3.6 to 15 */
 }
 
+.btn-tag {
+	background: #AD0A0A;
+	background: linear-gradient(to right, #AD0A0A, #8C2E66);
+	background: -webkit-linear-gradient(left, #AD0A0A , #8C2E66); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #AD0A0A, #8C2E66); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #AD0A0A, #8C2E66); /* For Firefox 3.6 to 15 */
+	color: #fff;
+}
+
 .btn-lg-rnd {
 	border-radius: 50px;
 	width: 46.74%;
@@ -1105,9 +1158,9 @@ input[type=number]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 
 .btn-rnd-sm {
 	display: inline-block;
-	border-radius: 50px;
-	width: 50px;
-	height: 50px;
+	border-radius: 30px;
+	width: 30px;
+	height: 30px;
 	margin: 0 auto;
 }
 
@@ -1270,8 +1323,8 @@ div.tooltip {
 .grid-title>h3 {
 	display: inline-block;
 	vertical-align: top;
-	padding-top: 15px;
-	padding-left: 10px;
+	padding-top: 6px;
+	padding-left: 4px;
 }
 
 .grid-col {
