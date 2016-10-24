@@ -19,6 +19,7 @@
 								<label for="Password">Password
 									<input type="password" name="password">
 								</label>
+								<!--<div><?php echo $message_display; ?></div>-->
 								<input type="submit" class="btn btn-blue btn-md" id="btn-login" value="LOG IN">
 								<!--<div class="btn btn-blue btn-md" id="btn-cs">LOG IN</div>-->
 							</form>

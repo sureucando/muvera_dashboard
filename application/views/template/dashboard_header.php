@@ -30,9 +30,9 @@
 				<a class="header-logo" href="<?php echo base_url(); ?>">Muvera<div class="beta-version">beta version</div></a> <!--  -->
 			</div>
 			<div class="header-mid">
-				<div class="header-mediaonline">MEDIA ONLINE</div>
+				<!--<div class="header-mediaonline">MEDIA ONLINE</div>
 				<div class="header-twitter">TWITTER</div>
-				<div class="header-facebook">FACEBOOK</div>
+				<div class="header-facebook">FACEBOOK</div>-->
 			</div>
 			<div class="header-right">
 				<a class="header-login" href="<?php echo base_url('login'); ?>">Log In</a>

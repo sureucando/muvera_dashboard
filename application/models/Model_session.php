@@ -1,5 +1,5 @@
 <?php
-class Session_model extends CI_Model {
+class Model_session extends CI_Model {
 
     public function __construct()
     {
@@ -23,7 +23,7 @@ class Session_model extends CI_Model {
         }
     }
 
-    public function get_user_data($username)
+    public function getUserData($username)
     {
         $condition = "username =" . "'" . $username . "'";
         $this->db->select('*');

@@ -105,7 +105,7 @@ class Print_report extends CI_Controller {
 		$imgdata = file_get_contents('php://input');
 				
 		if ($imgdata) {
-			$filename = APPPATH.'generated_chart/example_001.png';
+			$filename = APPPATH.'generated_chart/'.$this->session->userdata('filename').'.png';
 			$imgfile = imagecreatefrompng($imgdata);
 			// integer representation of the color black (rgb: 0,0,0)
 			$background = imagecolorallocate($imgfile, 0, 0, 0);
@@ -124,12 +124,12 @@ class Print_report extends CI_Controller {
 				unlink($filename);
 				imagepng($imgfile,$filename);
 				imagedestroy($imgfile);
-				echo "filename : generated_chart/example_001.png";
+				echo "filename : generated_chart/".$this->session->userdata('filename').".png";
 			}
 			else{				
 				imagepng($imgfile,$filename);
 				imagedestroy($imgfile);
-				echo "filename : generated_chart/example_001.png";
+				echo "filename : generated_chart/".$this->session->userdata('filename').".png";
 			}
 		}
 		else{
@@ -138,7 +138,6 @@ class Print_report extends CI_Controller {
 	}
 	
 	function download(){
-		$this->load->helper('download');
 		$data = file_get_contents(APPPATH.$this->uri->segment(3)."/".$this->uri->segment(4)); // Read the file's contents
 		$name = $this->uri->segment(4);
 		force_download($name, $data);

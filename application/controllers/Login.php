@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('session_model');
+		$this->load->model('model_session');
 		
 	}
 
@@ -35,13 +35,15 @@ class Login extends CI_Controller {
 	{
 		$data = array(
 			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password')
+			'password' => md5($this->input->post('password'))
 		);
 
-		$result = $this->session_model->login($data);
-		if($result == true){
-			$username = $this->input->post('username');
-			$result = $this->session_model->get_user_data($username);
+		$result = $this->model_session->login($data);
+		//echo '<script>';
+		//echo 'console.log('. json_encode($result[0]->activated).')';
+		//echo '</script>';
+		if(($result == true) AND ($result[0]->activated == 0)){
+			$result = $this->model_session->getUserData($data['username']);
 			if($result != false){
 				$session_data = array(
 					'username' => $result[0]->username,

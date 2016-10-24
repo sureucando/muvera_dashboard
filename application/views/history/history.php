@@ -8,191 +8,80 @@
 			<div class="banner-bot"></div>-->
 			<div class="content-container">
 				<div class="section-history">
+					<div class="grid-title border-bot">
+						<div class="btn-tag btn-rnd-sm"></div>
+						<h3>Tag</h3>
+					</div>
 					<div class="grid">
+						<?php 
+							$rownumber1 = $item;
+							$rownumber2 = $item - 1;
+							$rownumber3 = $item - 2;	
+						?>
 						<div class="grid-col" id="grid-col-1">
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
-										<div class="grid-content-open">
-											<div class="grid-btn-cont border-bot">
-												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-png.png"></div>
-											</div>
-											<div class="grid-btn-cont border-bot">
-												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-pdf.png"></div>
-											</div>
-											<div class="grid-btn-cont">
-												<div class="btn btn-orange btn-rnd"><img src="assets/images/file-csv.png"></div>
-											</div>
-											<div class="grid-page-cont">
-												<i class="fa fa-angle-left" aria-hidden="true"></i>
-												<i class="fa fa-angle-right" aria-hidden="true"></i>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
+							<!-- Item Col 1 -->
+							<?php
+							if (($item % 3) == 1){
+								$col1 = (($item - 1) / 3) + 1;
+								for ($i = 1; $i<=$col1; $i++){
+									$data = array (
+										'item' => $rownumber1,
+										'rowdata' => $rowdata[$rownumber1-1]
+									);
+									$this->load->view('template/grid_item_history.php', $data);
+									$rownumber1 = $rownumber1 - 3;
+								}
+							}
+							else {
+								$col1 = ($item + 2) / 3;
+								for ($i = 1; $i<=$col1; $i++){
+									$data = array (
+										'item' => $rownumber1,
+										'rowdata' => $rowdata[$rownumber1-1]
+									);
+									$this->load->view('template/grid_item_history.php', $data);
+									$rownumber1 = $rownumber1 - 3;
+								}
+							} ?>
 						</div>
 						<div class="grid-col" id="grid-col-2">
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
+							<!-- Item Col 2 -->
+							<?php 
+							if (($item % 3) == 2){
+								$col2 = (($item - 2) / 3) + 1;
+								for ($i = 1; $i<=$col2; $i++){
+									$data = array (
+										'item' => $rownumber2,
+										'rowdata' => $rowdata[$rownumber2-1]
+									);
+									$this->load->view('template/grid_item_history.php', $data);
+									$rownumber2 = $rownumber2 - 3;
+								}
+							}
+							else {
+								$col2 = ($item + 1) / 3;
+								for ($i = 1; $i<=$col2; $i++){
+									$data = array (
+										'item' => $rownumber2,
+										'rowdata' => $rowdata[$rownumber2-1]
+									);
+									$this->load->view('template/grid_item_history.php', $data);
+									$rownumber2 = $rownumber2 - 3;
+								}
+							} ?>
 						</div>
 						<div class="grid-col" id="grid-col-3">
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
-										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
-							<div class="grid-item">
-								<div class="grid-content">
-									<div class="grid-closed">
-										<div class="grid-header">
-											<i class="fa fa-angle-down" aria-hidden="true"></i>
-										</div>
-										<div class="btn-expand">Keyword</div>
-									</div>
-									<div class="grid-opened">
-										<div class="grid-header">
-											<i class="fa fa-angle-up" aria-hidden="true"></i>
-										</div>
-									</div>
-								</div>
-								<div class="grid-footer">
-									<div class="grid-tanggal">Tanggal</div>
-								</div>
-							</div>
+							<!-- Item Col 3 -->
+							<?php
+							$col3 = $item / 3;
+							for ($i = 1; $i<=$col3; $i++){
+									$data = array (
+										'item' => $rownumber3,
+										'rowdata' => $rowdata[$rownumber3-1]
+									);
+								$this->load->view('template/grid_item_history.php', $data);
+								$rownumber3 = $rownumber3 - 3;
+							} ?>
 						</div>
 					</div>
 				</div>

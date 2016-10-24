@@ -19,10 +19,30 @@ class History extends CI_Controller {
 
 	public function home()
 	{
+		$this->load->model('model_history');
 		$data['title'] = 'History';
 
+		$username = $this->session->userdata('username');
+		$result = $this->model_history->getHistory($username);
+		
 		$this->load->view('template/dashboard_headerv2.php', $data);
-		$this->load->view('history/history.php', $data);
+		if($result == NULL){
+			$this->load->view('history/history.php', $data);
+		}
+		else{
+			$i = 0;
+			foreach($result as $row){
+				$countData[$i] = array (
+					"keyword" => explode(',', $row->keyword),
+					"filename" => $row->filename,
+					"tanggal" => $row->hit_time
+				);
+				$i++;
+			}
+			$data['rowdata'] = $countData;
+			$data['item'] = $i;
+			$this->load->view('history/history.php', $data);
+		}
 		$this->load->view('template/dashboard_footer.php', $data);
 	}
 
